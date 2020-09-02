@@ -32,13 +32,16 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   CalculatorState _calculate(double height, double weight) {
-    double result = height != null && weight != null ? _round(BmiCalculator.calculateBmi (height, weight)) : null;
-    CalculatorState state = CalculatorState (height: height, weight: weight, bmi: result);
+    double bmi = _round2(BmiCalculator.calculateBmi (height, weight));
+    CalculatorState state = CalculatorState (height: height, weight: weight, bmi: bmi);
     return state;
   }
 
-  double _round (double value) {
-    return (( value *100).roundToDouble())/100;
+  // Dart math lib doesn't have arithmetic operations for rounding to given amount of decimals, so one needs to have hack here
+  // https://github.com/dart-lang/sdk/issues/8575
+  // note: null handling is not very nice, so it might need to be enhanced
+  double _round2 (double value) {
+    return value != null ? ((value *100).roundToDouble())/100 : null;
   }
 
 }
