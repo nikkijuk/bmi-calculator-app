@@ -34,13 +34,10 @@ class HeightInput extends StatelessWidget {
           decoration: InputDecoration(
             icon: const Icon(Icons.person),
             labelText: 'Height',
-            //errorText: state.height.invalid ? 'Invalid Email' : null,
           ),
           keyboardType: TextInputType.number,
           onChanged: (value) {
-            double height = double.parse(value);
-            print(height);
-            context.bloc<CalculatorBloc>().add(CalculatorHeightChanged(height: height));
+            context.bloc<CalculatorBloc>().add(CalculatorHeightChanged(height: value != null && value != '' ? double.parse(value) : null));
           },
         );
       },
@@ -59,13 +56,10 @@ class WeightInput extends StatelessWidget {
           decoration: InputDecoration(
             icon: const Icon(Icons.party_mode),
             labelText: 'Weight',
-            //errorText: state.weight.invalid ? 'Invalid Email' : null,
           ),
           keyboardType: TextInputType.number,
           onChanged: (value) {
-            double weight = double.parse(value);
-            print(weight);
-            context.bloc<CalculatorBloc>().add(CalculatorWeightChanged(weight: weight));
+            context.bloc<CalculatorBloc>().add(CalculatorWeightChanged(weight: value != null && value != '' ? double.parse(value) : null));
           },
         );
       },
@@ -77,12 +71,10 @@ class BmiField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
-      buildWhen: (previous, current)  {
-        print ('bmi ${current.bmi}');
-        return previous.bmi != current.bmi;
-      },
+      buildWhen: (previous, current) => previous.bmi != current.bmi,
       builder: (context, state) {
-        return Text(state.bmi.toString(),
+        return Text(
+          "Bmi is ${state.bmi?.toString() ?? '<not calculated yet>'}",
         );
       },
     );
