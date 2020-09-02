@@ -1,4 +1,7 @@
+import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
+import 'package:bmi_calculator_app/pages/calculator_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +29,13 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Flutter Form Validation')),
+        body: BlocProvider(
+          create: (_) => CalculatorBloc(),
+          child: CalculatorPage(),
+        ),
+      ),
     );
   }
 }
