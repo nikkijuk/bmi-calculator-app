@@ -8,6 +8,8 @@ This project is actually a technology demo
 - Flutter for UI
 - Bloc pattern for separating logic from UI 
 - bloc & bloc_flutter packages for implementation of Bloc
+- Separated logic tested with normal unit test
+- Bloc tested with with bloc test
 
 ## Further info
 
