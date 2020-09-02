@@ -10,6 +10,6 @@ Bloc itself is not Flutter specific, and can be used from other Dart apps and te
 
 ![Bloc implementation and tests](../diagrams/bmi-calculator-bloc-test.png)
 
-Note that domain logic is separated from Bloc, and can be tested with simple unit test.
-
 Bloc is tested with specialized test extensions, which makes it clean and simple to interact with sinks and streams.
+
+Note that domain logic is separated from Bloc, and can be tested with simple unit test.
