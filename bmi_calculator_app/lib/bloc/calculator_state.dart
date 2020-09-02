@@ -7,8 +7,8 @@ class CalculatorState {
     @required this.bmi,
   });
 
-  final int height;
-  final int weight;
+  final double height;
+  final double weight;
   final double bmi;
 
   bool get isComplete => height != null && weight != null && bmi != null;

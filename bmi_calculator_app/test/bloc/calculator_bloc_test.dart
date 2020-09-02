@@ -21,16 +21,6 @@ void main() {
     });
 
     group('calculate', () {
-      /*
-      blocTest<CalculatorBloc, CalculatorState>(
-        'initial state is emitted',
-        build: () => CalculatorBloc(),
-        expect: const <CalculatorState>[
-          CalculatorState(height: null, weight: null, bmi: null),
-        ],
-      );
-  */
-
       blocTest<CalculatorBloc, CalculatorState>(
         'to events created in response to set height und weight',
         build: () => CalculatorBloc(),
@@ -38,27 +28,10 @@ void main() {
           ..add(CalculatorHeightChanged(height: 170))
           ..add(CalculatorWeightChanged(weight: 70)),
         expect: const <CalculatorState>[
-          //CalculatorState(height: null, weight: null, bmi: null),
           CalculatorState(height: 170, weight: null, bmi: null),
-          CalculatorState(height: 170, weight: 70, bmi: 42)
+          CalculatorState(height: 170, weight: 70, bmi: 24.22)
         ],
       );
-
-      /*
-      blocTest<CounterCubit, int>(
-        'emits [1, 2] when state is 0 and invoked twice',
-        build: () => CounterCubit(),
-        act: (cubit) => cubit..increment()..increment(),
-        expect: const <int>[1, 2],
-      );
-
-      blocTest<CounterCubit, int>(
-        'emits [42] when state is 41',
-        build: () => CounterCubit()..emit(41),
-        act: (cubit) => cubit.increment(),
-        expect: const <int>[42],
-      );
-       */
 
     });
   });

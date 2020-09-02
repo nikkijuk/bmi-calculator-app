@@ -24,17 +24,21 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     }
   }
 
-  Stream<CalculatorState> _setHeight(int height) async* {
+  Stream<CalculatorState> _setHeight(double height) async* {
     yield _calculate(height, state.weight);
   }
-  Stream<CalculatorState> _setWeight(int weight) async* {
+  Stream<CalculatorState> _setWeight(double weight) async* {
     yield _calculate(state.height, weight);
   }
 
-  CalculatorState _calculate(int height, int weight) {
-    double result = height != null && weight != null ? BmiCalculator.calculateBmi (height, weight) : null;
+  CalculatorState _calculate(double height, double weight) {
+    double result = height != null && weight != null ? _round(BmiCalculator.calculateBmi (height, weight)) : null;
     CalculatorState state = CalculatorState (height: height, weight: weight, bmi: result);
     return state;
+  }
+
+  double _round (double value) {
+    return (( value *100).roundToDouble())/100;
   }
 
 }
