@@ -40,7 +40,7 @@ void main() {
         expect: const <CalculatorState>[
           //CalculatorState(height: null, weight: null, bmi: null),
           CalculatorState(height: 170, weight: null, bmi: null),
-          CalculatorState(height: 170, weight: 70, bmi: 0)
+          CalculatorState(height: 170, weight: 70, bmi: 42)
         ],
       );
 

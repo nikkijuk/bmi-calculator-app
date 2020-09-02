@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:bmi_calculator_app/domain/bmi_calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
@@ -31,12 +32,8 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   CalculatorState _calculate(int height, int weight) {
-    //  = num.parse(n.toStringAsFixed(2));
-    //double result = height != null && weight != null ? double.parse(((weight / pow(height, 2)) * 703).toStringAsPrecision(0)) : null;
-    //double result = height != null && weight != null ? ((weight / pow(height, 2)) * 703).truncateToDouble() : null;
-    double result = height != null && weight != null ? 0 : null;
+    double result = height != null && weight != null ? BmiCalculator.calculateBmi (height, weight) : null;
     CalculatorState state = CalculatorState (height: height, weight: weight, bmi: result);
-    print (state);
     return state;
   }
 
