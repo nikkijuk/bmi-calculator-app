@@ -23,5 +23,5 @@ void main() {
     double bmi = BmiCalculator.calculateBmi(null, null);
     expect(bmi, null);
   });
-  
+
 }

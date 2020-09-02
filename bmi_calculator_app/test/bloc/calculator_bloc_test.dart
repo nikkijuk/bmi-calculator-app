@@ -2,6 +2,8 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// test calculator blocs initial state and sending events / receiving responses from stream
+// https://pub.dev/packages/bloc_test
 void main() {
   group('CalculatorBloc', () {
     test('initial state is not complete', () {
@@ -32,6 +34,8 @@ void main() {
           CalculatorState(height: 170, weight: 70, bmi: 24.22)
         ],
       );
+
+      // TODO: add test for reset ?
 
     });
   });
