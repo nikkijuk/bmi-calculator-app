@@ -30,7 +30,7 @@ class HeightInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.height != current.height,
       builder: (context, state) {
         return TextFormField(
-          initialValue: state.height.toString(),
+          initialValue: state.height?.toString() ?? '',
           decoration: InputDecoration(
             icon: const Icon(Icons.person),
             labelText: 'Height',
@@ -55,7 +55,7 @@ class WeightInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.weight != current.weight,
       builder: (context, state) {
         return TextFormField(
-          initialValue: state.weight.toString(),
+          initialValue: state.weight?.toString() ?? '',
           decoration: InputDecoration(
             icon: const Icon(Icons.party_mode),
             labelText: 'Weight',
