@@ -37,7 +37,7 @@ class HeightInput extends StatelessWidget {
           ),
           keyboardType: TextInputType.number,
           onChanged: (value) {
-            context.bloc<CalculatorBloc>().add(CalculatorHeightChanged(height: value != null && value != '' ? double.parse(value) : null));
+            context.bloc<CalculatorBloc>().add(CalculatorHeightChanged(height: _parseDoubleOrNull(value)));
           },
         );
       },
@@ -59,7 +59,7 @@ class WeightInput extends StatelessWidget {
           ),
           keyboardType: TextInputType.number,
           onChanged: (value) {
-            context.bloc<CalculatorBloc>().add(CalculatorWeightChanged(weight: value != null && value != '' ? double.parse(value) : null));
+            context.bloc<CalculatorBloc>().add(CalculatorWeightChanged(weight: _parseDoubleOrNull(value)));
           },
         );
       },
@@ -80,3 +80,6 @@ class BmiField extends StatelessWidget {
     );
   }
 }
+
+// this was tricky: field can contain null, empty or numeric value
+double _parseDoubleOrNull(String value) => value != null && value != '' ? double.parse(value) : null;
