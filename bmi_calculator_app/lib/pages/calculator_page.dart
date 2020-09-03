@@ -9,14 +9,17 @@ class CalculatorPage extends StatelessWidget {
 
       return BlocBuilder<CalculatorBloc, CalculatorState>(
         builder: (context, state) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              HeightInput (),
-              WeightInput (),
-              BmiField(),
-            ],
+          return Center (
+            child: Column(
+              //mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                HeightInput (),
+                WeightInput (),
+                BmiField(),
+              ],
+            )
           );
         },
       );
@@ -75,6 +78,7 @@ class BmiField extends StatelessWidget {
       builder: (context, state) {
         return Text(
           "Bmi is ${state.bmi?.toString() ?? '<not calculated yet>'}",
+          style: Theme.of(context).textTheme.headline4,
         );
       },
     );
