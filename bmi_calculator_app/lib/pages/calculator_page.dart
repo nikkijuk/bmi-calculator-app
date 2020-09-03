@@ -37,6 +37,7 @@ class HeightInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.height != current.height,
       builder: (context, state) {
         return TextFormField(
+          key: ValueKey ("height"),
           initialValue: state.height?.toString() ?? '',
           decoration: InputDecoration(
             icon: const Icon(Icons.person),
@@ -62,6 +63,7 @@ class WeightInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.weight != current.weight,
       builder: (context, state) {
         return TextFormField(
+          key: ValueKey ("weight"),
           initialValue: state.weight?.toString() ?? '',
           decoration: InputDecoration(
             icon: const Icon(Icons.party_mode),
@@ -83,6 +85,7 @@ class BmiCalculationResult extends StatelessWidget {
       builder: (context, state) {
         return Text(
           "Bmi is ${state.bmi?.toString() ?? '<not calculated>'}",
+          key: ValueKey ("bmi"),
           style: Theme.of(context).textTheme.headline4,
         );
       },
@@ -110,7 +113,6 @@ class ResetButton extends StatelessWidget {
     );
   }
 }
-
 
 // this was tricky: field can contain null, empty or numeric value
 double _parseDoubleOrNull(String value) => value != null && value != '' ? double.parse(value) : null;

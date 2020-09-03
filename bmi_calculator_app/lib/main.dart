@@ -7,11 +7,11 @@ import 'bloc/simple_bloc_observer.dart';
 
 void main() {
   Bloc.observer = SimpleBlocObserver();
-  runApp(MyApp());
+  runApp(BmiCalculatorApp());
 }
 
 // This widget is the root of app
-class MyApp extends StatelessWidget {
+class BmiCalculatorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
