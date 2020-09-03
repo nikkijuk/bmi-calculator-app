@@ -16,6 +16,7 @@ class CalculatorPage extends StatelessWidget {
                 HeightInput (),
                 WeightInput (),
                 BmiCalculationResult(),
+                ResetButton(),
               ],
             )
           );
@@ -88,6 +89,28 @@ class BmiCalculationResult extends StatelessWidget {
     );
   }
 }
+
+// TODO: either reset button needs to be removed or local state of stateless height & weight fields need to be cleared
+// note: currently reset event is sent, state of bloc is resetted (and bmi can't be calculated), but ui keeps state of form input fields and this state won't change
+class ResetButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    void _onReset() =>
+        context.bloc<CalculatorBloc>().add(CalculatorReset());
+
+    return BlocBuilder<CalculatorBloc, CalculatorState>(
+      //buildWhen: (previous, current) => previous.bmi != current.bmi,
+      builder: (context, state) {
+        return RaisedButton (
+          onPressed: _onReset,
+          child: const Text('Reset - does not work as expected!'),
+        );
+      },
+    );
+  }
+}
+
 
 // this was tricky: field can contain null, empty or numeric value
 double _parseDoubleOrNull(String value) => value != null && value != '' ? double.parse(value) : null;
