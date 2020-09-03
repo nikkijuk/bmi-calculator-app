@@ -6,18 +6,16 @@ class CalculatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
       return BlocBuilder<CalculatorBloc, CalculatorState>(
         builder: (context, state) {
           return Center (
             child: Column(
-              //mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 HeightInput (),
                 WeightInput (),
-                BmiField(),
+                BmiCalculationResult(),
               ],
             )
           );
@@ -27,8 +25,13 @@ class CalculatorPage extends StatelessWidget {
 }
 
 class HeightInput extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
+
+    void _onHeightChanged(String value) =>
+        context.bloc<CalculatorBloc>().add(CalculatorHeightChanged(height: _parseDoubleOrNull(value)));
+    
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.height != current.height,
       builder: (context, state) {
@@ -39,9 +42,7 @@ class HeightInput extends StatelessWidget {
             labelText: 'Height',
           ),
           keyboardType: TextInputType.number,
-          onChanged: (value) {
-            context.bloc<CalculatorBloc>().add(CalculatorHeightChanged(height: _parseDoubleOrNull(value)));
-          },
+          onChanged: _onHeightChanged,
         );
       },
     );
@@ -49,8 +50,13 @@ class HeightInput extends StatelessWidget {
 }
 
 class WeightInput extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
+    void _onWeightChanged(String value) =>
+        context.bloc<CalculatorBloc>().add(CalculatorWeightChanged(weight: _parseDoubleOrNull(value)));
+
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.weight != current.weight,
       builder: (context, state) {
@@ -61,23 +67,21 @@ class WeightInput extends StatelessWidget {
             labelText: 'Weight',
           ),
           keyboardType: TextInputType.number,
-          onChanged: (value) {
-            context.bloc<CalculatorBloc>().add(CalculatorWeightChanged(weight: _parseDoubleOrNull(value)));
-          },
+          onChanged: _onWeightChanged,
         );
       },
     );
   }
 }
 
-class BmiField extends StatelessWidget {
+class BmiCalculationResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.bmi != current.bmi,
       builder: (context, state) {
         return Text(
-          "Bmi is ${state.bmi?.toString() ?? '<not calculated yet>'}",
+          "Bmi is ${state.bmi?.toString() ?? '<not calculated>'}",
           style: Theme.of(context).textTheme.headline4,
         );
       },
