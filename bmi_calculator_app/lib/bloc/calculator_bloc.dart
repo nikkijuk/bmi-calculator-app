@@ -15,19 +15,26 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
 
   @override
   Stream<CalculatorState> mapEventToState(CalculatorEvent event) async* {
-    if (event is CalculatorReset) {
-      yield CalculatorState.initial();
-    } else if (event is CalculatorHeightChanged) {
-      yield* _changeHeight(event.height);
-    } else if (event is CalculatorWeightChanged) {
-      yield* _changeWeight(event.weight);
+
+    switch (event.runtimeType) {
+      case CalculatorReset:
+        yield CalculatorState.initial();
+        break;
+      case CalculatorHeightChanged:
+        yield* _changeHeight(event);
+        break;
+      case CalculatorWeightChanged:
+        yield* _changeWeight(event);
+        break;
     }
   }
 
-  Stream<CalculatorState> _changeHeight(double height) async* {
+  Stream<CalculatorState> _changeHeight(CalculatorHeightChanged event) async* {
+    double height = event.height;
     yield _createCalculatorState(height, state.weight);
   }
-  Stream<CalculatorState> _changeWeight(double weight) async* {
+  Stream<CalculatorState> _changeWeight(CalculatorWeightChanged event) async* {
+    double weight = event.weight;
     yield _createCalculatorState(state.height, weight);
   }
 
