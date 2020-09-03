@@ -22,47 +22,31 @@ void main() {
     await tester.pumpWidget(BmiCalculatorApp());
 
     // pre
-    expect(find.text('Bmi is <not calculated>'), findsOneWidget);
 
-    expect(find.byIcon(Icons.person), findsOneWidget); // height
-    expect(find.byIcon(Icons.party_mode), findsOneWidget); // weight
-
+    // check all widgets are there
     expect(find.byKey (ValueKey("height")), findsOneWidget); // height
     expect(find.byKey (ValueKey("weight")), findsOneWidget); // weight
     expect(find.byKey (ValueKey("bmi")), findsOneWidget); // bmi
 
+    // check that bmi is not calculated
+    expect(find.text('Bmi is <not calculated>'), findsOneWidget);
+
     // set height
-    await tester.tap(find.byIcon(Icons.person));
+    await tester.enterText(find.byKey (ValueKey("height")), '170');
     await tester.pump();
 
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit1);
-    await tester.pump();
-
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit7);
-    await tester.pump();
-
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit0);
-    await tester.pump();
-
-    // part set
+    // part set, bmi not calculated
     expect(find.text('Bmi is <not calculated>'), findsOneWidget);
 
     // set weight
-    await tester.tap(find.byIcon(Icons.party_mode));
+    await tester.enterText(find.byKey (ValueKey("weight")), '70');
     await tester.pump();
-
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit7);
-    await tester.pump();
-
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit0);
-    await tester.pumpAndSettle();
 
     // check bmi
     // text should have now changed
     expect(find.byKey(ValueKey("bmi")), findsOneWidget);
 
-    // TODO: why UI doesn't update? Is Bloc not active?
-    //expect(find.text('Bmi is <not calculated>'), findsNothing); // shouldn't be there anymore
-    //expect(find.text('Bmi is 24.22'), findsOneWidget);
+    expect(find.text('Bmi is <not calculated>'), findsNothing); // shouldn't be there anymore
+    expect(find.text('Bmi is 24.22'), findsOneWidget); // calculated value should be there
   });
 }
