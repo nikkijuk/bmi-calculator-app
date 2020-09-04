@@ -33,19 +33,19 @@ void main() {
 
     // set height
     await tester.enterText(find.byKey (ValueKey("height")), '170');
-    await tester.pump();
+    await tester.pump(); // trigger frame rendering
 
     // part set, bmi not calculated
     expect(find.text('Bmi is <not calculated>'), findsOneWidget);
 
     // set weight
     await tester.enterText(find.byKey (ValueKey("weight")), '70');
-    await tester.pump();
+    await tester.pump(); // trigger frame rendering
 
-    // check bmi
-    // text should have now changed
+    // check bmi is shown
     expect(find.byKey(ValueKey("bmi")), findsOneWidget);
 
+    // bmi should have now changed after setting value to fields and rendering widgets
     expect(find.text('Bmi is <not calculated>'), findsNothing); // shouldn't be there anymore
     expect(find.text('Bmi is 24.22'), findsOneWidget); // calculated value should be there
   });
