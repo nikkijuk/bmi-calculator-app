@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/simple_bloc_observer.dart';
+import 'domain/traditional_bmi_calculator.dart';
 
 void main() {
   Bloc.observer = SimpleBlocObserver();
@@ -24,7 +25,7 @@ class BmiCalculatorApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('BMI Calculator')),
         body: BlocProvider(
-          create: (_) => CalculatorBloc(),
+          create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
           child: CalculatorPage(),
         ),
       ),

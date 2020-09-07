@@ -11,7 +11,9 @@ part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
 
-  CalculatorBloc() : super(CalculatorState.initial());
+  BmiCalculator calculator;
+
+  CalculatorBloc(this.calculator) : super(CalculatorState.initial());
 
   @override
   Stream<CalculatorState> mapEventToState(CalculatorEvent event) async* {
@@ -39,7 +41,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   CalculatorState _createCalculatorState(double height, double weight) {
-    double bmi = BmiCalculator.calculateBmiPrecision2 (height, weight);
+    double bmi = calculator.calculateBmiPrecision2 (height, weight);
     return CalculatorState (height: height, weight: weight, bmi: bmi);
   }
 
