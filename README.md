@@ -16,3 +16,4 @@ This project is actually a technology demo
 - https://bloclibrary.dev/#/
 - https://github.com/felangel/bloc/tree/master/examples/flutter_dynamic_form
 - https://www.youtube.com/watch?v=knMvKPKBzGE&feature=youtu.be
+- https://blog.codemagic.io/flutter-libraries-ebook-by-codemagic/
