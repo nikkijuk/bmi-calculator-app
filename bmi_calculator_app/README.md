@@ -22,7 +22,7 @@ Domain classes do not have dependencies to Flutter.
 
 ## Implementing Bloc pattern
 
-Bloc pattern is implemented in BMI Calculator using 3rd party extension called bloc_flutter.
+Bloc pattern is implemented in BMI Calculator using 3rd party extension called [flutter_bloc] (https://pub.dev/packages/flutter_bloc)
 
 Bloc itself is not Flutter specific, and can be used from other Dart apps and tests without Flutter.
 
@@ -30,7 +30,9 @@ Bloc itself is not Flutter specific, and can be used from other Dart apps and te
 
 Bloc is tested with specialized test extensions, which makes it clean and simple to interact with sinks and streams.
 
-Note that domain logic is separated from Bloc, and is tested with simple unit test. With separate tests we can concentrate on bloc tests to interaction with business logic, since we know that algorithm itself is already ok.
+Note: domain logic is separated from Bloc, and is tested with simple unit test. With separate tests we can concentrate on bloc tests to interaction with business logic, since we know that algorithm itself is already ok.
+
+Note: bloc_flutter is similarly named component as one we use, so be careful not to mix them.
 
 ## Implementing UI components
 
