@@ -2,6 +2,22 @@
 
 Flutter Body Mass Index Calculator
 
+## Implementing domain classes
+
+Body mass index is calculated from height and weight of person. Result is single number. Two parameters, one number as result. Pretty neat.
+
+World is still bit tricky
+- In europe we have ISO system (KG, CM), but there's other systems in world also.
+- There's well known way of calculating BMI, but also new way which should be more accurate.
+
+While this app uses solely ISO when calculating, it has classes for both traditional and new algorithm.
+
+Reason: It's ok to assume in contract of components that client does transformation between numeric systems. Still, we want algorith to be pluggable.
+
+![Domain classes implementation and tests](../diagrams/bmi-calculator-classes.png)
+
+There's test for each implemented algorithm. When testing later business logic components (bloc) and interaction (pages) we don't need to duplicate tests which are already done for domain objects.
+
 ## Implementing Bloc pattern
 
 Bloc pattern is implemented in BMI Calculator using 3rd party extension called bloc_flutter.
@@ -12,4 +28,12 @@ Bloc itself is not Flutter specific, and can be used from other Dart apps and te
 
 Bloc is tested with specialized test extensions, which makes it clean and simple to interact with sinks and streams.
 
-Note that domain logic is separated from Bloc, and can be tested with simple unit test.
+Note that domain logic is separated from Bloc, and is tested with simple unit test. With separate tests we can concentrate on bloc tests to interaction with business logic, since we know that algorithm itself is already ok.
+
+## Implementing UI components
+
+BMI calculator is simple and has only one page. This page is shown after BmiCalcularApp is started.
+
+WidgetTester component is used to interact with ui fron test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
+
+![Calculator UI implementation and tests](../diagrams/calculator-page-test.png)
