@@ -12,11 +12,13 @@ World is still bit tricky
 
 While this app uses solely ISO when calculating, it has classes for both traditional and new algorithm.
 
-Reason: It's ok to assume in contract of components that client does transformation between numeric systems. Still, we want algorith to be pluggable.
+Reason: It's ok to assume in contract of components that client does transformation between numeric systems. Still, we want algorithm to be isolated for use and testing.
 
 ![Domain classes implementation and tests](../diagrams/bmi-calculator-classes.png)
 
 There's test for each implemented algorithm. When testing later business logic components (bloc) and interaction (pages) we don't need to duplicate tests which are already done for domain objects.
+
+Domain classes do not have dependencies to Flutter.
 
 ## Implementing Bloc pattern
 
@@ -37,3 +39,5 @@ BMI calculator is simple and has only one page. This page is shown after BmiCalc
 WidgetTester component is used to interact with ui fron test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
 
 ![Calculator UI implementation and tests](../diagrams/calculator-page-test.png)
+
+UI components are Flutter Widgets. So, from here on one can't reuse classes with for example Angular.
