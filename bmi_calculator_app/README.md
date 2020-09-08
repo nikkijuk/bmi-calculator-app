@@ -30,7 +30,7 @@ Bloc itself is not Flutter specific, and can be used from other Dart apps and te
 
 Bloc is tested with specialized test extensions, which makes it clean and simple to interact with sinks and streams.
 
-Note: domain logic is separated from Bloc, and is tested with simple unit test. With separate tests we can concentrate on bloc tests to interaction with business logic, since we know that algorithm itself is already ok.
+Domain logic is separated from Bloc, and is tested with simple unit test. With separate tests we can concentrate on bloc tests to interaction with business logic, since we know that algorithm itself is already ok.
 
 Note: bloc_flutter is similarly named component as one we use, so be careful not to mix them.
 
