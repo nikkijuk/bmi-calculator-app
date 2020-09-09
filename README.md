@@ -1,4 +1,4 @@
-# flutter-bmi-calculator-app
+# bmi-calculator-app
 Body Mass Index calculator implemented with Flutter
 
 ## Technology
