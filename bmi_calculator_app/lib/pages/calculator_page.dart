@@ -16,7 +16,7 @@ class CalculatorPage extends StatelessWidget {
                 HeightInput (),
                 WeightInput (),
                 BmiCalculationResult(),
-                ResetButton(),
+                //rResetButton(),
               ],
             )
           );
