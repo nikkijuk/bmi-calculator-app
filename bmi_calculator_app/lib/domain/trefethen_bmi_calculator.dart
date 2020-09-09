@@ -14,5 +14,4 @@ class TrefethenBmiCalculator extends BmiCalculator {
     return height != null && weight != null ? ( 1.3 * weight / pow (height / 100, 2.5)) : null;
   }
 
-
 }

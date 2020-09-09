@@ -7,7 +7,7 @@ import 'bloc/simple_bloc_observer.dart';
 import 'domain/traditional_bmi_calculator.dart';
 
 void main() {
-  Bloc.observer = SimpleBlocObserver();
+  Bloc.observer = SimpleBlocObserver(); // adds logging so that bloc operations are easier to follow
   runApp(BmiCalculatorApp());
 }
 

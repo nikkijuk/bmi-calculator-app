@@ -3,7 +3,7 @@ import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:bmi_calculator_app/domain/traditional_bmi_calculator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-  // test calculator blocs initial state and sending events using sink / receiving state as responses from stream
+// test calculator bloc initial state and sending events using sink / receiving state as responses from stream
 // https://pub.dev/packages/bloc_test
 void main() {
   group('CalculatorBloc', () {
