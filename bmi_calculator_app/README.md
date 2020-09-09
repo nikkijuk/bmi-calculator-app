@@ -46,6 +46,16 @@ Note: bloc_flutter is similarly named component as one we use, so be careful not
 
 BMI calculator is simple and has only one page. This page is shown after BmiCalcularApp is started.
 
+Flutter uses composition to build viewa
+- BmiCalcularApp is composed of MaterialApp, Scaffold and CalculatorPage during startup
+- CalculatorPage is composed of BlocBuilder, Center, Column and HeightInput, WeightInput and BmiCalculationResult
+- CalculatorPage is rendere when BlocBuilder receives state from bloc
+- HeightInput, WeightInput and BmiCalculationResult are all rendered when associated BlocBuilder receives update
+
+![Calculator Page](../diagrams/calculator-page-outline.png)
+
+Composition in CalculatorPage is extreme, and for this app it would be nought to have all embedded within one BlocBuilder. 
+
 WidgetTester component is used to interact with ui fron test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
 
 ![Calculator UI implementation and tests](../diagrams/calculator-page-test.png)
