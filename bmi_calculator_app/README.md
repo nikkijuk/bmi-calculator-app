@@ -22,7 +22,7 @@ Domain classes do not have dependencies to Flutter.
 
 ## Implementing Bloc pattern
 
-Bloc pattern is implemented in BMI Calculator using 3rd party extension called [flutter_bloc] (https://pub.dev/packages/flutter_bloc).
+Bloc pattern is implemented in BMI Calculator using 3rd party extension called [flutter_bloc](https://pub.dev/packages/flutter_bloc).
 
 Bloc reacts on three events
 - CalculartReset 
