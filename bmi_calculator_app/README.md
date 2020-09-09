@@ -51,6 +51,7 @@ Flutter uses composition to build viewa
 - CalculatorPage is composed of BlocBuilder, Center, Column and HeightInput, WeightInput and BmiCalculationResult
 - CalculatorPage is rendere when BlocBuilder receives state from bloc
 - HeightInput, WeightInput and BmiCalculationResult are all rendered when associated BlocBuilder receives update
+- HeightInput, WeightInput and BmiCalculationResult have all id's (key), which can used to identify fields ui component during test
 
 ![Calculator Page outline](../diagrams/calculator-page-outline.png)
 
