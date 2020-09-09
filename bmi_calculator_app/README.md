@@ -26,7 +26,7 @@ Bloc pattern is implemented in BMI Calculator using 3rd party extension called [
 
 Calculator Bloc reacts on three events
 - CalculatorReset 
-- CalculatorHeightChanged containing persons weight
+- CalculatorHeightChanged containing persons height
 - CalculatorWeightChanged containing persons weight
 
 Bloc state is returned when bloc state changes
