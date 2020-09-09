@@ -52,7 +52,7 @@ Flutter uses composition to build viewa
 - CalculatorPage is rendere when BlocBuilder receives state from bloc
 - HeightInput, WeightInput and BmiCalculationResult are all rendered when associated BlocBuilder receives update
 
-![Calculator Page](../diagrams/calculator-page-outline.png)
+![Calculator Page outline](../diagrams/calculator-page-outline.png)
 
 Composition in CalculatorPage is extreme, and for this app it would be nought to have all embedded within one BlocBuilder. 
 
