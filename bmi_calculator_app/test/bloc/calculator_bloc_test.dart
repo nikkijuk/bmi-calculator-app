@@ -26,7 +26,7 @@ void main() {
 
   });
 
-  group('calculation of bni with traditional algorithm', () {
+  group('calculation of bmi with traditional algorithm', () {
     blocTest<CalculatorBloc, CalculatorState>(
       'to events created in response to set height und weight',
       build: () => CalculatorBloc(TraditionalBmiCalculator()),
@@ -40,7 +40,7 @@ void main() {
     );
   });
 
-  group('calculation of bni with trefethen algorithm', () {
+  group('calculation of bmi with trefethen algorithm', () {
     blocTest<CalculatorBloc, CalculatorState>(
       'to events created in response to set height und weight',
       build: () => CalculatorBloc(TrefethenBmiCalculator()),
