@@ -83,8 +83,14 @@ class BmiCalculationResult extends StatelessWidget {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.bmi != current.bmi,
       builder: (context, state) {
-        return Text(
-          "Bmi is ${state.bmi?.toString() ?? '<not calculated>'}",
+        return state.bmi == null ?
+          Text(
+              "not calculated",
+              key: ValueKey ("not-calculated"),
+          )
+        :
+          Text(
+          "Bmi is ${state.bmi}",
           key: ValueKey ("bmi"),
           style: Theme.of(context).textTheme.headline4,
         );

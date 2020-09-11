@@ -18,20 +18,25 @@ void main() {
 
     // pre
 
-    // check all widgets are there
-    expect(find.byKey (ValueKey("height")), findsOneWidget); // height
-    expect(find.byKey (ValueKey("weight")), findsOneWidget); // weight
-    expect(find.byKey (ValueKey("bmi")), findsOneWidget); // bmi
+    // check 'height' and 'weight' input widgets are there
+    expect(find.byKey (ValueKey("height")), findsOneWidget);
+    expect(find.byKey (ValueKey("weight")), findsOneWidget);
 
-    // check that bmi is not calculated
-    expect(find.text('Bmi is <not calculated>'), findsOneWidget);
+    // check 'not-calculated' output widget is there
+    expect(find.byKey (ValueKey("not-calculated")), findsOneWidget);
+
+    // check 'bmi' output widgets is not there
+    expect(find.byKey (ValueKey("bmi")), findsNothing);
+
+    // check that "not calculated" text is visible
+    expect(find.text('not calculated'), findsOneWidget);
 
     // set height
     await tester.enterText(find.byKey (ValueKey("height")), '170');
     await tester.pump(); // trigger frame rendering
 
     // part set, bmi not calculated
-    expect(find.text('Bmi is <not calculated>'), findsOneWidget);
+    expect(find.text('not calculated'), findsOneWidget);
 
     // set weight
     await tester.enterText(find.byKey (ValueKey("weight")), '70');
@@ -41,7 +46,7 @@ void main() {
     expect(find.byKey(ValueKey("bmi")), findsOneWidget);
 
     // bmi should have now changed after setting value to fields and rendering widgets
-    expect(find.text('Bmi is <not calculated>'), findsNothing); // shouldn't be there anymore
+    expect(find.text('not calculated'), findsNothing); // shouldn't be there anymore
     expect(find.text('Bmi is 24.22'), findsOneWidget); // calculated value should be there
   });
 }
