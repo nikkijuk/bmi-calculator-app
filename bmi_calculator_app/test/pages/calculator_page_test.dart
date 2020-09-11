@@ -50,6 +50,6 @@ void main() {
 
     // bmi should have now changed after setting value to fields and rendering widgets
     expect(find.text('not calculated'), findsNothing);
-    expect(find.text('Bmi is 24.22'), findsOneWidget); 
+    expect(find.text('Bmi is 24.22'), findsOneWidget);
   });
 }

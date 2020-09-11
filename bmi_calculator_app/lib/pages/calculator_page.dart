@@ -30,9 +30,16 @@ class HeightInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    // create callback handler, which
+    // - uses BlocProvider to find CalculatorBloc using it's type
+    // - creates CalculatorHeightChangedEvent and adds it to sink of CalculatorBloc
     void _onHeightChanged(String value) =>
         context.bloc<CalculatorBloc>().add(CalculatorHeightChanged(height: _parseDoubleOrNull(value)));
-    
+
+    // listens stream of CalculatorBloc, which
+    // - triggers when new CalculatorState is received from stream
+    // - building of widget happens when previous and current object differ in meaningful way
+    // - builder return newly built widget if building has happened
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.height != current.height,
       builder: (context, state) {
