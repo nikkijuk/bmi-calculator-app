@@ -25,10 +25,10 @@ World is still bit tricky
 While this app uses solely ISO (CM, KG) when calculating, it has classes for both traditional and new algorithm.
 
 Traditional formula: 
-- BMI = weight(kg)/height(m)^2 = 703*weight(lb)/height(in)^2.
+- BMI = weight(kg)/height(m)^2 = 703 * weight(lb)/height(in)^2.
 
 New formula: 
-- BMI = 1.3*weight(kg)/height(m)^2.5 = 5734*weight(lb)/height(in)^2.5
+- BMI = 1.3 * weight(kg)/height(m)^2.5 = 5734 * weight(lb)/height(in)^2.5
 
 Reason: It's ok to assume in contract of components that client does transformation between numeric systems. Still, we want algorithm to be isolated for use and testing.
 
