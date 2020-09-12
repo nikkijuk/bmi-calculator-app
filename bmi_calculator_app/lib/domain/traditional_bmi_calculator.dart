@@ -9,7 +9,7 @@ import 'package:bmi_calculator_app/domain/bmi_calculator.dart';
  */
 class TraditionalBmiCalculator extends BmiCalculator {
 
-  // Current formula: BMI = weight(kg)/height(m)^2 = 703*weight(lb)/height(in)^2.
+  // Traditional formula: BMI = weight(kg)/height(m)^2 = 703*weight(lb)/height(in)^2.
   double calculateBmi (double height, double weight) {
     return height != null && weight != null ? ( weight / pow (height / 100, 2)) : null;
   }

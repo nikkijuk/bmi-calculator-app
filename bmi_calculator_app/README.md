@@ -4,13 +4,15 @@ Flutter Body Mass Index Calculator
 
 ## Calculate your BMI
 
-Body mass index can be calculated from two values, and result correlates to persons healt. It's hard to think simpler app with real meaning in context of our lives.
+Body mass index can be calculated from two values, and result correlates to persons healt. 
+
+It's hard to think simpler app with real meaning in context of our lives.
 
 ![Calculate your BMI](../diagrams/calculator-page-iphone-simulator-screenshot.png)
 
-In current development stage app doesn't yet contain description of value, but this will be propably added later.
+In current development stage app doesn't yet contain description of calculated bmi value, but this will be probably added later.
 
-Note: Bmi has [limited value](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6477109/) on estimating overall healt.
+Note: Bmi has [limited value](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6477109/) on estimating overall health.
 
 ## Implementing domain classes
 
@@ -20,7 +22,13 @@ World is still bit tricky
 - In europe we have ISO system (KG, CM), but there's other systems in world also.
 - There's well known way of calculating BMI, but also new way which should be more accurate.
 
-While this app uses solely ISO when calculating, it has classes for both traditional and new algorithm.
+While this app uses solely ISO (CM, KG) when calculating, it has classes for both traditional and new algorithm.
+
+Traditional formula: 
+- BMI = weight(kg)/height(m)^2 = 703*weight(lb)/height(in)^2.
+
+New formula: 
+- BMI = 1.3*weight(kg)/height(m)^2.5 = 5734*weight(lb)/height(in)^2.5
 
 Reason: It's ok to assume in contract of components that client does transformation between numeric systems. Still, we want algorithm to be isolated for use and testing.
 
