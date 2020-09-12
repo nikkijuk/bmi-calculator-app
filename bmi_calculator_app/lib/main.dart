@@ -1,14 +1,27 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:bmi_calculator_app/pages/calculator_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/simple_bloc_observer.dart';
 import 'domain/traditional_bmi_calculator.dart';
 
 void main() {
-  Bloc.observer = SimpleBlocObserver(); // adds logging so that bloc operations are easier to follow
+
+  // adds logging so that bloc operations are easier to follow
+  Bloc.observer = SimpleBlocObserver();
+
   runApp(BmiCalculatorApp());
+
+  // Didn't work on ios simulator - dunno if it just had bad day?
+  /*
+  // disable landscape and run app
+  SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
+  ).then((_) => runApp(BmiCalculatorApp()));
+   */
+
 }
 
 // This widget is the root of app
