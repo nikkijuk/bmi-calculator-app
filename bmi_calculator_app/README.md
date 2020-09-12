@@ -6,7 +6,7 @@ Flutter Body Mass Index Calculator
 
 Body mass index can be calculated from two values, and result correlates to persons healt. It's hard to think simpler app with real meaning in context of our lives.
 
-![Calculate your BMI](../diagrams/bmi-page-iphone-simulator-screenshot.png)
+![Calculate your BMI](../diagrams/calculator-page-iphone-simulator-screenshot.png)
 
 In current development stage app doesn't yet contain description of value, but this will be propably added later.
 
