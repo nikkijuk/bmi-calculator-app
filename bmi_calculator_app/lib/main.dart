@@ -11,16 +11,14 @@ void main() {
 
   // adds logging so that bloc operations are easier to follow
   Bloc.observer = SimpleBlocObserver();
-
-  runApp(BmiCalculatorApp());
-
-  // Didn't work on ios simulator - dunno if it just had bad day?
-  /*
+  
   // disable landscape and run app
+  WidgetsFlutterBinding.ensureInitialized(); // ios simulator needed this line
   SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
-  ).then((_) => runApp(BmiCalculatorApp()));
-   */
+  ).then(
+    (_) => runApp(BmiCalculatorApp())
+  );
 
 }
 
