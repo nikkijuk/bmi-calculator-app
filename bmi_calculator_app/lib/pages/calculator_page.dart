@@ -8,17 +8,20 @@ class CalculatorPage extends StatelessWidget {
   Widget build(BuildContext context) {
       return BlocBuilder<CalculatorBloc, CalculatorState>(
         builder: (context, state) {
-          return Center (
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                HeightInput (),
-                WeightInput (),
-                BmiCalculationResult(),
-                //rResetButton(),
-              ],
-            )
+          return Container(
+            padding: EdgeInsets.all(8),
+            child: Center (
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  HeightInput (),
+                  WeightInput (),
+                  BmiCalculationResult(),
+                  //rResetButton(),
+                ],
+              )
+            ),
           );
         },
       );
@@ -43,15 +46,21 @@ class HeightInput extends StatelessWidget {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.height != current.height,
       builder: (context, state) {
-        return TextFormField(
-          key: ValueKey ("height"),
-          initialValue: state.height?.toString() ?? '',
-          decoration: InputDecoration(
-            icon: const Icon(Icons.person),
-            labelText: 'Height',
+        return Container(
+          padding: EdgeInsets.all(8),
+          child: TextFormField(
+            key: ValueKey ("height"),
+            initialValue: state.height?.toString() ?? '',
+            decoration: InputDecoration(
+              icon: const Icon(Icons.vertical_align_center),
+              labelText: 'Height',
+              hintText: 'Height in centimeters',
+              border: const OutlineInputBorder(),
+              contentPadding: EdgeInsets.all(8),
+            ),
+            keyboardType: TextInputType.number,
+            onChanged: _onHeightChanged,
           ),
-          keyboardType: TextInputType.number,
-          onChanged: _onHeightChanged,
         );
       },
     );
@@ -69,15 +78,21 @@ class WeightInput extends StatelessWidget {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.weight != current.weight,
       builder: (context, state) {
-        return TextFormField(
-          key: ValueKey ("weight"),
-          initialValue: state.weight?.toString() ?? '',
-          decoration: InputDecoration(
-            icon: const Icon(Icons.party_mode),
-            labelText: 'Weight',
+        return Container(
+          padding: EdgeInsets.all(8) ,
+          child: TextFormField(
+            key: ValueKey ("weight"),
+            initialValue: state.weight?.toString() ?? '',
+            decoration: InputDecoration(
+              icon: const Icon(Icons.restaurant),
+              labelText: 'Weight',
+              hintText: 'Weight in kilograms',
+              border: const OutlineInputBorder(),
+              contentPadding: EdgeInsets.all(8),
+            ),
+            keyboardType: TextInputType.number,
+            onChanged: _onWeightChanged,
           ),
-          keyboardType: TextInputType.number,
-          onChanged: _onWeightChanged,
         );
       },
     );
@@ -91,16 +106,20 @@ class BmiCalculationResult extends StatelessWidget {
       buildWhen: (previous, current) => previous.bmi != current.bmi,
       builder: (context, state) {
         return state.bmi == null ?
-          Text(
-              "not calculated",
-              key: ValueKey ("not-calculated"),
+          Center(
+            child: Text(
+                "not calculated",
+                key: ValueKey ("not-calculated"),
+            ),
           )
         :
-          Text(
-          "Bmi is ${state.bmi}",
-          key: ValueKey ("bmi"),
-          style: Theme.of(context).textTheme.headline4,
-        );
+          Center(
+            child: Text(
+            "Bmi is ${state.bmi}",
+            key: ValueKey ("bmi"),
+            style: Theme.of(context).textTheme.headline4,
+        ),
+          );
       },
     );
   }
