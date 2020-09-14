@@ -130,10 +130,16 @@ class BmiCalculationResult extends StatelessWidget {
 
                 Expanded(
                   child: charts.BarChart (
-                    _nutritionalStatuses(),
+                    _nutritionalStatuses(state.bmi),
                     animate: false,
                     barGroupingType: charts.BarGroupingType.stacked,
                     vertical: false,
+                    customSeriesRenderers: [
+                        new charts.BarTargetLineRendererConfig<String>(
+                          // ID used to link series to this renderer.
+                            customRendererId: 'customTargetLine',
+                            groupingType: charts.BarGroupingType.stacked)
+                      ]
                   ),
                 ),
               ],
@@ -150,7 +156,7 @@ double _parseDoubleOrNull(String value) => value != null && value != '' ? double
 
 
 /// Create series list with multiple series
-List<charts.Series<NutritionalStatus, String>> _nutritionalStatuses() {
+List<charts.Series<NutritionalStatus, String>> _nutritionalStatuses(double bmi) {
   final statuses = [
     NutritionalStatus ('U', 'Underweight', 0, 18.5, Colors.red.shade50),
     NutritionalStatus ('N', 'Normal weight', 18.5, 25, Colors.green),
@@ -160,15 +166,26 @@ List<charts.Series<NutritionalStatus, String>> _nutritionalStatuses() {
     NutritionalStatus ('O3', 'Obesity class III', 40.0, 100, Colors.red.shade400),
   ];
 
+  final result = [
+    NutritionalStatus ('X', 'Dummy', 0, 18.5, Colors.red.shade50),
+  ];
 
   return [
     new charts.Series<NutritionalStatus, String>(
-      id: 'BMI',
+      id: 'BMI Scale',
       domainFn: (NutritionalStatus status, _) => "BMI",
       measureFn: (NutritionalStatus status, _) => status.maxBmi - status.minBmi,
       colorFn: (NutritionalStatus status, _) => charts.Color(r: status.color.red, g: status.color.green, b: status.color.blue),
       data: statuses,
+    ),
+    new charts.Series<NutritionalStatus, String>(
+      id: 'BMI Result',
+      domainFn: (NutritionalStatus status, _) => "BMI",
+      measureFn: (NutritionalStatus status, _) => bmi,
+      data: result,
     )
+  // Configure our custom bar target renderer for this series.
+  ..setAttribute(charts.rendererIdKey, 'customTargetLine'),
   ];
 }
 
