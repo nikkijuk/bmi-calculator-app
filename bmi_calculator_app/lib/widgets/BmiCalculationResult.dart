@@ -38,7 +38,7 @@ class BmiCalculationResult extends StatelessWidget {
                     customSeriesRenderers: [
                       new charts.BarTargetLineRendererConfig<String>(
                         // ID used to link series to this renderer.
-                          customRendererId: 'customTargetLine',
+                          customRendererId: 'bmiResultLine',
                           groupingType: charts.BarGroupingType.stacked)
                     ]
                 ),
@@ -66,7 +66,7 @@ class BmiCalculationResult extends StatelessWidget {
     ];
 
     final result = [
-      NutritionalStatus ('X', 'Dummy', 0, 18.5, Colors.red.shade50),
+      NutritionalStatus ('ME', 'My BMI', bmi, bmi, Colors.black),
     ];
 
     return [
@@ -80,12 +80,12 @@ class BmiCalculationResult extends StatelessWidget {
       new charts.Series<NutritionalStatus, String>(
         id: 'BMI Result',
         domainFn: (NutritionalStatus status, _) => "BMI",
-        measureFn: (NutritionalStatus status, _) => bmi,
+        measureFn: (NutritionalStatus status, _) => status.minBmi,
         strokeWidthPxFn: (NutritionalStatus status, _) => 6,
         data: result,
       )
       // Configure our custom bar target renderer for this series.
-        ..setAttribute(charts.rendererIdKey, 'customTargetLine'),
+        ..setAttribute(charts.rendererIdKey, 'bmiResultLine'),
     ];
   }
 }
