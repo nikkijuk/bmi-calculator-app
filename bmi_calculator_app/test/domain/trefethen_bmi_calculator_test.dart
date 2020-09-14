@@ -1,4 +1,3 @@
-import 'package:bmi_calculator_app/domain/bmi_calculator.dart';
 import 'package:bmi_calculator_app/domain/Trefethen_bmi_calculator.dart';
 import 'package:test/test.dart';
 

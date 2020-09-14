@@ -1,4 +1,3 @@
-import 'dart:math';
 
 /**
  * This bmi calculator supports calculation with kilos and centimeters (iso)

@@ -11,7 +11,7 @@ void main() {
 
   // adds logging so that bloc operations are easier to follow
   Bloc.observer = SimpleBlocObserver();
-  
+
   // disable landscape and run app
   WidgetsFlutterBinding.ensureInitialized(); // ios simulator needed this line
   SystemChrome.setPreferredOrientations(
