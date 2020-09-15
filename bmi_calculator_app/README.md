@@ -10,9 +10,9 @@ It's hard to think simpler app with real meaning in context of our lives.
 
 ![Calculate your BMI](../diagrams/calculator-page-iphone-simulator-screenshot.png)
 
-In current development stage app doesn't yet contain description of calculated bmi value, but this will be probably added later.
+Color of result corresponds to color on graph and there's even text explaining bmi result. How cool is that!
 
-Note: Bmi has [limited value](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6477109/) on estimating overall health.
+Note: Health is not a simple number game. Bmi has [limited value](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6477109/) on estimating overall health, so one should take care of not interpreting "normal weight" as "healthy" even if green color suggest that result is positive.  
 
 ## Implementing domain classes
 
