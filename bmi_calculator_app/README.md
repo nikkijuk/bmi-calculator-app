@@ -75,7 +75,7 @@ Flutter uses composition to build views
 
 ![Calculator Page outline](../diagrams/calculator-page-outline.png)
 
-Composition in CalculatorPage is extreme, and for this app it would be nought to have all embedded within one BlocBuilder. 
+Composition in CalculatorPage is done using separate stateless widgets and for this reason several bloc builders are used. For this app it would be possible to have all input and result widgets embedded within one BlocBuilder, but this would have been at some point simply too much.  
 
 WidgetTester component is used to interact with ui fron test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
 
