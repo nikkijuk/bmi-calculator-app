@@ -22,7 +22,7 @@ class BmiCalculationResult extends StatelessWidget {
     */
 
   // it might be wise to put this data later on to own file - now it's here locally since we only need it here
-  // NOTE: Colors are from dart.ui package
+  // NOTE: Colors are from dart.ui package - they are not same colors as chart component uses
   final statuses = [
     NutritionalStatus ('T3', 'Severe Thinness', 0, 16, Colors.blue),
     NutritionalStatus ('T2', 'Moderate Thinness', 16, 17, Colors.blue.shade100),
