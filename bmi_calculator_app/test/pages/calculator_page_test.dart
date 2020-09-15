@@ -24,6 +24,7 @@ void main() {
 
     // check 'bmi' output widgets is not there
     expect(find.byKey (ValueKey("bmi")), findsNothing);
+    expect(find.byKey (ValueKey("bmi-name")), findsNothing);
 
     // check 'not-calculated' output widget is there
     expect(find.byKey (ValueKey("not-calculated")), findsOneWidget);
@@ -44,6 +45,7 @@ void main() {
 
     // check "bmi" is shown
     expect(find.byKey(ValueKey("bmi")), findsOneWidget);
+    expect(find.byKey(ValueKey("bmi-name")), findsOneWidget);
 
     // check not calculated is not shown
     expect(find.byKey(ValueKey("not-calculated")), findsNothing);
@@ -51,5 +53,6 @@ void main() {
     // bmi should have now changed after setting value to fields and rendering widgets
     expect(find.text('not calculated'), findsNothing);
     expect(find.text('Bmi is 24.22'), findsOneWidget);
+    expect(find.text('Normal weight'), findsOneWidget);
   });
 }

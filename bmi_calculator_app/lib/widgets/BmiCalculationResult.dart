@@ -60,7 +60,7 @@ class BmiCalculationResult extends StatelessWidget {
               ),
               Text(
                 current.name,
-                key: ValueKey ("bmiName"),
+                key: ValueKey ("bmi-name"),
                 style: Theme.of(context).textTheme.headline6.apply(color: current.color),
               ),
               Expanded(
