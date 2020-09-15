@@ -58,13 +58,15 @@ Bloc is tested with specialized [bloc_test](https://pub.dev/packages/bloc_test) 
 
 Domain logic is separated from Bloc, and is tested with simple unit test. With separate tests we can concentrate on bloc tests to interaction with business logic, since we know that algorithm itself is already ok.
 
+Note: due to design decision made reset event is never used. Nevertheless, it functions, and could be used if state would be managed in ui components differently.
+
 Note: bloc_flutter is similarly named component as one we use, so be careful not to mix them.
 
 ## Implementing UI components
 
 BMI calculator is simple and has only one page. This page is shown after BmiCalcularApp is started.
 
-Flutter uses composition to build viewa
+Flutter uses composition to build views
 - BmiCalcularApp is composed of MaterialApp, Scaffold and CalculatorPage during startup
 - CalculatorPage is composed of BlocBuilder, Center, Column and HeightInput, WeightInput and BmiCalculationResult
 - CalculatorPage is rendere when BlocBuilder receives state from bloc
