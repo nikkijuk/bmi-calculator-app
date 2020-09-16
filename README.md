@@ -7,13 +7,14 @@ Body Mass Index calculator implemented with Flutter
 
 ## Technology
 
-This project is actually a technology demo
+This project is a pretty simple technology demo
 
 - Flutter for UI
 - Bloc pattern for separating logic from UI 
 - bloc & bloc_flutter packages for implementation of Bloc  
 - Bloc tested with with bloc_test
 - Domain logic tested with normal unit test
+- Additional test for user interaction
 
 ## Further info
 
