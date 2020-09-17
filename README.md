@@ -129,7 +129,6 @@ Note: At first flutter app was at sub directory of repo. This might have worked 
 
 BLOC
 - https://bloclibrary.dev/#/
-- https://github.com/felangel/bloc/tree/master/examples/flutter_dynamic_form
 - https://www.youtube.com/watch?v=knMvKPKBzGE&feature=youtu.be
 
 Libraries
