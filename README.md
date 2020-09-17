@@ -19,10 +19,6 @@ This project is a pretty simple technology demo
 
 ## Roadmap
 
-Integrate to CI/CD, possibly Codemagic (commercial)
-- https://medium.com/flutter-community/how-to-save-10-of-flutter-development-time-every-day-40c39833d1cb
-- https://codemagic.io
-
 Extend with BDD / ATDD tools, preferably Gherkin tests
 - https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
 https://pub.dev/packages/flutter_gherkin
@@ -131,7 +127,14 @@ Note: At first flutter app was at sub directory of repo. This might have worked 
 
 ## Further info
 
+BLOC
 - https://bloclibrary.dev/#/
 - https://github.com/felangel/bloc/tree/master/examples/flutter_dynamic_form
 - https://www.youtube.com/watch?v=knMvKPKBzGE&feature=youtu.be
+
+Libraries
 - https://blog.codemagic.io/flutter-libraries-ebook-by-codemagic/
+
+CI/CD
+- https://medium.com/flutter-community/how-to-save-10-of-flutter-development-time-every-day-40c39833d1cb
+- https://codemagic.io
