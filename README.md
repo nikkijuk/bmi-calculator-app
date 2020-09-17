@@ -46,7 +46,7 @@ Body mass index can be calculated from two values, and result correlates to pers
 
 It's hard to think simpler app with real meaning in context of our lives.
 
-![Calculate your BMI](../diagrams/calculator-page-iphone-simulator-screenshot.png)
+![Calculate your BMI](diagrams/calculator-page-iphone-simulator-screenshot.png)
 
 Color of result corresponds to color on graph and there's even text explaining bmi result. How cool is that!
 
@@ -70,7 +70,7 @@ New formula:
 
 Reason: It's ok to assume in contract of components that client does transformation between numeric systems. Still, we want algorithm to be isolated for use and testing.
 
-![Domain classes implementation and tests](../diagrams/bmi-calculator-classes.png)
+![Domain classes implementation and tests](diagrams/bmi-calculator-classes.png)
 
 There's test for each implemented algorithm. When testing later business logic components (bloc) and interaction (pages) we don't need to duplicate tests which are already done for domain objects.
 
@@ -90,7 +90,7 @@ Bloc state is returned when bloc state changes
 
 Bloc itself is not Flutter specific, and can be used from other Dart apps and tests without Flutter.
 
-![Bloc implementation and tests](../diagrams/bmi-calculator-bloc-test.png)
+![Bloc implementation and tests](diagrams/bmi-calculator-bloc-test.png)
 
 Bloc is tested with specialized [bloc_test](https://pub.dev/packages/bloc_test) extensions, which makes it clean and simple to interact with sinks and streams.
 
@@ -111,13 +111,13 @@ Flutter uses composition to build views
 - HeightInput, WeightInput and BmiCalculationResult are all rendered when associated BlocBuilder receives update
 - HeightInput, WeightInput and BmiCalculationResult have all id's (key), which can used to identify fields ui component during test
 
-![Calculator Page outline](../diagrams/calculator-page-outline.png)
+![Calculator Page outline](diagrams/calculator-page-outline.png)
 
 Composition in CalculatorPage is done using separate stateless widgets and for this reason several bloc builders are used. For this app it would be possible to have all input and result widgets embedded within one BlocBuilder, but this would have been at some point simply too much.  
 
 WidgetTester component is used to interact with ui fron test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
 
-![Calculator UI implementation and tests](../diagrams/calculator-page-test.png)
+![Calculator UI implementation and tests](diagrams/calculator-page-test.png)
 
 UI components are Flutter Widgets. So, from here on one can't reuse classes with for example Angular.
 
