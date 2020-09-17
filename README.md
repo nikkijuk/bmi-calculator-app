@@ -121,6 +121,14 @@ WidgetTester component is used to interact with ui fron test classes. All intera
 
 UI components are Flutter Widgets. So, from here on one can't reuse classes with for example Angular.
 
+## CI/CD
+
+Codemagic is used for CI/CD and integrating it was really simple. There was need to enable tests, since they were by default not active. 
+
+![CI/CD with tests](diagrams/calculator-ci-cd-codemagic.png)
+
+Note: At first flutter app was at sub directory of repo. This might have worked with some configuration, since by default CodeMagic seems to think that in multirepo subdirectories are pure dart, not flutter apps. I decided to copy app to root of repository and after that all was very simple.
+
 ## Further info
 
 - https://bloclibrary.dev/#/
