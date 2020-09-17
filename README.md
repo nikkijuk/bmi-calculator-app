@@ -142,5 +142,5 @@ Libraries
 - https://blog.codemagic.io/flutter-libraries-ebook-by-codemagic/
 
 CI/CD
-- https://medium.com/flutter-community/how-to-save-10-of-flutter-development-time-every-day-40c39833d1cb
 - https://codemagic.io
+- https://blog.codemagic.io/flutter-step-by-step-tutorial/
