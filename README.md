@@ -16,6 +16,29 @@ This project is a pretty simple technology demo
 - Domain logic tested with normal unit test
 - Additional test for user interaction
 
+## Roadmap
+
+Integrate to CI/CD, possibly Codemagic (commercial)
+- https://medium.com/flutter-community/how-to-save-10-of-flutter-development-time-every-day-40c39833d1cb
+- https://codemagic.io
+
+Extend with BDD / ATDD tools, preferably Gherkin tests
+- https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
+https://pub.dev/packages/flutter_gherkin
+
+Try implementing Screenshot tests, possibly with Golden Toolkit
+- https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
+- https://pub.dev/packages/golden_toolkit
+
+Implement localization
+- https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+
+Add static analysis for dart code
+- https://pub.dev/packages/analyzer
+
+Prepare distribution thru stores
+- .. this might never happen, as there's quite limited value on adding this app to any kind of store 
+
 ## Further info
 
 - https://bloclibrary.dev/#/
