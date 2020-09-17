@@ -125,12 +125,11 @@ Codemagic is used for CI/CD and integrating it was really simple. There was need
 
 Note: At first flutter app was at sub directory of repo. This might have worked with some configuration, since by default CodeMagic seems to think that in multirepo subdirectories are pure dart, not flutter apps. I decided to copy app to root of repository and after that all was very simple.
 
-## Manually deploying to iOS from CI/CD artifacts
+## Manually deploying to iOS from CI/CD artifacts - without Apple Developer Account
 
-There seems to be several ways of deploying artifact produced with CI/CD to iOS device. I haven't so far tested them.
+There seems to be several ways of deploying artifact produced with CI/CD to iOS device. I haven't so far tested them. I recommend to try stackoverflows recipe.
 
-I recommend to try stackoverflows recipe
-- https://stackoverflow.com/questions/51254470/how-to-create-ipa-file-for-testing-using-runner-app/56666092
+https://stackoverflow.com/questions/51254470/how-to-create-ipa-file-for-testing-using-runner-app/56666092
 
 ## Linux, Docker and iOs?
 
