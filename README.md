@@ -132,6 +132,12 @@ There seems to be several ways of deploying artifact produced with CI/CD to iOS 
 I recommend to try stackoverflows recipe
 - https://stackoverflow.com/questions/51254470/how-to-create-ipa-file-for-testing-using-runner-app/56666092
 
+## Linux, Docker and iOs?
+
+How cool is this: You can develop iOs apps with Linux. Haven't tested it yet, but it sounds just great.
+
+https://blog.codemagic.io/how-to-develop-and-distribute-ios-apps-without-mac-with-flutter-codemagic/
+
 ## Further info
 
 BLOC
