@@ -19,10 +19,7 @@ This project is a pretty simple technology demo
 
 ## Roadmap
 
-Add static analysis for dart code
-- https://pub.dev/packages/analyzer
-
-Implement localization
+Implement localization (currently only english)
 - https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 
 Extend with BDD / ATDD tools, preferably Gherkin tests
