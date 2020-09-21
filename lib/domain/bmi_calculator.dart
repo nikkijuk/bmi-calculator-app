@@ -1,7 +1,5 @@
 
-/**
- * This bmi calculator supports calculation with kilos and centimeters (iso)
- */
+/// This bmi calculator supports calculation with kilos and centimeters (iso)
 abstract class BmiCalculator  {
 
   // template method, does not need overriding
