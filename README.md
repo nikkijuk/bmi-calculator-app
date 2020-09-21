@@ -100,7 +100,7 @@ Note: bloc_flutter is similarly named component as one we use, so be careful not
 
 Events & States are immutable. State needs to be compared to previous state in bloc to see if it has changed according to event.
 
-Instead of generating model classes or just implementation to equals, hascode and toString manually with own boilerplate code there's single library which makes it really easy to implement these methods without polluting model classes with extra lines.
+Instead of generating model classes, using generated implementation of equals, hascode and toString or writing manually own boilerplate code there's single library which makes it really easy to implement these methods without polluting model classes with extra lines.
 
 https://pub.dev/packages/equatable
 
