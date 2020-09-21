@@ -13,7 +13,8 @@ void main() {
   // adds logging so that bloc operations are easier to follow
   Bloc.observer = SimpleBlocObserver();
 
-  // adds properties to toString method of Equatable - note: this just helps debug a bit
+  // adds properties to toString method of classes using Equatable
+  // note: this helps by adding details to log output of SimpleBlocObserver
   EquatableConfig.stringify = true;
 
   // disable landscape and run app
