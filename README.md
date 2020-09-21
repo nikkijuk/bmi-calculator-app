@@ -19,19 +19,19 @@ This project is a pretty simple technology demo
 
 ## Roadmap
 
-Extend with BDD / ATDD tools, preferably Gherkin tests
-- https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
-https://pub.dev/packages/flutter_gherkin
-
-Try implementing Screenshot tests, possibly with Golden Toolkit
-- https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
-- https://pub.dev/packages/golden_toolkit
+Add static analysis for dart code
+- https://pub.dev/packages/analyzer
 
 Implement localization
 - https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 
-Add static analysis for dart code
-- https://pub.dev/packages/analyzer
+Extend with BDD / ATDD tools, preferably Gherkin tests
+- https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
+https://pub.dev/packages/flutter_gherkin
+
+Try Screenshot tests, possibly with Golden Toolkit
+- https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
+- https://pub.dev/packages/golden_toolkit
 
 Prepare distribution thru stores
 - .. this might never happen, as there's quite limited value on adding this app to any kind of store 
@@ -135,6 +135,12 @@ Codemagic is used for CI/CD and integrating it was really simple. There was need
 
 Note: At first flutter app was at sub directory of repo. This might have worked with some configuration, since by default CodeMagic seems to think that in multirepo subdirectories are pure dart, not flutter apps. I decided to copy app to root of repository and after that all was very simple.
 
+## Static analysis
+
+Command *Flutter analyze* does static analyze to dart code.
+
+When everything is ok locally then just select that Codemagic runs analyze during build. 
+
 ## Manually deploying to iOS from CI/CD artifacts - without Apple Developer Account
 
 There seems to be several ways of deploying artifact produced with CI/CD to iOS device. I haven't so far tested them. I recommend to try stackoverflows recipe.
@@ -159,3 +165,7 @@ Libraries
 CI/CD
 - https://codemagic.io
 - https://blog.codemagic.io/flutter-step-by-step-tutorial/
+
+Static analysis
+- https://github.com/flutter/flutter/wiki/Using-the-Dart-analyzer
+- https://docs.codemagic.io/testing/static-code-analysis/
