@@ -1,5 +1,6 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:bmi_calculator_app/pages/calculator_page.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +12,9 @@ void main() {
 
   // adds logging so that bloc operations are easier to follow
   Bloc.observer = SimpleBlocObserver();
+
+  // adds properties to toString method of Equatable - note: this just helps debug a bit
+  EquatableConfig.stringify = true;
 
   // disable landscape and run app
   WidgetsFlutterBinding.ensureInitialized(); // ios simulator needed this line

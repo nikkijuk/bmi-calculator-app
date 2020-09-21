@@ -1,6 +1,8 @@
 part of 'calculator_bloc.dart';
 
-class CalculatorState {
+// calculator state is immutable - if it changes new state object is created
+@immutable
+class CalculatorState extends Equatable {
   const CalculatorState({
     @required this.height,
     @required this.weight,
@@ -10,8 +12,6 @@ class CalculatorState {
   final double height;
   final double weight;
   final double bmi;
-
-  bool get isComplete => height != null && weight != null && bmi != null;
 
   const CalculatorState.initial()
       : this(
@@ -32,6 +32,8 @@ class CalculatorState {
     );
   }
 
-  bool operator ==(Object other) => other is CalculatorState && height == other.height && weight == other.weight && bmi == other.bmi;
+  bool get isComplete => height != null && weight != null && bmi != null;
 
+  @override
+  List<Object> get props => [height, weight, bmi];
 }
