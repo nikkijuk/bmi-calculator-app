@@ -21,6 +21,7 @@ This project is a pretty simple technology demo
 
 Implement localization (currently only english)
 - https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+- use ready service or tool for localization process
 
 Extend with BDD / ATDD tools, preferably Gherkin tests
 - https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
@@ -123,6 +124,16 @@ WidgetTester component is used to interact with ui fron test classes. All intera
 ![Calculator UI implementation and tests](diagrams/calculator-page-test.png)
 
 UI components are Flutter Widgets. So, from here on one can't reuse classes with for example Angular.
+
+## Localization
+
+Localization is pretty complicated to implement completely without 3rd party tools
+
+Candiates for tooling
+- Saas service like [Localizely.com](https://localizely.com/)
+- Windows, Linux & OSX app like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
+
+Using [Localizely.com localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use as tooling for developer doesn't change.
 
 ## CI/CD
 
