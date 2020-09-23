@@ -1,5 +1,9 @@
 {
   "@@locale": "fi",
+  "height": "Pituus",
+  "@height": {},
   "title": "BMI Laskin",
-  "@title": {}
+  "@title": {},
+  "weight": "Paino",
+  "@weight": {}
 }

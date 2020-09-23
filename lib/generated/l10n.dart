@@ -33,11 +33,31 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Length`
+  String get height {
+    return Intl.message(
+      'Length',
+      name: 'height',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `BMI Calculator`
   String get title {
     return Intl.message(
       'BMI Calculator',
       name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight`
+  String get weight {
+    return Intl.message(
+      'Weight',
+      name: 'weight',
       desc: '',
       args: [],
     );

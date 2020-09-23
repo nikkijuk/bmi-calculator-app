@@ -1,5 +1,9 @@
 {
   "@@locale": "de",
+  "height": "Länge",
+  "@height": {},
   "title": "BMI Rechner",
-  "@title": {}
+  "@title": {},
+  "weight": "Gewicht",
+  "@weight": {}
 }

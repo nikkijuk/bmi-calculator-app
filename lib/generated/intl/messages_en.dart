@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "title" : MessageLookupByLibrary.simpleMessage("BMI Calculator")
+    "height" : MessageLookupByLibrary.simpleMessage("Length"),
+    "title" : MessageLookupByLibrary.simpleMessage("BMI Calculator"),
+    "weight" : MessageLookupByLibrary.simpleMessage("Weight")
   };
 }

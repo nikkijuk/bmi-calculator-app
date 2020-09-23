@@ -1,4 +1,5 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
+import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:bmi_calculator_app/widgets/BmiCalculationResult.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -58,7 +59,7 @@ class HeightInput extends StatelessWidget {
             initialValue: state.height?.toString() ?? '',
             decoration: InputDecoration(
               icon: const Icon(Icons.vertical_align_center),
-              labelText: 'Height',
+              labelText: S.of(context).height, // 'Height',
               hintText: 'Height in centimeters',
               border: const OutlineInputBorder(),
               contentPadding: EdgeInsets.all(8),
@@ -90,7 +91,7 @@ class WeightInput extends StatelessWidget {
             initialValue: state.weight?.toString() ?? '',
             decoration: InputDecoration(
               icon: const Icon(Icons.restaurant),
-              labelText: 'Weight',
+              labelText: S.of(context).weight, // 'Weight',
               hintText: 'Weight in kilograms',
               border: const OutlineInputBorder(),
               contentPadding: EdgeInsets.all(8),
