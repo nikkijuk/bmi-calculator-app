@@ -19,10 +19,24 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
+  static m0(bmi) => "bmi ist ${bmi}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "bmi_result" : m0,
     "height" : MessageLookupByLibrary.simpleMessage("Länge"),
+    "height_desc" : MessageLookupByLibrary.simpleMessage("Länge in centimeter"),
+    "level_n_name" : MessageLookupByLibrary.simpleMessage("Normalgewicht"),
+    "level_o1_name" : MessageLookupByLibrary.simpleMessage("Adipositas Grad I "),
+    "level_o2_name" : MessageLookupByLibrary.simpleMessage("Adipositas Grad II "),
+    "level_o3_name" : MessageLookupByLibrary.simpleMessage("Adipositas Grad III"),
+    "level_po_name" : MessageLookupByLibrary.simpleMessage("Übergewicht"),
+    "level_t1_name" : MessageLookupByLibrary.simpleMessage("Leichte Untergewicht"),
+    "level_t2_name" : MessageLookupByLibrary.simpleMessage("Moderate Untergewicht"),
+    "level_t3_name" : MessageLookupByLibrary.simpleMessage("Starkes Untergewicht"),
+    "not_calculated" : MessageLookupByLibrary.simpleMessage("Nicht gerechnet"),
     "title" : MessageLookupByLibrary.simpleMessage("BMI Rechner"),
-    "weight" : MessageLookupByLibrary.simpleMessage("Gewicht")
+    "weight" : MessageLookupByLibrary.simpleMessage("Gewicht"),
+    "weight_desc" : MessageLookupByLibrary.simpleMessage("Gewicht in kilos")
   };
 }

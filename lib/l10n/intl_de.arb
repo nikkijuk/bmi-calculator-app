@@ -1,9 +1,37 @@
 {
   "@@locale": "de",
+  "bmi_result": "bmi ist {bmi}",
+  "@bmi_result": {
+    "placeholders": {
+      "bmi": {}
+    }
+  },
   "height": "Länge",
   "@height": {},
+  "height_desc": "Länge in centimeter",
+  "@height_desc": {},
+  "level_n_name": "Normalgewicht",
+  "@level_n_name": {},
+  "level_o1_name": "Adipositas Grad I ",
+  "@level_o1_name": {},
+  "level_o2_name": "Adipositas Grad II ",
+  "@level_o2_name": {},
+  "level_o3_name": "Adipositas Grad III",
+  "@level_o3_name": {},
+  "level_po_name": "Übergewicht",
+  "@level_po_name": {},
+  "level_t1_name": "Leichte Untergewicht",
+  "@level_t1_name": {},
+  "level_t2_name": "Moderate Untergewicht",
+  "@level_t2_name": {},
+  "level_t3_name": "Starkes Untergewicht",
+  "@level_t3_name": {},
+  "not_calculated": "Nicht gerechnet",
+  "@not_calculated": {},
   "title": "BMI Rechner",
   "@title": {},
   "weight": "Gewicht",
-  "@weight": {}
+  "@weight": {},
+  "weight_desc": "Gewicht in kilos",
+  "@weight_desc": {}
 }

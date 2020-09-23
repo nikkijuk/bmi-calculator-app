@@ -1,9 +1,37 @@
 {
   "@@locale": "en",
+  "bmi_result": "bmi is {bmi}",
+  "@bmi_result": {
+    "placeholders": {
+      "bmi": {}
+    }
+  },
   "height": "Length",
   "@height": {},
+  "height_desc": "Lenght in centimeters",
+  "@height_desc": {},
+  "level_n_name": "Normal Weight",
+  "@level_n_name": {},
+  "level_o1_name": "Obese Class I",
+  "@level_o1_name": {},
+  "level_o2_name": "Obese Class II",
+  "@level_o2_name": {},
+  "level_o3_name": "Obese Class III",
+  "@level_o3_name": {},
+  "level_po_name": "Overweight",
+  "@level_po_name": {},
+  "level_t1_name": "Mild Thinness",
+  "@level_t1_name": {},
+  "level_t2_name": "Moderate Thinness",
+  "@level_t2_name": {},
+  "level_t3_name": "Severe Thinness",
+  "@level_t3_name": {},
+  "not_calculated": "not calculated",
+  "@not_calculated": {},
   "title": "BMI Calculator",
   "@title": {},
   "weight": "Weight",
-  "@weight": {}
+  "@weight": {},
+  "weight_desc": "Weight in kilos",
+  "@weight_desc": {}
 }

@@ -60,7 +60,7 @@ class HeightInput extends StatelessWidget {
             decoration: InputDecoration(
               icon: const Icon(Icons.vertical_align_center),
               labelText: S.of(context).height, // 'Height',
-              hintText: 'Height in centimeters',
+              hintText: S.of(context).height_desc, // 'Height in centimeters',
               border: const OutlineInputBorder(),
               contentPadding: EdgeInsets.all(8),
             ),
@@ -92,7 +92,7 @@ class WeightInput extends StatelessWidget {
             decoration: InputDecoration(
               icon: const Icon(Icons.restaurant),
               labelText: S.of(context).weight, // 'Weight',
-              hintText: 'Weight in kilograms',
+              hintText: S.of(context).weight_desc, //'Weight in kilograms',
               border: const OutlineInputBorder(),
               contentPadding: EdgeInsets.all(8),
             ),

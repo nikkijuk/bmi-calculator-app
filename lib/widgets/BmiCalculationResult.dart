@@ -1,7 +1,9 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
+import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 // Complexity of this single component and it's dependencies are reason
 // why it has been moved to separate file - there's no need to reuse it
@@ -42,24 +44,28 @@ class BmiCalculationResult extends StatelessWidget {
         if (state.bmi == null) {
           return Center(
           child: Text(
-            "not calculated",
+            S.of(context).not_calculated,
             key: ValueKey ("not-calculated"),
           ),
         );
         } else {
           NutritionalStatus current = statuses.lastWhere((element) => element.minBmi <= state.bmi);
+          var level_key = "level_${current.id}_name".toLowerCase();
           return Container(
           height: MediaQuery.of(context).size.height * 30/100,
           width:MediaQuery.of(context).size.width * 60/100,
           child: Column(
             children: [
               Text(
-                "Bmi is ${state.bmi}",
+                S.of(context).bmi_result(state.bmi),
                 key: ValueKey ("bmi"),
                 style: Theme.of(context).textTheme.headline4.apply(color: current.color),
               ),
               Text(
-                current.name,
+                Intl.message(
+                  level_key,
+                  name: level_key,
+                ),
                 key: ValueKey ("bmi-name"),
                 style: Theme.of(context).textTheme.headline6.apply(color: current.color),
               ),
