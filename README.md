@@ -19,19 +19,17 @@ This project is a pretty simple technology demo
 
 ## Roadmap
 
+Implement localization (currently only english)
+- https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+- use ready service or tool for localization process
+
 Extend with BDD / ATDD tools, preferably Gherkin tests
 - https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
 https://pub.dev/packages/flutter_gherkin
 
-Try implementing Screenshot tests, possibly with Golden Toolkit
+Try Screenshot tests, possibly with Golden Toolkit
 - https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
 - https://pub.dev/packages/golden_toolkit
-
-Implement localization
-- https://flutter.dev/docs/development/accessibility-and-localization/internationalization
-
-Add static analysis for dart code
-- https://pub.dev/packages/analyzer
 
 Prepare distribution thru stores
 - .. this might never happen, as there's quite limited value on adding this app to any kind of store 
@@ -127,6 +125,16 @@ WidgetTester component is used to interact with ui fron test classes. All intera
 
 UI components are Flutter Widgets. So, from here on one can't reuse classes with for example Angular.
 
+## Localization
+
+Localization is pretty complicated to implement completely without 3rd party tools
+
+Candiates for tooling
+- Saas service like [Localizely.com](https://localizely.com/)
+- Windows, Linux & OSX app like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
+
+Using Saas service [localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use as tooling for developer doesn't change.
+
 ## CI/CD
 
 Codemagic is used for CI/CD and integrating it was really simple. There was need to enable tests, since they were by default not active. 
@@ -134,6 +142,12 @@ Codemagic is used for CI/CD and integrating it was really simple. There was need
 ![CI/CD with tests](diagrams/calculator-ci-cd-codemagic.png)
 
 Note: At first flutter app was at sub directory of repo. This might have worked with some configuration, since by default CodeMagic seems to think that in multirepo subdirectories are pure dart, not flutter apps. I decided to copy app to root of repository and after that all was very simple.
+
+## Static analysis
+
+Command *Flutter analyze* does static analyze to dart code.
+
+When everything is ok locally then just select that Codemagic runs analyze during build. 
 
 ## Manually deploying to iOS from CI/CD artifacts - without Apple Developer Account
 
@@ -153,9 +167,19 @@ BLOC
 - https://bloclibrary.dev/#/
 - https://www.youtube.com/watch?v=knMvKPKBzGE&feature=youtu.be
 
+BabelEdit
+- https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-flutter-apps
+
+Localizely
+- https://localizely.com/flutter-localization-workflow/
+
 Libraries
 - https://blog.codemagic.io/flutter-libraries-ebook-by-codemagic/
 
 CI/CD
 - https://codemagic.io
 - https://blog.codemagic.io/flutter-step-by-step-tutorial/
+
+Static analysis
+- https://github.com/flutter/flutter/wiki/Using-the-Dart-analyzer
+- https://docs.codemagic.io/testing/static-code-analysis/
