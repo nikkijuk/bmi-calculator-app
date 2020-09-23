@@ -178,6 +178,10 @@ BabelEdit
 Localizely
 - https://localizely.com/flutter-localization-workflow/
 
+Phrase
+- https://phrase.com/
+- https://phrase.com/blog/posts/how-to-internationalize-a-flutter-app/
+
 Libraries
 - https://blog.codemagic.io/flutter-libraries-ebook-by-codemagic/
 
