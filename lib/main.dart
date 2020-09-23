@@ -4,9 +4,11 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'bloc/simple_bloc_observer.dart';
 import 'domain/traditional_bmi_calculator.dart';
+import 'generated/l10n.dart';
 
 void main() {
 
@@ -33,17 +35,41 @@ class BmiCalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BMI Calculator',
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('BMI Calculator')),
-        body: BlocProvider(
-          create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
-          child: CalculatorPage(),
-        ),
+      home: BmiCalculatorHome(),
+    );
+  }
+}
+
+// delegates need to exist higher in widget tree
+// https://github.com/flutter/flutter/issues/26365
+class BmiCalculatorHome extends StatelessWidget {
+  const BmiCalculatorHome({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: Text(
+              "BMI Calculator"
+            //S.of(context).title
+          ),
+      ),
+      body: BlocProvider(
+        create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
+        child: CalculatorPage(),
       ),
     );
   }
