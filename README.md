@@ -129,9 +129,10 @@ UI components are Flutter Widgets. So, from here on one can't reuse classes with
 
 Localization is pretty complicated to implement completely without 3rd party tools
 
-Candiates for tooling
+Candiates for tooling 
+- Clever library like [easy localization](https://pub.dev/packages/easy_localization)
 - Saas service like [Localizely.com](https://localizely.com/)
-- Windows, Linux & OSX app like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
+- Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 
 Using Saas service [localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use as tooling for developer doesn't change.
 
@@ -166,6 +167,9 @@ https://blog.codemagic.io/how-to-develop-and-distribute-ios-apps-without-mac-wit
 BLOC
 - https://bloclibrary.dev/#/
 - https://www.youtube.com/watch?v=knMvKPKBzGE&feature=youtu.be
+
+Easy Localization
+- https://pub.dev/packages/easy_localization
 
 BabelEdit
 - https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-flutter-apps
