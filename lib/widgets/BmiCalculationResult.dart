@@ -50,7 +50,7 @@ class BmiCalculationResult extends StatelessWidget {
         );
         } else {
           NutritionalStatus current = statuses.lastWhere((element) => element.minBmi <= state.bmi);
-          var level_key = "level_${current.id}_name".toLowerCase();
+          var bmiLevelKey = "level_${current.id}_name".toLowerCase();
           return Container(
           height: MediaQuery.of(context).size.height * 30/100,
           width:MediaQuery.of(context).size.width * 60/100,
@@ -63,8 +63,8 @@ class BmiCalculationResult extends StatelessWidget {
               ),
               Text(
                 Intl.message(
-                  level_key,
-                  name: level_key,
+                  bmiLevelKey,
+                  name: bmiLevelKey,
                 ),
                 key: ValueKey ("bmi-name"),
                 style: Theme.of(context).textTheme.headline6.apply(color: current.color),
