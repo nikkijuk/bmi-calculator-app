@@ -170,6 +170,7 @@ BLOC
 
 Easy Localization
 - https://pub.dev/packages/easy_localization
+- https://dev.to/remejuan/bringing-localization-into-your-widget-testing-71f
 
 BabelEdit
 - https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-flutter-apps
