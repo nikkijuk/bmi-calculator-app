@@ -133,7 +133,7 @@ Candiates for tooling
 - Saas service like [Localizely.com](https://localizely.com/)
 - Windows, Linux & OSX app like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 
-Using [Localizely.com localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use as tooling for developer doesn't change.
+Using Saas service [localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use as tooling for developer doesn't change.
 
 ## CI/CD
 
