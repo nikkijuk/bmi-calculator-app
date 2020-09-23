@@ -5,12 +5,10 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:bmi_calculator_app/main.dart';
-import 'package:intl/intl.dart';
 
 void main() {
   testWidgets('BMI calculator smoke test', (WidgetTester tester) async {
@@ -18,7 +16,8 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(BmiCalculatorApp());
 
-    // Build ui again
+    // Build ui again - this is to get localization work
+    // dunno really why this is needed, but seems that localization delegates might relate to this problem
     // https://github.com/flutter/flutter/issues/22193
     await tester.pumpAndSettle();
 
