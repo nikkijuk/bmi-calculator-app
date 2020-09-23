@@ -167,6 +167,12 @@ BLOC
 - https://bloclibrary.dev/#/
 - https://www.youtube.com/watch?v=knMvKPKBzGE&feature=youtu.be
 
+BabelEdit
+- https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-flutter-apps
+
+Localizely
+- https://localizely.com/flutter-localization-workflow/
+
 Libraries
 - https://blog.codemagic.io/flutter-libraries-ebook-by-codemagic/
 
