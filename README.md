@@ -222,6 +222,10 @@ BLOC
 Localization
 - https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 
+ARB format
+- https://localizely.com/flutter-arb/
+- https://unicode-org.github.io/icu/
+
 Localizely
 - https://localizely.com/flutter-localization-workflow/
 - https://github.com/localizely/flutter-intl-plugin-sample-app
