@@ -164,14 +164,14 @@ I was using upload and download.
 
 I managed to get Localizely translation workflow to run, but it wasn't always that smooth.
 - Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was confusing when trying to upload arb's to Localizely.
-- Once integration to Localizely on IDE was simply grayed out - no idea why, and what brought it back - if it would have been longer time absent I would have needed to see how to accomlish needed tasks from command line or using localizelys api's or user interface. 
+- Once integration to Localizely on IDE was simply grayed out - no idea why, and what brought it back - if it would have been longer time absent I would have needed to see how to accomplish needed tasks from command line or using localizelys api's or user interface. 
 - Generated code [intl_utils](https://pub.dev/packages/intl_utils) produces seems ok, but if for some reason it doesn't work you're workflow is broken. [intl_utils](https://pub.dev/packages/intl_utils) is closed source, so there's very little you can do by yourself.
 - Tests didn't work after localization due to [bug in Flutter](https://github.com/flutter/flutter/issues/22193). This is not related to Localizely, but makes it very important to unserstand what exactly happens in process and how Flutter works.
 - In addition I wanted to localize list of strings, and for this I used [Intl package](https://pub.dev/packages/intl) directly. There might have been some easier way, but this was first I came across.
-- I also used translations with placeholders, which worked fine at the end, but Localizely didn't give any information as I was on very first try writing placeholders in wrong syntax - code generation did give error message, and nothing happened, so I hanaged to fix it eventually.
-- Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language colums was re-ordered when translations were entered, which suprised me quite a lot.
+- I also used translations with placeholders, which worked fine at the end, but Localizely didn't give any notification when I was at first writing placeholders in wrong syntax - code generation did give error message, so I managed to fix it eventually.
+- Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot.
 
-I could have opted to [not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/, but it seemed good idea and made my life easy.
+I could have opted [not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/, but it seemed good idea and made my life easy. Generated code is also simple to read, so one can understand what it does.
 
 Experience was mostly positive, but there's still lot to do on developer & Translator UX before it all works smoothly.
 
