@@ -222,6 +222,7 @@ Localization
 
 Localizely
 - https://localizely.com/flutter-localization-workflow/
+- https://github.com/localizely/flutter-intl-plugin-sample-app
 
 Phrase
 - https://phrase.com/
