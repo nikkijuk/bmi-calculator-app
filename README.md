@@ -133,7 +133,7 @@ Candidates for process / tooling
 - Additional translations collection with [Intl_traslations](https://pub.dev/packages/intl_translation)
 - Experimental: Support for other formats than ARB with [int_translation_format](https://pub.dev/packages/intl_translation_format) and [intl_translation_xliff](https://pub.dev/packages/intl_translation_xliff)
 - Code generation from arb files with [intl_utils](https://pub.dev/packages/intl_utils)
-- Saas service with plugins to Android studio and VS Code like [Localizely.com](https://localizely.com/)
+- Saas service with [plugin to Android studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl) and VS Code like [Localizely.com](https://localizely.com/)
 - Saas service without integration to IDEs like [Phrase](https://phrase.com/)
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
@@ -144,6 +144,14 @@ As the saying goes: "A fool with a tool is still a fool", so one must learn how 
 ### Experimenting with Localizely
 
 [Localizely's localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use, as developer doesn't ever need to leave IDE.
+
+Andoid studios Flutter_intl plugin and Localizely project are connected with Localizelys developers api key and Localizelys projects project id.
+
+![Localizely flow](diagrams/localizely-flow.png)
+
+There might be different role for translator, or developer can do translations also. In long run separating these roles is vital, but during this experiment I was doing both sides.
+
+When ARB files are downloaded from Localizely Flutter_Intl plugin generates needed code to use translations. Code shouldn't be changed by developer, but only used from 
 
 I managed to get Localizely translation workflow to run, but it wasn't always that smooth.
 - Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was confusing when trying to upload arb's to Localizely.
