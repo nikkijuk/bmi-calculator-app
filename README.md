@@ -179,7 +179,7 @@ I managed to get Localizely translation workflow to run, but there was some issu
 - Tests didn't work after localization due to [bug in Flutter](https://github.com/flutter/flutter/issues/22193). This is not related to Localizely, but makes it very important to understand how Flutter works.
 - In addition I wanted to localize list of strings, and for this I used [Intl package](https://pub.dev/packages/intl) directly. There might have been some easier way, but this was first I came across.
 - I also used translations with placeholders, which worked fine at the end, but Localizely didn't give warning when I was at first writing placeholders in wrong syntax - code generation did give error message, so I managed to fix it eventually.
-- Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot. This is known bug and will be fixed shortly.
+- Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot. It might be that one should always work with single language, not with several languages simultaneously as I did.
 
 I could have opted [not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea and made my life easy. Generated code is also simple to read, so one can understand what it does.
 
