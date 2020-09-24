@@ -155,7 +155,7 @@ After some setup tasks and checking that needed dependencies are at place it is 
 
 Localizely has easy to understand UI
 
-![Localizely add translations](diagrams/localizely-list.png)
+![Localizely add translations](diagrams/localizely-ui.png)
 
 When placeholders are used they're just written as text and code generation takes care that they are easy to use from Dart code.
 
