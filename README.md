@@ -153,6 +153,14 @@ There might be different person in role of translator, or developer can do trans
 
 After some setup tasks and checking that needed dependencies are at place it is possible to use roundtrip of (1) upload arb files - (2) change localizations - (3) download arb files - (4) generate code for localization - (5) use localizations from flutter app.
 
+Localizely has easy to understand UI
+
+![Localizely add translations](diagrams/localizely-list.png)
+
+When placeholders are used they're just written as text and code generation takes care that they are easy to use from Dart code.
+
+![Localizely use placeholders](diagrams/localizely-placeholder.png)
+
 When ARB files are downloaded from Localizely [Flutter_intl plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl) generates needed code to access localized keys. Code shouldn't be changed by developer as next roundtrip overwrites generated files.
 
 I was using upload and download. 
