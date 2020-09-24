@@ -145,7 +145,7 @@ As the saying goes: "A fool with a tool is still a fool", so one must learn how 
 
 [Localizely's localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use, as developer doesn't ever need to leave IDE.
 
-Android studios Flutter_intl plugin and Localizely project are connected with Localizelys developer specific api key and Localizelys project specific project id.
+Android studios [Flutter_intl plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl) and Localizely project are connected with Localizelys developer specific api key and Localizelys project specific project id.
 
 ![Localizely flow](diagrams/localizely-flow.png)
 
@@ -153,13 +153,14 @@ There might be different person in role of translator, or developer can do trans
 
 After some setup tasks and checking that needed dependencies are at place one one can test roundtrip of upload arb files - change localizations - download arb files - generate code for localization - use localizations from flutter app.
 
-When ARB files are downloaded from Localizely Flutter_Intl plugin generates needed code to use translations. Code shouldn't be changed by developer as next roundtrip overwrites generated files.  
+When ARB files are downloaded from Localizely [Flutter_intl plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl) generates needed code to access localized keys. Code shouldn't be changed by developer as next roundtrip overwrites generated files.
 
 I was using upload and download. 
-- First single arb was uploaded to Localizely
-- I added locations and keys to cover some of real complexity
-- After downloading updated and new arb's I just needed to use generated artifacts to integrate localizations.
-- Using localizations needed LocalizationDelegates to be defined from MaterialApp, WidgetTests to be altered due to async loading of localizations and using localizations in UI.
+- I wrote single ARB file by hand for EN locale.
+- This seed ARB was uploaded to Localizely
+- During localization Bmi Calculator I added ARB files for FI and DE using Android Studio and keys and localized texts using Localizely. 
+- After downloading updated ARB files I just needed to use automatically generated Dart artifacts to integrate localizations.
+- Using localizations needed [localizationsDelegates](https://api.flutter.dev/flutter/material/MaterialApp/localizationsDelegates.html) to be defined from MaterialApp, WidgetTests to be altered due to async loading of localizations and using localizations in UI.
 
 I managed to get Localizely translation workflow to run, but it wasn't always that smooth.
 - Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was confusing when trying to upload arb's to Localizely.
