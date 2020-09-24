@@ -12,8 +12,10 @@ This project is a pretty simple technology demo
 
 - Flutter for UI
 - Localizely for Localization workflow
+- CodeMagic for CI/CD
 - Bloc pattern for separating logic from UI 
 - bloc & bloc_flutter packages for implementation of Bloc  
+- object equality implemented with equatable
 - Bloc tested with with bloc_test
 - Domain logic tested with normal unit test
 - Additional test for user interaction
