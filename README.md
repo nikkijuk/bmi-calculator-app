@@ -133,7 +133,7 @@ Candidates for process / tooling
 - Additional translations collection with [Intl_traslations](https://pub.dev/packages/intl_translation)
 - Experimental: Support for other formats than ARB with [int_translation_format](https://pub.dev/packages/intl_translation_format) and [intl_translation_xliff](https://pub.dev/packages/intl_translation_xliff)
 - Code generation from arb files with [intl_utils](https://pub.dev/packages/intl_utils)
-- Saas service with [plugin to Android studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl) and VS Code like [Localizely.com](https://localizely.com/)
+- Saas service with [plugin to Android studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl) and [VS Code](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) like [Localizely.com](https://localizely.com/)
 - Saas service without integration to IDEs like [Phrase](https://phrase.com/)
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
