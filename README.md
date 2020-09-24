@@ -143,15 +143,15 @@ As the saying goes: "A fool with a tool is still a fool", so one must learn how 
 
 ### Experimenting with Localizely
 
-[Localizely's localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use, as developer doesn't ever need to leave IDE.
+[Localizely's localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it easy to use, as developer doesn't ever need to leave IDE.
 
 Android studios [Flutter_intl plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl) and Localizely project are connected with Localizelys developer specific api key and Localizelys project specific project id.
 
 ![Localizely flow](diagrams/localizely-flow.png)
 
-There might be different person in role of translator, or developer can do translations in addition to programming. In long run separating these roles is vital, but during this experiment I was doing both sides.
+There might be different person in role of translator, or developer can do translations in addition to programming. In long run separating these roles is vital, but during this experiment I was working on both roles.
 
-After some setup tasks and checking that needed dependencies are at place it is possible to use roundtrip of (1) upload arb files - (2) change localizations - (3) download arb files - (4) generate code for localization - (5) use localizations from flutter app.
+After some setup tasks and checking that needed dependencies are at place it is possible to use roundtrip of (1) create and edit ARB files - (2) upload ARB files to Localizely - (3) edit and add localizations using Localizelys web UI - (4) download ARB files from Localizely - (5) generate code for localization - (6) use localizations from flutter app.
 
 Localizely has easy to understand UI
 
@@ -161,27 +161,29 @@ When placeholders are used they're just written as text and code generation take
 
 ![Localizely use placeholders](diagrams/localizely-placeholder.png)
 
+Localizely support plurals, but they aren't needed in Bmi Calculator.
+
 When ARB files are downloaded from Localizely [Flutter_intl plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl) generates needed code to access localized keys. Code shouldn't be changed by developer as next roundtrip overwrites generated files.
 
-I was using upload and download. 
-- I wrote single ARB file by hand for EN locale.
+I was using upload and download and they worked fine. 
+- I created single ARB file by hand for EN locale.
 - This seed ARB was uploaded to Localizely
-- During localization Bmi Calculator I added ARB files for FI and DE using Android Studio and keys and localized texts using Localizely. 
+- During localization Bmi Calculator I added ARB files for FI and DE using Android Studio and keys and localized texts using Localizely.
 - After downloading updated ARB files I just needed to use automatically generated Dart artifacts to integrate localizations.
 - Using localizations needed [localizationsDelegates](https://api.flutter.dev/flutter/material/MaterialApp/localizationsDelegates.html) to be defined from MaterialApp, WidgetTests to be altered due to [flutter bug pf async loading of localizations](https://github.com/flutter/flutter/issues/22193) and using localizations in UI.
 
-I managed to get Localizely translation workflow to run, but it wasn't always that smooth.
-- Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was confusing when trying to upload arb's to Localizely.
-- Once integration to Localizely on IDE was simply grayed out - no idea why, and what brought it back - if it would have been longer time absent I would have needed to see how to accomplish needed tasks from command line or using localizelys api's or user interface. 
-- Generated code [intl_utils](https://pub.dev/packages/intl_utils) produces seems ok, but if for some reason it doesn't work you're workflow is broken. [intl_utils](https://pub.dev/packages/intl_utils) is closed source, so there's very little you can do by yourself.
-- Tests didn't work after localization due to [bug in Flutter](https://github.com/flutter/flutter/issues/22193). This is not related to Localizely, but makes it very important to understand what exactly happens in process and how Flutter works.
+I managed to get Localizely translation workflow to run, but there was some issues which I did report to very helpful support.
+- Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was stating Authorization problem when trying to upload ARBs to Localizely.
+- Once integration to Localizely on IDE was simply grayed out - no idea why, and what brought it back - if it would have been longer time absent I would have needed to see how to accomplish needed tasks from command line using [intl_utils](https://pub.dev/packages/intl_utils) or using localizelys api's or user interface. 
+- Generated code [intl_utils](https://pub.dev/packages/intl_utils) produces seems ok, and as generation is done by [intl_utils](https://pub.dev/packages/intl_utils) which Localizely has provided as open source package there should be always possibility to implement PR and fix issues.
+- Tests didn't work after localization due to [bug in Flutter](https://github.com/flutter/flutter/issues/22193). This is not related to Localizely, but makes it very important to understand how Flutter works.
 - In addition I wanted to localize list of strings, and for this I used [Intl package](https://pub.dev/packages/intl) directly. There might have been some easier way, but this was first I came across.
-- I also used translations with placeholders, which worked fine at the end, but Localizely didn't give any notification when I was at first writing placeholders in wrong syntax - code generation did give error message, so I managed to fix it eventually.
-- Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot.
+- I also used translations with placeholders, which worked fine at the end, but Localizely didn't give warning when I was at first writing placeholders in wrong syntax - code generation did give error message, so I managed to fix it eventually.
+- Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot. This is known bug and will be fixed shortly.
 
 I could have opted [not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea and made my life easy. Generated code is also simple to read, so one can understand what it does.
 
-Experience was mostly positive, but there's still lot to do on developer & Translator UX before it all works smoothly.
+Experience was mostly positive, but there's still work to do on developer & Translator UX before it all works smoothly.
 
 ## CI/CD
 
