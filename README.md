@@ -145,13 +145,21 @@ As the saying goes: "A fool with a tool is still a fool", so one must learn how 
 
 [Localizely's localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use, as developer doesn't ever need to leave IDE.
 
-Andoid studios Flutter_intl plugin and Localizely project are connected with Localizelys developers api key and Localizelys projects project id.
+Android studios Flutter_intl plugin and Localizely project are connected with Localizelys developer specific api key and Localizelys project specific project id.
 
 ![Localizely flow](diagrams/localizely-flow.png)
 
-There might be different role for translator, or developer can do translations also. In long run separating these roles is vital, but during this experiment I was doing both sides.
+There might be different person in role of translator, or developer can do translations in addition to programming. In long run separating these roles is vital, but during this experiment I was doing both sides.
 
-When ARB files are downloaded from Localizely Flutter_Intl plugin generates needed code to use translations. Code shouldn't be changed by developer, but only used from 
+After some setup tasks and checking that needed dependencies are at place one one can test roundtrip of upload arb files - change localizations - download arb files - generate code for localization - use localizations from flutter app.
+
+When ARB files are downloaded from Localizely Flutter_Intl plugin generates needed code to use translations. Code shouldn't be changed by developer as next roundtrip overwrites generated files.  
+
+I was using upload and download. 
+- First single arb was uploaded to Localizely
+- I added locations and keys to cover some of real complexity
+- After downloading updated and new arb's I just needed to use generated artifacts to integrate localizations.
+- Using localizations needed LocalizationDelegates to be defined from MaterialApp, WidgetTests to be altered due to async loading of localizations and using localizations in UI.
 
 I managed to get Localizely translation workflow to run, but it wasn't always that smooth.
 - Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was confusing when trying to upload arb's to Localizely.
