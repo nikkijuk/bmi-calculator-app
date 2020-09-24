@@ -27,12 +27,12 @@ class BmiCalculationResult extends StatelessWidget {
   // NOTE: Colors are from dart.ui package - they are not same colors as chart component uses
   final statuses = [
     NutritionalStatus ('T3', 'Severe Thinness', 0, 16, Colors.blue),
-    NutritionalStatus ('T2', 'Moderate Thinness', 16, 17, Colors.blue.shade100),
-    NutritionalStatus ('T1', 'Mild Thinness', 17, 18.5, Colors.blue.shade200),
+    NutritionalStatus ('T2', 'Moderate Thinness', 16, 17, Colors.blue.shade300),
+    NutritionalStatus ('T1', 'Mild Thinness', 17, 18.5, Colors.blue.shade100),
     NutritionalStatus ('N',  'Normal weight', 18.5, 25, Colors.green),
-    NutritionalStatus ('PO', 'Overweight', 25.0, 30, Colors.orange),
-    NutritionalStatus ('O1', 'Obese class I', 30.0, 35, Colors.red.shade200),
-    NutritionalStatus ('O2', 'Obese class II', 35.0, 40, Colors.red.shade100),
+    NutritionalStatus ('PO', 'Overweight', 25.0, 30, Colors.yellow),
+    NutritionalStatus ('O1', 'Obese class I', 30.0, 35, Colors.red.shade100),
+    NutritionalStatus ('O2', 'Obese class II', 35.0, 40, Colors.red.shade300),
     NutritionalStatus ('O3', 'Obese class III', 40.0, 100, Colors.red),
   ];
 
@@ -63,7 +63,7 @@ class BmiCalculationResult extends StatelessWidget {
               ),
               Text(
                 Intl.message(
-                  bmiLevelKey,
+                  bmiLevelKey, // NOTE: I'm not sure that this is exactly right?
                   name: bmiLevelKey,
                 ),
                 key: ValueKey ("bmi-name"),
