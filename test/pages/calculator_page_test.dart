@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:bmi_calculator_app/main.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   testWidgets('BMI calculator smoke test', (WidgetTester tester) async {
@@ -16,12 +17,11 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(BmiCalculatorApp());
 
-    // Build ui again - this is to get localization work
-    // dunno really why this is needed, but seems that localization delegates might relate to this problem
-    // https://github.com/flutter/flutter/issues/22193
+    // quick fix: wait for the localization delegate's Future to complete.
+    // read also: https://github.com/flutter/flutter/issues/22193
+    // summary: "Assets are failing to load in tests when they are over 10Kb.
+    // This is really confusing and hard to debug behaviour."
     await tester.pumpAndSettle();
-
-    // pre
 
     // check 'height' and 'weight' input widgets are there
     expect(find.byKey (ValueKey("height")), findsOneWidget);

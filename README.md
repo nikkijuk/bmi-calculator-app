@@ -127,14 +127,32 @@ UI components are Flutter Widgets. So, from here on one can't reuse classes with
 
 ## Localization
 
-Localization is pretty complicated to implement completely without 3rd party tools
+Localization is pretty complicated to implement completely without 3rd party tools. 
 
-Candiates for tooling 
-- Clever library like [easy localization](https://pub.dev/packages/easy_localization)
-- Saas service like [Localizely.com](https://localizely.com/)
+Candidates for process / tooling
+- Flutter default process with [Intl package](https://pub.dev/packages/intl) 
+- Additional translations collection with [Intl_traslations](https://pub.dev/packages/intl_translation)
+- Experimental: Support for other formats than ARB with [int_translation_format](https://pub.dev/packages/intl_translation_format) and [intl_translation_xliff](https://pub.dev/packages/intl_translation_xliff)
+- Code generation from arb files with [intl_utils](https://pub.dev/packages/intl_utils)
+- Saas service with plugins to Android studio and VS Code like [Localizely.com](https://localizely.com/)
+- Saas service without integration to IDEs like [Phrase](https://phrase.com/)
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
+- Clever library like [easy localization](https://pub.dev/packages/easy_localization)
+- Clever Library plus [Some Python Scripts & Spreadsheet](https://itnext.io/flutter-localisation-google-sheets-api-python-internalisation-paradise-8439cab57866)
 
-Using Saas service [localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use as tooling for developer doesn't change.
+As the saying goes: "A fool with a tool is still a fool", so one must learn how flutter does localization.
+
+### Experimenting with Localizely
+
+[Localizely's localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it potentially easy to use, as developer doesn't ever need to leave IDE.
+
+I managed to get Localizely translation workflow to run, but it wasn't always that smooth.
+- Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was confusing when trying to upload arb's to Localizely.
+- Once integration to Localizely on IDE was simply grayed out - no idea why, and what brought it back.
+- Generated code [intl_utils](https://pub.dev/packages/intl_utils) produces seems ok, but if for some reason it doesn't work you're on your own.
+- Tests didn't work after localization due to [bug in Flutter](https://github.com/flutter/flutter/issues/22193)
+
+I could have opted to [not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/, but it seemed good idea and made my life easy.
 
 ## CI/CD
 
