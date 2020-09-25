@@ -52,8 +52,8 @@ void main() {
     expect(find.byKey(ValueKey("bmi-name")), findsOneWidget);
 
     // print out result field - very primitive debug option, works with me
-    debugPrint (find.byKey(ValueKey("bmi")).evaluate().join(","));
-    debugPrint (find.byKey(ValueKey("bmi-name")).evaluate().join(","));
+    //debugPrint (find.byKey(ValueKey("bmi")).evaluate().join(","));
+    //debugPrint (find.byKey(ValueKey("bmi-name")).evaluate().join(","));
 
     // check not calculated is not shown
     expect(find.byKey(ValueKey("not-calculated")), findsNothing);
