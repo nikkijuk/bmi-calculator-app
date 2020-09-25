@@ -126,7 +126,7 @@ UI components are Flutter Widgets. So, from here on one can't reuse classes with
 
 ## Localization
 
-Localizations are normally defined using [ARB files](https://localizely.com/flutter-arb).
+Localizations are normally defined using [ARB files](https://localizely.com/flutter-arb). There doesn't seem to have syntax highlighter for ARB content, which makes them harder to use as necessary.
 
 Localization is pretty complicated to implement completely without 3rd party tools. 
 
@@ -140,6 +140,7 @@ Candidates for process / tooling
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
 - Clever Library plus [Some Python Scripts & Spreadsheet](https://itnext.io/flutter-localisation-google-sheets-api-python-internalisation-paradise-8439cab57866)
+
 
 As the saying goes: "A fool with a tool is still a fool", so one must learn how flutter does localization.
 
@@ -157,13 +158,13 @@ After some setup tasks and checking that needed dependencies are at place it is 
 
 Localizely has easy to understand UI
 
-![Localizely add translations](diagrams/localizely-ui.png)
+![Localizely add translations](diagrams/localizely-translations.png)
 
 When placeholders are used they're just written as text and code generation takes care that they are easy to use from Dart code.
 
-![Localizely use placeholders](diagrams/localizely-placeholder.png)
+Localizing list of values like enums is possible using [ICU select syntax](https://localizely.com/flutter-arb).
 
-Localizely support plurals, but they aren't needed in Bmi Calculator.
+Localizely support also plurals, but they aren't needed in Bmi Calculator.
 
 When ARB files are downloaded from Localizely [Flutter_intl plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl) generates needed code to access localized keys. Code shouldn't be changed by developer as next roundtrip overwrites generated files.
 
@@ -179,7 +180,7 @@ I managed to get Localizely translation workflow to run, but there was some issu
 - Once integration to Localizely on IDE was simply grayed out - no idea why, and what brought it back - if it would have been longer time absent I would have needed to see how to accomplish needed tasks from command line using [intl_utils](https://pub.dev/packages/intl_utils) or using localizelys api's or user interface. 
 - Generated code [intl_utils](https://pub.dev/packages/intl_utils) produces seems ok, and as generation is done by [intl_utils](https://pub.dev/packages/intl_utils) which Localizely has provided as open source package there should be always possibility to implement PR and fix issues.
 - Tests didn't work after localization due to [bug in Flutter](https://github.com/flutter/flutter/issues/22193). This is not related to Localizely, but makes it very important to understand how Flutter works.
-- In addition I wanted to localize list of strings, and for this I used [Intl package](https://pub.dev/packages/intl) directly. There might have been some easier way, but this was first I came across.
+- In localize list of strings using [ICU Select format](https://localizely.com/flutter-arb), which was just wonderful, but editing in Localizely web UI wasn't really easy and I used external text editor and copy&paste additionally. I could have used IDE directly and write ICU to ARB, which might have been nicest way to programmer.
 - I also used translations with placeholders, which worked fine at the end, but Localizely didn't give warning when I was at first writing placeholders in wrong syntax - code generation did give error message, so I managed to fix it eventually.
 - Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot. It might be that one should always work with single language, not with several languages simultaneously as I did.
 
@@ -224,6 +225,9 @@ Localization
 
 ARB format
 - https://localizely.com/flutter-arb/
+
+ICU
+- https://medium.com/i18n-and-l10n-resources-for-developers/the-missing-guide-to-the-icu-message-format-d7f8efc50bab
 - https://unicode-org.github.io/icu/
 
 Localizely
