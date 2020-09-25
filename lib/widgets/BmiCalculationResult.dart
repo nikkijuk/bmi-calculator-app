@@ -3,7 +3,6 @@ import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 
 // Complexity of this single component and it's dependencies are reason
 // why it has been moved to separate file - there's no need to reuse it
@@ -26,14 +25,14 @@ class BmiCalculationResult extends StatelessWidget {
   // it might be wise to put this data later on to own file - now it's here locally since we only need it here
   // NOTE: Colors are from dart.ui package - they are not same colors as chart component uses
   final statuses = [
-    NutritionalStatus ('T3', 'Severe Thinness', 0, 16, Colors.blue),
-    NutritionalStatus ('T2', 'Moderate Thinness', 16, 17, Colors.blue.shade300),
-    NutritionalStatus ('T1', 'Mild Thinness', 17, 18.5, Colors.blue.shade100),
-    NutritionalStatus ('N',  'Normal weight', 18.5, 25, Colors.green),
-    NutritionalStatus ('PO', 'Overweight', 25.0, 30, Colors.yellow),
-    NutritionalStatus ('O1', 'Obese class I', 30.0, 35, Colors.red.shade100),
-    NutritionalStatus ('O2', 'Obese class II', 35.0, 40, Colors.red.shade300),
-    NutritionalStatus ('O3', 'Obese class III', 40.0, 100, Colors.red),
+    NutritionalStatus ('t3', 'Severe Thinness', 0, 16, Colors.blue),
+    NutritionalStatus ('t2', 'Moderate Thinness', 16, 17, Colors.blue.shade300),
+    NutritionalStatus ('t1', 'Mild Thinness', 17, 18.5, Colors.blue.shade100),
+    NutritionalStatus ('n',  'Normal weight', 18.5, 25, Colors.green),
+    NutritionalStatus ('po', 'Overweight', 25.0, 30, Colors.yellow),
+    NutritionalStatus ('o1', 'Obese class I', 30.0, 35, Colors.red.shade100),
+    NutritionalStatus ('o2', 'Obese class II', 35.0, 40, Colors.red.shade300),
+    NutritionalStatus ('o3', 'Obese class III', 40.0, 100, Colors.red),
   ];
 
   @override
@@ -50,7 +49,6 @@ class BmiCalculationResult extends StatelessWidget {
         );
         } else {
           NutritionalStatus current = statuses.lastWhere((element) => element.minBmi <= state.bmi);
-          var bmiLevelKey = "level_${current.id}_name".toLowerCase();
           return Container(
           height: MediaQuery.of(context).size.height * 30/100,
           width:MediaQuery.of(context).size.width * 60/100,
@@ -62,10 +60,7 @@ class BmiCalculationResult extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline4.apply(color: current.color),
               ),
               Text(
-                Intl.message(
-                  bmiLevelKey, // NOTE: I'm not sure that this is exactly right?
-                  name: bmiLevelKey,
-                ),
+              S.of(context).bmi_desc(current.id),
                 key: ValueKey ("bmi-name"),
                 style: Theme.of(context).textTheme.headline6.apply(color: current.color),
               ),

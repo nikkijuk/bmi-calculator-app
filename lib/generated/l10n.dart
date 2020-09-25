@@ -33,6 +33,27 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `{bmiLevel, select, t3 {Severe Thinness} t2 {Moderate Thinness} t1 {Mild Thinness} n {Normal Weight} po {Overweight} o1 {Obese Class I} o2 {Obese Class II} o3 {Obese Class III} other{N/A}}`
+  String bmi_desc(Object bmiLevel) {
+    return Intl.select(
+      bmiLevel,
+      {
+        't3': 'Severe Thinness',
+        't2': 'Moderate Thinness',
+        't1': 'Mild Thinness',
+        'n': 'Normal Weight',
+        'po': 'Overweight',
+        'o1': 'Obese Class I',
+        'o2': 'Obese Class II',
+        'o3': 'Obese Class III',
+        'other': 'N/A',
+      },
+      name: 'bmi_desc',
+      desc: '',
+      args: [bmiLevel],
+    );
+  }
+
   /// `bmi is {bmi}`
   String bmi_result(Object bmi) {
     return Intl.message(
@@ -58,86 +79,6 @@ class S {
     return Intl.message(
       'Lenght in centimeters',
       name: 'height_desc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Normal Weight`
-  String get level_n_name {
-    return Intl.message(
-      'Normal Weight',
-      name: 'level_n_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Obese Class I`
-  String get level_o1_name {
-    return Intl.message(
-      'Obese Class I',
-      name: 'level_o1_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Obese Class II`
-  String get level_o2_name {
-    return Intl.message(
-      'Obese Class II',
-      name: 'level_o2_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Obese Class III`
-  String get level_o3_name {
-    return Intl.message(
-      'Obese Class III',
-      name: 'level_o3_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Overweight`
-  String get level_po_name {
-    return Intl.message(
-      'Overweight',
-      name: 'level_po_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Mild Thinness`
-  String get level_t1_name {
-    return Intl.message(
-      'Mild Thinness',
-      name: 'level_t1_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Moderate Thinness`
-  String get level_t2_name {
-    return Intl.message(
-      'Moderate Thinness',
-      name: 'level_t2_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Severe Thinness`
-  String get level_t3_name {
-    return Intl.message(
-      'Severe Thinness',
-      name: 'level_t3_name',
       desc: '',
       args: [],
     );

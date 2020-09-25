@@ -1,5 +1,11 @@
 {
   "@@locale": "fi",
+  "bmi_desc": "{bmiLevel, select, t3{Sairaalloinen alipaino} t2{Vaikea alipaino} t1{Alipaino} n {Normaalipaino} po {Ylipaino} o1 {Merkittävä ylipaino} o2 {Vaikea ylipaino} o3 {Sairaalloinen ylipaino} other{N/A}}",
+  "@bmi_desc": {
+    "placeholders": {
+      "bmiLevel": {}
+    }
+  },
   "bmi_result": "bmi on {bmi}",
   "@bmi_result": {
     "placeholders": {
@@ -10,22 +16,6 @@
   "@height": {},
   "height_desc": "Pituus centtimetreinä",
   "@height_desc": {},
-  "level_n_name": "Normaalipaino",
-  "@level_n_name": {},
-  "level_o1_name": "Merkittävä ylipaino",
-  "@level_o1_name": {},
-  "level_o2_name": "Vaikea ylipaino",
-  "@level_o2_name": {},
-  "level_o3_name": "Sairaalloinen ylipaino",
-  "@level_o3_name": {},
-  "level_po_name": "Ylipaino",
-  "@level_po_name": {},
-  "level_t1_name": "Lievä alipaino",
-  "@level_t1_name": {},
-  "level_t2_name": "Merkittävä alipaino",
-  "@level_t2_name": {},
-  "level_t3_name": "Sairaalloinen alipaino",
-  "@level_t3_name": {},
   "not_calculated": "ei laskettu",
   "@not_calculated": {},
   "title": "BMI Laskin",

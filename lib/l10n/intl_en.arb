@@ -1,5 +1,11 @@
 {
   "@@locale": "en",
+  "bmi_desc": "{bmiLevel, select, t3 {Severe Thinness} t2 {Moderate Thinness} t1 {Mild Thinness} n {Normal Weight} po {Overweight} o1 {Obese Class I} o2 {Obese Class II} o3 {Obese Class III} other{N/A}}",
+  "@bmi_desc": {
+    "placeholders": {
+      "bmiLevel": {}
+    }
+  },
   "bmi_result": "bmi is {bmi}",
   "@bmi_result": {
     "placeholders": {
@@ -10,22 +16,6 @@
   "@height": {},
   "height_desc": "Lenght in centimeters",
   "@height_desc": {},
-  "level_n_name": "Normal Weight",
-  "@level_n_name": {},
-  "level_o1_name": "Obese Class I",
-  "@level_o1_name": {},
-  "level_o2_name": "Obese Class II",
-  "@level_o2_name": {},
-  "level_o3_name": "Obese Class III",
-  "@level_o3_name": {},
-  "level_po_name": "Overweight",
-  "@level_po_name": {},
-  "level_t1_name": "Mild Thinness",
-  "@level_t1_name": {},
-  "level_t2_name": "Moderate Thinness",
-  "@level_t2_name": {},
-  "level_t3_name": "Severe Thinness",
-  "@level_t3_name": {},
   "not_calculated": "not calculated",
   "@not_calculated": {},
   "title": "BMI Calculator",

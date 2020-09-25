@@ -19,21 +19,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fi';
 
-  static m0(bmi) => "bmi on ${bmi}";
+  static m0(bmiLevel) => "${Intl.select(bmiLevel, {'t3': 'Sairaalloinen alipaino', 't2': 'Vaikea alipaino', 't1': 'Alipaino', 'n': 'Normaalipaino', 'po': 'Ylipaino', 'o1': 'Merkittävä ylipaino', 'o2': 'Vaikea ylipaino', 'o3': 'Sairaalloinen ylipaino', 'other': 'N/A', })}";
+
+  static m1(bmi) => "bmi on ${bmi}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "bmi_result" : m0,
+    "bmi_desc" : m0,
+    "bmi_result" : m1,
     "height" : MessageLookupByLibrary.simpleMessage("Pituus"),
     "height_desc" : MessageLookupByLibrary.simpleMessage("Pituus centtimetreinä"),
-    "level_n_name" : MessageLookupByLibrary.simpleMessage("Normaalipaino"),
-    "level_o1_name" : MessageLookupByLibrary.simpleMessage("Merkittävä ylipaino"),
-    "level_o2_name" : MessageLookupByLibrary.simpleMessage("Vaikea ylipaino"),
-    "level_o3_name" : MessageLookupByLibrary.simpleMessage("Sairaalloinen ylipaino"),
-    "level_po_name" : MessageLookupByLibrary.simpleMessage("Ylipaino"),
-    "level_t1_name" : MessageLookupByLibrary.simpleMessage("Lievä alipaino"),
-    "level_t2_name" : MessageLookupByLibrary.simpleMessage("Merkittävä alipaino"),
-    "level_t3_name" : MessageLookupByLibrary.simpleMessage("Sairaalloinen alipaino"),
     "not_calculated" : MessageLookupByLibrary.simpleMessage("ei laskettu"),
     "title" : MessageLookupByLibrary.simpleMessage("BMI Laskin"),
     "weight" : MessageLookupByLibrary.simpleMessage("Paino"),
