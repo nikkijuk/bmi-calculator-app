@@ -184,7 +184,7 @@ I managed to get Localizely translation workflow to run, but there was some issu
 - It is possible to localize list of strings using [ICU Select format](https://localizely.com/flutter-arb), which works just wonderful.  Editing complex rules in Localizely web UI wasn't really easy and I used external text editor and copy&paste additionally. I could have used IDE directly and write ICU to ARB, which might have been nicest way to programmer, but as Android studio does higlight ARB files just like normal JSON files it wouldn't have helped a lot to use IDE.
 - Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot. It might be that one should always work with single language, not with several languages simultaneously as I did.
 
-I could have opted [not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea and made my life easy. Generated code is also simple to read, so one can understand what it does.
+I could have opted [to live without code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea and made my life easy to let machine to do tedious work to me. Generated code is clean and simple to read, so one can understand what it does.
 
 Experience was mostly positive, but there's still work to do on developer & Translator UX before it all works smoothly.
 
