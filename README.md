@@ -234,14 +234,6 @@ BLOC
 Code style & Rules
 - https://dart.dev/guides/language/effective-dart/style
 
-Very Good Analysis
-- https://pub.dev/packages/very_good_analysis
-- https://verygood.ventures/blog/introducing-very-good-analysis
-
-Pedantic
-- https://pub.dev/packages/pedantic
-- https://medium.com/dartlang/pedantic-dart-1c7d365510de
-
 Localization
 - https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 
@@ -288,6 +280,14 @@ CI/CD
 Static analysis
 - https://github.com/flutter/flutter/wiki/Using-the-Dart-analyzer
 - https://docs.codemagic.io/testing/static-code-analysis/
+
+Very Good Analysis
+- https://pub.dev/packages/very_good_analysis
+- https://verygood.ventures/blog/introducing-very-good-analysis
+
+Pedantic
+- https://pub.dev/packages/pedantic
+- https://medium.com/dartlang/pedantic-dart-1c7d365510de
 
 Sample apps
 - https://github.com/devonfw-forge/devonfw4flutter-mts-app
