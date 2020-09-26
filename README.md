@@ -126,17 +126,17 @@ UI components are Flutter Widgets. So, from here on one can't reuse classes with
 
 ## Localization
 
+Localization is pretty [complicated to implement](https://flutter.dev/docs/development/accessibility-and-localization/internationalization) completely without 3rd party tools. 
+
 Localizations are normally defined using [ARB files](https://localizely.com/flutter-arb). There doesn't seem to have syntax highlighter for ARB content, which makes them harder to use as necessary.
 
-Localization is pretty complicated to implement completely without 3rd party tools. 
-
-Candidates for process / tooling
+Candidates for process / tooling / ..
 - Flutter default process with [Intl package](https://pub.dev/packages/intl) 
 - Additional translations collection with [Intl_traslations](https://pub.dev/packages/intl_translation)
 - Experimental: Support for other formats than ARB with [int_translation_format](https://pub.dev/packages/intl_translation_format) and [intl_translation_xliff](https://pub.dev/packages/intl_translation_xliff)
 - Code generation from ARB files with [intl_utils](https://pub.dev/packages/intl_utils)
 - Saas service with [plugin to Android studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl) and [VS Code](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) like [Localizely.com](https://localizely.com/)
-- Saas service without integration to IDEs like [Phrase](https://phrase.com/)
+- Saas service without integration to IDEs like [Phrase](https://phrase.com/) or [Crowdin](https://crowdin.com/) or [Loco](https://localise.biz/) or ..
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
 - Clever Library plus [Some Python Scripts & Spreadsheet](https://itnext.io/flutter-localisation-google-sheets-api-python-internalisation-paradise-8439cab57866)
