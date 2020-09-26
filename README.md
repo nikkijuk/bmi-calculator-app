@@ -141,7 +141,6 @@ Candidates for process / tooling / ..
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
 - Clever Library plus [Some Python Scripts & Spreadsheet](https://itnext.io/flutter-localisation-google-sheets-api-python-internalisation-paradise-8439cab57866)
 
-
 As the saying goes: "A fool with a tool is still a fool", so one must learn how flutter does localization.
 
 ### Experimenting with Localizely
@@ -289,3 +288,7 @@ CI/CD
 Static analysis
 - https://github.com/flutter/flutter/wiki/Using-the-Dart-analyzer
 - https://docs.codemagic.io/testing/static-code-analysis/
+
+Sample apps
+- https://github.com/devonfw-forge/devonfw4flutter-mts-app
+- https://github.com/Fasust/wisgen
