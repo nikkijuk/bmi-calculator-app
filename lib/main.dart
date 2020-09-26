@@ -46,7 +46,7 @@ class BmiCalculatorApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BmiCalculatorHome(),
+      home: const BmiCalculatorHome(),
     );
   }
 }
@@ -63,8 +63,7 @@ class BmiCalculatorHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-              "BMI Calculator"
-            //S.of(context).title
+            S.of(context).title
           ),
       ),
       body: BlocProvider(

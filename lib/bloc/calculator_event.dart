@@ -7,7 +7,8 @@ abstract class CalculatorEvent  {
 
 class CalculatorReset extends CalculatorEvent {}
 
-// mixin used as calculator event is base class and Dart doesn't support multi-inheritance
+// mixin used as calculator event is base class and
+// Dart doesn't support multi-inheritance
 class CalculatorHeightChanged extends CalculatorEvent with EquatableMixin {
   const CalculatorHeightChanged({this.height});
 
@@ -17,7 +18,8 @@ class CalculatorHeightChanged extends CalculatorEvent with EquatableMixin {
   List<Object> get props => [height];
 }
 
-// mixin used as calculator event is base class and Dart doesn't support multi-inheritance
+// mixin used as calculator event is base class and
+// Dart doesn't support multi-inheritance
 class CalculatorWeightChanged extends CalculatorEvent with EquatableMixin {
   const CalculatorWeightChanged({this.weight});
 

@@ -9,7 +9,8 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('CalculatorBloc', () {
     test('initial state is not complete', () {
-      expect(CalculatorBloc(TraditionalBmiCalculator()).state.isComplete, false);
+      expect(CalculatorBloc(TraditionalBmiCalculator()).state.isComplete,
+          false);
     });
 
     test('initial state of height is null', () {
@@ -31,8 +32,8 @@ void main() {
       'to events created in response to set height und weight',
       build: () => CalculatorBloc(TraditionalBmiCalculator()),
       act: (bloc) => bloc
-        ..add(CalculatorHeightChanged(height: 170))
-        ..add(CalculatorWeightChanged(weight: 70)),
+        ..add(const CalculatorHeightChanged(height: 170))
+        ..add(const CalculatorWeightChanged(weight: 70)),
       expect: const <CalculatorState>[
         CalculatorState(height: 170, weight: null, bmi: null),
         CalculatorState(height: 170, weight: 70, bmi: 24.22)
@@ -45,8 +46,8 @@ void main() {
       'to events created in response to set height und weight',
       build: () => CalculatorBloc(TrefethenBmiCalculator()),
       act: (bloc) => bloc
-        ..add(CalculatorHeightChanged(height: 170))
-        ..add(CalculatorWeightChanged(weight: 70)),
+        ..add(const CalculatorHeightChanged(height: 170))
+        ..add(const CalculatorWeightChanged(weight: 70)),
       expect: const <CalculatorState>[
         CalculatorState(height: 170, weight: null, bmi: null),
         CalculatorState(height: 170, weight: 70, bmi: 24.15)

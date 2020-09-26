@@ -4,8 +4,10 @@ import 'package:bloc/bloc.dart';
 // https://pub.dev/packages/bloc
 // one needs to know that bloc is subclass of cubit
 // difference
-// - cubit emits state objects and has state, state is changed when methods of cubit are called
-// - bloc emits state objects and has state, state is changed when bloc receives events thru sink
+// - cubit emits state objects and has state,
+//    state is changed when methods of cubit are called
+// - bloc emits state objects and has state,
+//   state is changed when bloc receives events thru sink
 class SimpleBlocObserver extends BlocObserver {
   @override
   void onChange(Cubit cubit, Change change) {

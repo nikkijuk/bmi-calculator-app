@@ -9,16 +9,16 @@ class CalculatorState extends Equatable {
     @required this.bmi,
   });
 
-  final double height;
-  final double weight;
-  final double bmi;
-
   const CalculatorState.initial()
       : this(
     height: null,
     weight: null,
     bmi: null,
   );
+
+  final double height;
+  final double weight;
+  final double bmi;
 
   CalculatorState copyWith({
     int height,

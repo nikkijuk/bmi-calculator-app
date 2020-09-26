@@ -10,17 +10,16 @@ part 'calculator_event.dart';
 part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
+  CalculatorBloc(this.calculator) : super(const CalculatorState.initial());
 
   BmiCalculator calculator;
-
-  CalculatorBloc(this.calculator) : super(CalculatorState.initial());
 
   @override
   Stream<CalculatorState> mapEventToState(CalculatorEvent event) async* {
 
     switch (event.runtimeType) {
       case CalculatorReset:
-        yield CalculatorState.initial();
+        yield const CalculatorState.initial();
         break;
       case CalculatorHeightChanged:
         yield* _changeHeight(event);
@@ -32,17 +31,17 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   Stream<CalculatorState> _changeHeight(CalculatorHeightChanged event) async* {
-    double height = event.height;
+    var height = event.height;
     yield _createCalculatorState(height, state.weight);
   }
 
   Stream<CalculatorState> _changeWeight(CalculatorWeightChanged event) async* {
-    double weight = event.weight;
+    var weight = event.weight;
     yield _createCalculatorState(state.height, weight);
   }
 
   CalculatorState _createCalculatorState(double height, double weight) {
-    double bmi = calculator.calculateBmiPrecision2 (height, weight);
+    var bmi = calculator.calculateBmiPrecision2 (height, weight);
     return CalculatorState (height: height, weight: weight, bmi: bmi);
   }
 

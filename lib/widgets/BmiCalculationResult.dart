@@ -8,10 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // why it has been moved to separate file - there's no need to reuse it
 class BmiCalculationResult extends StatelessWidget {
 
-  /// For data see:
-  /// - https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi
-  // - https://www.calculator.net/bmi-calculator.html
   /*
+  Classification:
     Severe Thinness	< 16
     Moderate Thinness	16 - 17
     Mild Thinness	17 - 18.5
@@ -20,10 +18,12 @@ class BmiCalculationResult extends StatelessWidget {
     Obese Class I	30 - 35
     Obese Class II	35 - 40
     Obese Class III	> 40
-    */
+  */
 
-  // it might be wise to put this data later on to own file - now it's here locally since we only need it here
-  // NOTE: Colors are from dart.ui package - they are not same colors as chart component uses
+  // it might be wise to put this data later on to own file
+  // now it's here locally since we only need it here
+  // NOTE: Colors are from dart.ui package,
+  // they are not same colors as chart component uses
   final statuses = [
     NutritionalStatus ('t3', 'Severe Thinness', 0, 16, Colors.blue),
     NutritionalStatus ('t2', 'Moderate Thinness', 16, 17, Colors.blue.shade300),
@@ -44,11 +44,11 @@ class BmiCalculationResult extends StatelessWidget {
           return Center(
           child: Text(
             S.of(context).not_calculated,
-            key: ValueKey ("not-calculated"),
+            key: const ValueKey ('not-calculated'),
           ),
         );
         } else {
-          NutritionalStatus current = statuses.lastWhere((element) => element.minBmi <= state.bmi);
+          var current = statuses.lastWhere((e) => e.minBmi <= state.bmi);
           return Container(
           height: MediaQuery.of(context).size.height * 30/100,
           width:MediaQuery.of(context).size.width * 60/100,
@@ -56,22 +56,26 @@ class BmiCalculationResult extends StatelessWidget {
             children: [
               Text(
                 S.of(context).bmi_result(state.bmi),
-                key: ValueKey ("bmi"),
-                style: Theme.of(context).textTheme.headline4.apply(color: current.color),
+                key: const ValueKey ('bmi'),
+                style: Theme.of(context).textTheme.headline4.apply(
+                    color: current.color
+                ),
               ),
               Text(
               S.of(context).bmi_desc(current.id),
-                key: ValueKey ("bmi-name"),
-                style: Theme.of(context).textTheme.headline6.apply(color: current.color),
+                key: const ValueKey ('bmi-name'),
+                style: Theme.of(context).textTheme.headline6.apply(
+                    color: current.color
+                ),
               ),
               Expanded(
                 child: charts.BarChart (
-                    _nutritionalStatuses(state.bmi),
+                    _statusSeries(state.bmi),
                     animate: false,
                     barGroupingType: charts.BarGroupingType.stacked,
                     vertical: false,
                     customSeriesRenderers: [
-                      new charts.BarTargetLineRendererConfig<String>(
+                      charts.BarTargetLineRendererConfig<String>(
                         // ID used to link series to this renderer.
                           customRendererId: 'bmiResultLine',
                           groupingType: charts.BarGroupingType.stacked)
@@ -88,25 +92,27 @@ class BmiCalculationResult extends StatelessWidget {
 
 
   /// Create series list with multiple series
-  List<charts.Series<NutritionalStatus, String>> _nutritionalStatuses(double bmi) {
-
-
+  List<charts.Series<NutritionalStatus, String>> _statusSeries(double bmi) {
     final result = [
       NutritionalStatus ('ME', 'My BMI', bmi, bmi, Colors.black),
     ];
 
     return [
-      new charts.Series<NutritionalStatus, String>(
+      charts.Series<NutritionalStatus, String>(
         id: 'BMI Scale',
-        domainFn: (NutritionalStatus status, _) => "BMI",
-        measureFn: (NutritionalStatus status, _) => status.maxBmi - status.minBmi,
-        // NOTE: Colors which charts uses are from charts_flutter package - one needs to have manual conversion fo dart.ui colors
-        colorFn: (NutritionalStatus status, _) => charts.Color(r: status.color.red, g: status.color.green, b: status.color.blue),
+        domainFn: (NutritionalStatus st, _) => 'BMI',
+        measureFn: (NutritionalStatus st, _) => st.maxBmi - st.minBmi,
+        // NOTE: Colors which charts uses are from charts_flutter package 
+        // one needs to have manual conversion fo dart.ui colors
+        colorFn: (NutritionalStatus status, _) => charts.Color(
+            r: status.color.red, 
+            g: status.color.green, 
+            b: status.color.blue),
         data: statuses,
       ),
-      new charts.Series<NutritionalStatus, String>(
+      charts.Series<NutritionalStatus, String>(
         id: 'BMI Result',
-        domainFn: (NutritionalStatus status, _) => "BMI",
+        domainFn: (NutritionalStatus status, _) => 'BMI',
         measureFn: (NutritionalStatus status, _) => status.minBmi,
         strokeWidthPxFn: (NutritionalStatus status, _) => 6,
         data: result,
@@ -118,11 +124,11 @@ class BmiCalculationResult extends StatelessWidget {
 }
 
 class NutritionalStatus {
+  NutritionalStatus(this.id, this.name, this.minBmi, this.maxBmi, this.color);
+
   final String id;
   final String name;
   final double minBmi;
   final double maxBmi;
   final Color color;
-
-  NutritionalStatus(this.id, this.name, this.minBmi, this.maxBmi, this.color);
 }

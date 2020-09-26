@@ -183,8 +183,20 @@ I managed to get Localizely translation workflow to run, but there was some issu
 - I used translations with placeholders, which worked fine at the end, but Localizely didn't give warning when I was at first writing placeholders in wrong syntax - code generation did give error message, so I managed to fix it eventually.
 - It is possible to localize list of strings using [ICU Select format](https://localizely.com/flutter-arb), which works just wonderful.  Editing complex rules in Localizely web UI wasn't really easy and I used external text editor and copy&paste additionally. I could have used IDE directly and write ICU to ARB, which might have been nicest way to programmer, but as Android studio does higlight ARB files just like normal JSON files it wouldn't have helped a lot to use IDE.
 - Writing translations in Localizely was ok, but when having 3 languages focus on web app was changing and order of language columns was re-ordered when translations were entered, which surprised me quite a lot. It might be that one should always work with single language, not with several languages simultaneously as I did.
+- When I did add [very good analysis](https://pub.dev/packages/very_good_analysis) to project I needed to switch off globally some [linting rules](https://github.com/VGVentures/very_good_analysis/blob/main/lib/analysis_options.1.0.0.yaml) 
 
-I could have opted [to live without code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea and made my life easy to let machine to do tedious work to me. Generated code is clean and simple to read, so one can understand what it does.
+See below my analysis_options.yaml, lines_longer_than_80_chars and always_declare_return_types needed to be globally turned out
+
+```
+include: package:very_good_analysis/analysis_options.yaml
+linter:
+  rules:
+    public_member_api_docs: false
+    lines_longer_than_80_chars: false
+    always_declare_return_types: false
+```
+
+I could have opted [to not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea and made my life easy to let machine to do tedious work to me. Generated code is clean and simple to read, so one can understand what it does.
 
 Experience was mostly positive, but there's still work to do on developer & Translator UX before it all works smoothly.
 
@@ -237,6 +249,10 @@ Localizely
 Phrase
 - https://phrase.com/
 - https://phrase.com/blog/posts/how-to-internationalize-a-flutter-app/
+
+Crowdin
+- https://crowdin.com/
+- https://support.crowdin.com/supported-formats/
 
 Easy Localization
 - https://pub.dev/packages/easy_localization

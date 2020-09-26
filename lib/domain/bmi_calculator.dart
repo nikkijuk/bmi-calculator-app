@@ -11,7 +11,8 @@ abstract class BmiCalculator  {
   double calculateBmi (double height, double weight);
 
   // helper method, private, can't be overridden
-  // Dart math lib doesn't have arithmetic operations for rounding to given amount of decimals, so one needs to have hack here
+  // Dart math lib doesn't have arithmetic operations for rounding
+  // to given amount of decimals, so one needs to have hack here
   // https://github.com/dart-lang/sdk/issues/8575
   // note: null handling is not very nice, so it might need to be enhanced
   double _round2 (double value) {
