@@ -2,7 +2,7 @@
 
 [![Codemagic build status](https://api.codemagic.io/apps/5f630623448c706797de0d37/5f630623448c706797de0d36/status_badge.svg)](https://codemagic.io/apps/5f630623448c706797de0d37/5f630623448c706797de0d36/latest_build)
 
-![Localizely overall progress:](/localizely/progress/:projectId/:branch*?token=ed830d15cbf1485da5ae8ad4fa507797e25b7d29861f48de81738eb135fafe95)
+![Localizely overall progress:](/localizely/progress/1e6a5df2-6c96-4562-8b0b-82facf9b970a/master?token=ed830d15cbf1485da5ae8ad4fa507797e25b7d29861f48de81738eb135fafe95)
 
 Body Mass Index calculator implemented with Flutter
 
