@@ -25,6 +25,7 @@ This project is a pretty simple technology demo
 - Bloc tested with with bloc_test
 - Domain logic tested with normal unit test
 - Additional test for user interaction
+- Very good analysis for linting
 
 ## Roadmap
 
