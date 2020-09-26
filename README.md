@@ -196,7 +196,7 @@ linter:
     always_declare_return_types: false
 ```
 
-I could have opted [to not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea and made my life easy to let machine to do tedious work to me. Generated code is clean and simple to read, so one can understand what it does.
+I could have opted [to not use code generation](https://localizely.com/blog/flutter-localization-step-by-step/), but it seemed good idea. Generated code is clean and simple to read, so one can understand what it does. Linting rules that I needed to switch off are not critical, even if I'd prefer not to turn off rules globally.
 
 Experience was mostly positive, but there's still work to do on developer & Translator UX before it all works smoothly.
 
