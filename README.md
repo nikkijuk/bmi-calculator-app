@@ -232,6 +232,17 @@ BLOC
 - https://bloclibrary.dev/#/
 - https://www.youtube.com/watch?v=knMvKPKBzGE&feature=youtu.be
 
+Code style & Rules
+- https://dart.dev/guides/language/effective-dart/style
+
+Very Good Analysis
+- https://pub.dev/packages/very_good_analysis
+- https://verygood.ventures/blog/introducing-very-good-analysis
+
+Pedantic
+- https://pub.dev/packages/pedantic
+- https://medium.com/dartlang/pedantic-dart-1c7d365510de
+
 Localization
 - https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 
