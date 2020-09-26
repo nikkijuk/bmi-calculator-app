@@ -1,5 +1,7 @@
 # bmi-calculator-app
 
+[![Codemagic build status](https://api.codemagic.io/apps/5f630623448c706797de0d37/5f630623448c706797de0d36/status_badge.svg)](https://codemagic.io/apps/5f630623448c706797de0d37/5f630623448c706797de0d36/latest_build)
+
 Body Mass Index calculator implemented with Flutter
 
 ## What is BMI?
