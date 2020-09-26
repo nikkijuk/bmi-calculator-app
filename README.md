@@ -238,6 +238,9 @@ Phrase
 - https://phrase.com/
 - https://phrase.com/blog/posts/how-to-internationalize-a-flutter-app/
 
+Crowdin
+- https://crowdin.com/
+
 Arbify
 - https://github.com/Arbify/Arbify
 - https://pub.dev/packages/arbify
