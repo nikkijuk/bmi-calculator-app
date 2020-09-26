@@ -4,8 +4,6 @@
 
 ![Localizely overall progress](https://img.shields.io/localizely/progress/1e6a5df2-6c96-4562-8b0b-82facf9b970a?token=ed830d15cbf1485da5ae8ad4fa507797e25b7d29861f48de81738eb135fafe95)
 
-![Localizely overall progress](https://img.shields.io/localizely/progress/1e6a5df2-6c96-4562-8b0b-82facf9b970a/master?token=ed830d15cbf1485da5ae8ad4fa507797e25b7d29861f48de81738eb135fafe95)
-
 Body Mass Index calculator implemented with Flutter
 
 ## What is BMI?
