@@ -238,6 +238,13 @@ Phrase
 - https://phrase.com/
 - https://phrase.com/blog/posts/how-to-internationalize-a-flutter-app/
 
+Arbify
+- https://github.com/Arbify/Arbify
+- https://pub.dev/packages/arbify
+
+Loco
+- https://localise.biz/
+
 Easy Localization
 - https://pub.dev/packages/easy_localization
 - https://dev.to/remejuan/bringing-localization-into-your-widget-testing-71f
