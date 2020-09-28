@@ -147,6 +147,8 @@ Candidates for process / tooling / ..
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
 - Clever Library plus [Some Python Scripts & Spreadsheet](https://itnext.io/flutter-localisation-google-sheets-api-python-internalisation-paradise-8439cab57866)
+- More control needed, so [DIY Jason based](https://medium.com/@podcoder/flutter-localization-a39402757a42) or ..
+- And there needs to be couple of other options also .. 
 
 As the saying goes: "A fool with a tool is still a fool", so one must learn how flutter does localization.
 
