@@ -25,6 +25,7 @@ This project is a pretty simple technology demo
 - Bloc tested with with bloc_test
 - Domain logic tested with normal unit test
 - Additional test for user interaction
+- Very good analysis for linting
 
 ## Roadmap
 
@@ -146,6 +147,8 @@ Candidates for process / tooling / ..
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
 - Clever Library plus [Some Python Scripts & Spreadsheet](https://itnext.io/flutter-localisation-google-sheets-api-python-internalisation-paradise-8439cab57866)
+- More control needed, so [DIY Jason based](https://medium.com/@podcoder/flutter-localization-a39402757a42) or ..
+- And there needs to be couple of other options also .. 
 
 As the saying goes: "A fool with a tool is still a fool", so one must learn how flutter does localization.
 
@@ -179,6 +182,8 @@ I was using upload and download and they worked fine.
 - During localization Bmi Calculator I added ARB files for FI and DE using Android Studio and keys and localized texts using Localizely.
 - After downloading updated ARB files I just needed to use automatically generated Dart artifacts to integrate localizations.
 - Using localizations needed [localizationsDelegates](https://api.flutter.dev/flutter/material/MaterialApp/localizationsDelegates.html) to be defined from MaterialApp, WidgetTests to be altered due to [flutter bug at async loading of localizations](https://github.com/flutter/flutter/issues/22193) and using localizations in UI.
+
+Localizely provides [small sample app for localization](https://github.com/localizely/flutter-intl-plugin-sample-app/blob/master/lib/main.dart) so that that testing workflow can be done pretty simple.
 
 I managed to get Localizely translation workflow to run, but there was some issues which I did report to very helpful support.
 - Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was stating Authorization problem when trying to upload ARBs to Localizely.
