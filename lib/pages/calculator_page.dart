@@ -1,11 +1,17 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
+import 'package:bmi_calculator_app/bloc/localization_bloc.dart';
 import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:bmi_calculator_app/widgets/BmiCalculationResult.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CalculatorPage extends StatelessWidget {
+class CalculatorPage extends StatefulWidget {
 
+  @override
+  _CalculatorPageState createState() => _CalculatorPageState();
+}
+
+class _CalculatorPageState extends State<CalculatorPage> {
   @override
   Widget build(BuildContext context) {
       return BlocBuilder<CalculatorBloc, CalculatorState>(
@@ -17,10 +23,10 @@ class CalculatorPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
+                  languageSelection(context),
                   HeightInput (),
                   WeightInput (),
                   BmiCalculationResult(),
-                  //rResetButton(),
                 ],
               )
             ),
@@ -29,10 +35,58 @@ class CalculatorPage extends StatelessWidget {
       );
     }
 
+  Container languageSelection(BuildContext context) {
+    return Container(
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            RaisedButton(
+              onPressed: () {
+                setState(() {
+                  context.bloc<LocalizationBloc>().add(
+                      const Locale('en', 'US')
+                    );
+                });
+              },
+              child: const Text('ENGLISH'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                setState(() {
+                  context.bloc<LocalizationBloc>().add(
+                    const Locale('de', 'DE')
+                  );
+                });
+              },
+              child: const Text('GERMAN'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                setState(() {
+                  context.bloc<LocalizationBloc>().add(
+                      const Locale('fi', 'FI')
+                  );
+                });
+              },
+              child: const Text('FINNISH'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-class HeightInput extends StatelessWidget {
+class HeightInput extends StatefulWidget {
   
+  @override
+  _HeightInputState createState() => _HeightInputState();
+}
+
+class _HeightInputState extends State<HeightInput> {
   @override
   Widget build(BuildContext context) {
 
@@ -72,8 +126,13 @@ class HeightInput extends StatelessWidget {
   }
 }
 
-class WeightInput extends StatelessWidget {
+class WeightInput extends StatefulWidget {
 
+  @override
+  _WeightInputState createState() => _WeightInputState();
+}
+
+class _WeightInputState extends State<WeightInput> {
   @override
   Widget build(BuildContext context) {
 

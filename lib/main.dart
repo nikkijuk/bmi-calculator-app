@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'bloc/localization_bloc.dart';
 import 'bloc/simple_bloc_observer.dart';
 import 'domain/traditional_bmi_calculator.dart';
 import 'generated/l10n.dart';
@@ -30,34 +31,50 @@ void main() {
 }
 
 // This widget is the root of app
-class BmiCalculatorApp extends StatelessWidget {
+class BmiCalculatorApp extends StatefulWidget {
 
   @override
+  _BmiCalculatorAppState createState() => _BmiCalculatorAppState();
+}
+
+class _BmiCalculatorAppState extends State<BmiCalculatorApp> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: const BmiCalculatorHome(),
+    return BlocProvider(
+      create: (_) => LocalizationBloc(),
+      child: BlocBuilder<LocalizationBloc, Locale>(
+        builder: (context, locale) => MaterialApp(
+          locale: locale,
+          localizationsDelegates: [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          home: const BmiCalculatorHome(),
+        ),
+      )
     );
   }
 }
 
 // delegates need to exist higher in widget tree
 // https://github.com/flutter/flutter/issues/26365
-class BmiCalculatorHome extends StatelessWidget {
+class BmiCalculatorHome extends StatefulWidget {
   const BmiCalculatorHome({
     Key key,
   }) : super(key: key);
 
+  @override
+  _BmiCalculatorHomeState createState() => _BmiCalculatorHomeState();
+}
+
+class _BmiCalculatorHomeState extends State<BmiCalculatorHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
