@@ -23,7 +23,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  languageSelection(context),
+                  LanguageSelection(),
                   HeightInput (),
                   WeightInput (),
                   BmiCalculationResult(),
@@ -34,59 +34,65 @@ class _CalculatorPageState extends State<CalculatorPage> {
         },
       );
     }
-
-  Container languageSelection(BuildContext context) {
-    return Container(
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            RaisedButton(
-              onPressed: () {
-                setState(() {
-                  context.bloc<LocalizationBloc>().add(
-                      const Locale('en', 'US')
-                    );
-                });
-              },
-              child: const Text('ENGLISH'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                setState(() {
-                  context.bloc<LocalizationBloc>().add(
-                    const Locale('de', 'DE')
-                  );
-                });
-              },
-              child: const Text('GERMAN'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                setState(() {
-                  context.bloc<LocalizationBloc>().add(
-                      const Locale('fi', 'FI')
-                  );
-                });
-              },
-              child: const Text('FINNISH'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
 
-class HeightInput extends StatefulWidget {
-  
+class LanguageSelection extends StatefulWidget {
+
   @override
-  _HeightInputState createState() => _HeightInputState();
+  _LanguageSelectionState createState() => _LanguageSelectionState();
 }
 
-class _HeightInputState extends State<HeightInput> {
+class _LanguageSelectionState extends State<LanguageSelection> {
+
+  @override
+  Widget build(BuildContext context) {
+
+      return Container(
+        child: Container(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    context.bloc<LocalizationBloc>().add(
+                        const Locale('en', 'US')
+                    );
+                  });
+                },
+                child: const Text('ENGLISH'),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    context.bloc<LocalizationBloc>().add(
+                        const Locale('de', 'DE')
+                    );
+                  });
+                },
+                child: const Text('GERMAN'),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    context.bloc<LocalizationBloc>().add(
+                        const Locale('fi', 'FI')
+                    );
+                  });
+                },
+                child: const Text('FINNISH'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+  }
+
+class HeightInput extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
 
@@ -126,13 +132,8 @@ class _HeightInputState extends State<HeightInput> {
   }
 }
 
-class WeightInput extends StatefulWidget {
+class WeightInput extends StatelessWidget {
 
-  @override
-  _WeightInputState createState() => _WeightInputState();
-}
-
-class _WeightInputState extends State<WeightInput> {
   @override
   Widget build(BuildContext context) {
 
