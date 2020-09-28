@@ -181,6 +181,8 @@ I was using upload and download and they worked fine.
 - After downloading updated ARB files I just needed to use automatically generated Dart artifacts to integrate localizations.
 - Using localizations needed [localizationsDelegates](https://api.flutter.dev/flutter/material/MaterialApp/localizationsDelegates.html) to be defined from MaterialApp, WidgetTests to be altered due to [flutter bug at async loading of localizations](https://github.com/flutter/flutter/issues/22193) and using localizations in UI.
 
+Localizely provides [small sample app for localization](https://github.com/localizely/flutter-intl-plugin-sample-app/blob/master/lib/main.dart) so that that testing workflow can be done pretty simple.
+
 I managed to get Localizely translation workflow to run, but there was some issues which I did report to very helpful support.
 - Android studio let me to give wrong localizely project id while [integrating to localizely](https://localizely.com/flutter-localization-workflow/), and later error message was stating Authorization problem when trying to upload ARBs to Localizely.
 - Once integration to Localizely on IDE was simply grayed out - no idea why, and what brought it back - if it would have been longer time absent I would have needed to see how to accomplish needed tasks from command line using [intl_utils](https://pub.dev/packages/intl_utils) or using localizelys api's or user interface. 
