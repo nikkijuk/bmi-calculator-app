@@ -52,7 +52,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
           padding: const EdgeInsets.all(8),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               RaisedButton(
                 onPressed: () {
@@ -62,7 +62,9 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     );
                   });
                 },
-                child: const Text('ENGLISH'),
+                child: const Text(
+                    'ENGLISH',
+                ),
               ),
               RaisedButton(
                 onPressed: () {
