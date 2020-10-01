@@ -4,6 +4,7 @@ import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:bmi_calculator_app/widgets/BmiCalculationResult.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CalculatorPage extends StatefulWidget {
 
@@ -49,7 +50,13 @@ class _LanguageSelectionState extends State<LanguageSelection> {
 
       return Container(
         child: Container(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(0),
+          decoration:
+            BoxDecoration(
+                border: Border.all(
+                  style: BorderStyle.none,
+                ),
+            ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -62,10 +69,15 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     );
                   });
                 },
-                child: const Text(
-                    'ENGLISH',
+                color: Theme.of(context).canvasColor,
+                child:
+                  SvgPicture.asset(
+                    'icons/flags/svg/gb.svg',
+                    package: 'country_icons',
+                    height: 40.0,
+                    width: 40.0,
+                  ),
                 ),
-              ),
               RaisedButton(
                 onPressed: () {
                   setState(() {
@@ -74,8 +86,14 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     );
                   });
                 },
-                child: const Text('GERMAN'),
-              ),
+                color: Theme.of(context).canvasColor,
+                child:
+                  SvgPicture.asset(
+                    'icons/flags/svg/de.svg',
+                    package: 'country_icons',
+                    height: 40.0,
+                    width: 40.0,),
+                ),
               RaisedButton(
                 onPressed: () {
                   setState(() {
@@ -84,8 +102,14 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     );
                   });
                 },
-                child: const Text('FINNISH'),
-              ),
+                color: Theme.of(context).canvasColor,
+                child:
+                  SvgPicture.asset(
+                    'icons/flags/svg/fi.svg',
+                    package: 'country_icons',
+                    height: 40.0,
+                    width: 40.0,),
+                ),
             ],
           ),
         ),
