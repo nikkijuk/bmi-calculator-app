@@ -27,6 +27,8 @@ This project is a pretty simple technology demo
 - Additional test for user interaction
 - Very good analysis for linting
 
+Overview of [flutter architecture](https://flutter.dev/docs/resources/architectural-overview) serves you well if you try to understand why studying Flutter might be good idea.
+
 ## Roadmap
 
 Extend with BDD / ATDD tools, preferably Gherkin tests
