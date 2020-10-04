@@ -51,12 +51,6 @@ class _LanguageSelectionState extends State<LanguageSelection> {
       return Container(
         child: Container(
           padding: const EdgeInsets.all(0),
-          decoration:
-            BoxDecoration(
-                border: Border.all(
-                  style: BorderStyle.none,
-                ),
-            ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
