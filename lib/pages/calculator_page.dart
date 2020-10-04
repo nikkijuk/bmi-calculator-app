@@ -6,13 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CalculatorPage extends StatefulWidget {
+// CalcultarPage is skeleton and defines structure of compnentes
+class CalculatorPage extends StatelessWidget {
 
-  @override
-  _CalculatorPageState createState() => _CalculatorPageState();
-}
-
-class _CalculatorPageState extends State<CalculatorPage> {
   @override
   Widget build(BuildContext context) {
       return BlocBuilder<CalculatorBloc, CalculatorState>(
@@ -23,6 +19,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
+                // all components at page are defined separately as widgets
                 children: <Widget>[
                   LanguageSelection(),
                   HeightInput (),
@@ -37,6 +34,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
     }
 }
 
+// As we are using setState this needs to be stateful widget
 class LanguageSelection extends StatefulWidget {
 
   @override
@@ -44,7 +42,6 @@ class LanguageSelection extends StatefulWidget {
 }
 
 class _LanguageSelectionState extends State<LanguageSelection> {
-
   @override
   Widget build(BuildContext context) {
 
@@ -109,7 +106,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
             ],
       );
     }
-  }
+}
 
 class HeightInput extends StatelessWidget {
   
