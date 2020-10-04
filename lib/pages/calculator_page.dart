@@ -49,8 +49,6 @@ class _LanguageSelectionState extends State<LanguageSelection> {
   Widget build(BuildContext context) {
 
       return Container(
-        child: Container(
-          padding: const EdgeInsets.all(0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -103,7 +101,6 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 ),
             ],
           ),
-        ),
       );
     }
   }
