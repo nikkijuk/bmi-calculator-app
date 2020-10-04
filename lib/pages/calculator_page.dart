@@ -61,7 +61,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              RaisedButton(
+              FlatButton(
                 onPressed: () {
                   setState(() {
                     context.bloc<LocalizationBloc>().add(
@@ -69,7 +69,6 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     );
                   });
                 },
-                color: Theme.of(context).canvasColor,
                 child:
                   SvgPicture.asset(
                     'icons/flags/svg/gb.svg',
@@ -78,7 +77,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     width: 40.0,
                   ),
                 ),
-              RaisedButton(
+              FlatButton(
                 onPressed: () {
                   setState(() {
                     context.bloc<LocalizationBloc>().add(
@@ -86,7 +85,6 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     );
                   });
                 },
-                color: Theme.of(context).canvasColor,
                 child:
                   SvgPicture.asset(
                     'icons/flags/svg/de.svg',
@@ -94,7 +92,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     height: 40.0,
                     width: 40.0,),
                 ),
-              RaisedButton(
+              FlatButton(
                 onPressed: () {
                   setState(() {
                     context.bloc<LocalizationBloc>().add(
@@ -102,7 +100,6 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     );
                   });
                 },
-                color: Theme.of(context).canvasColor,
                 child:
                   SvgPicture.asset(
                     'icons/flags/svg/fi.svg',
