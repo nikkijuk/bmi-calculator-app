@@ -48,7 +48,7 @@ Body mass index can be calculated from two values, and result correlates to pers
 
 It's hard to think simpler app with real meaning in context of our lives.
 
-![Calculate your BMI](diagrams/calculator-page-iphone-simulator-screenshot.png)
+![Calculate your BMI](diagrams/bmi-calculator.gif)
 
 Color of result corresponds to color on graph and there's even text explaining bmi result. How cool is that!
 
