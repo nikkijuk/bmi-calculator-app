@@ -48,14 +48,19 @@ class _LanguageSelectionState extends State<LanguageSelection> {
   @override
   Widget build(BuildContext context) {
 
-      return Container(
-          child: Row(
+      // Flags for language selection are presented as row of flat buttons
+      // It's vitally important to select right type of button here:
+      // I was spending quite some time to tune wrong component while
+      // I didn't know all buttons that were available
+      return Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               FlatButton(
                 onPressed: () {
+                  // refresh view after lambda within setState is executed
                   setState(() {
+                    // inform localization bloc that locale has changed
                     context.bloc<LocalizationBloc>().add(
                         const Locale('en', 'US')
                     );
@@ -82,7 +87,8 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     'icons/flags/svg/de.svg',
                     package: 'country_icons',
                     height: 40.0,
-                    width: 40.0,),
+                    width: 40.0,
+                  ),
                 ),
               FlatButton(
                 onPressed: () {
@@ -97,10 +103,10 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                     'icons/flags/svg/fi.svg',
                     package: 'country_icons',
                     height: 40.0,
-                    width: 40.0,),
+                    width: 40.0,
+                  ),
                 ),
             ],
-          ),
       );
     }
   }
@@ -120,7 +126,7 @@ class HeightInput extends StatelessWidget {
 
     // listens stream of CalculatorBloc, which
     // - triggers when new CalculatorState is received from stream
-    // - wwidgets are built when previous and current object are not equal
+    // - widgets are built when previous and current object are not equal
     // - builder return newly built widget if building has happened
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.height != current.height,
