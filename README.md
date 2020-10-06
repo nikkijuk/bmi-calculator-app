@@ -40,6 +40,7 @@ Try Screenshot tests, possibly with Golden Toolkit
 - https://pub.dev/packages/golden_toolkit
 
 Add webview to show backgroud information
+- WebView is production ready since [Flutter 1.22](https://medium.com/flutter/announcing-flutter-1-22-44f146009e5f)
 - Show information of BMI calculation from internet
 
 Add menus to select background info or calculator page
