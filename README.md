@@ -39,8 +39,14 @@ Try Screenshot tests, possibly with Golden Toolkit
 - https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
 - https://pub.dev/packages/golden_toolkit
 
+Add webview to show backgroud information
+- Show information of BMI calculation from internet
+
+Add menus to select background info or calculator page
+
 Prepare distribution thru stores
-- .. this might never happen, as there's quite limited value on adding this app to any kind of store 
+- .. this might never happen, as there's quite limited value on adding this app to any kind of store
+- .. or it can happen that default algorithm is changed and app is published only to play store 
 
 ## Calculate your BMI
 
