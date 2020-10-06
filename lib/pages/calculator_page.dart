@@ -64,12 +64,14 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                   });
                 },
                 child:
+
                   SvgPicture.asset(
-                    'icons/flags/svg/gb.svg',
-                    package: 'country_icons',
+                    'assets/flags/svg/gb.svg',
                     height: 40.0,
                     width: 40.0,
                   ),
+                  
+
                 ),
               FlatButton(
                 onPressed: () {
@@ -81,8 +83,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 },
                 child:
                   SvgPicture.asset(
-                    'icons/flags/svg/de.svg',
-                    package: 'country_icons',
+                    'assets/flags/svg/de.svg',
                     height: 40.0,
                     width: 40.0,
                   ),
@@ -97,8 +98,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 },
                 child:
                   SvgPicture.asset(
-                    'icons/flags/svg/fi.svg',
-                    package: 'country_icons',
+                    'assets/flags/svg/fi.svg',
                     height: 40.0,
                     width: 40.0,
                   ),

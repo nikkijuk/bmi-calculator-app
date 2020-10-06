@@ -212,6 +212,13 @@ I could have opted [to not use code generation](https://localizely.com/blog/flut
 
 Experience was mostly positive, but there's still work to do on developer & Translator UX before it all works smoothly.
 
+## Gotchas with assets
+
+Flutter tests don't load asset bundles during tests. Took some hours to understand that there's little I can do to change it. Fix: Cloned svg flag files to local repository.
+
+- https://github.com/flutter/flutter/issues/12999
+- https://github.com/flutter/flutter/issues/27802
+
 ## CI/CD
 
 Codemagic is used for CI/CD and integrating it was really simple. There was need to enable tests, since they were by default not active. 

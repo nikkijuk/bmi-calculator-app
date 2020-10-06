@@ -1,5 +1,6 @@
-@Skip('currently failing (reason: svg bundle loading not happening)')
+//@Skip('currently failing (reason: svg bundle loading not happening)')
 // https://github.com/flutter/flutter/issues/12999
+// https://github.com/flutter/flutter/issues/27802
 
 
 // This is a basic Flutter widget test.
