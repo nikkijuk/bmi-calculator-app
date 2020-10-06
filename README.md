@@ -214,12 +214,12 @@ Experience was mostly positive, but there's still work to do on developer & Tran
 
 ## Gotchas with assets
 
-Flutter tests don't load asset bundles during tests if bundles are in other package. 
+Widget tests don't [load asset bundles from package dependencies](https://flutter.dev/docs/development/ui/assets-and-images#from-packages). 
 
 - https://github.com/flutter/flutter/issues/12999
 - https://github.com/flutter/flutter/issues/27802
 
-Fix: Cloned svg flag files to local repository and added currently used to pubspec.yaml
+Fix: Cloned svg flag files to local repository and added currently used to pubspec.yaml.
 
 ## CI/CD
 
