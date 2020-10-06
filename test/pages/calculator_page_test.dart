@@ -1,7 +1,5 @@
-//@Skip('currently failing (reason: svg bundle loading not happening)')
-// https://github.com/flutter/flutter/issues/12999
-// https://github.com/flutter/flutter/issues/27802
-
+//@Skip('currently failing (reason: FILL HERE)')
+// Left skip annotation here to wait next time when test lifecycle has problems
 
 // This is a basic Flutter widget test.
 //
