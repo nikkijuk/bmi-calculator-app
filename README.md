@@ -214,12 +214,14 @@ Experience was mostly positive, but there's still work to do on developer & Tran
 
 ## Gotchas with assets
 
-Widget tests don't [load asset bundles from package dependencies](https://flutter.dev/docs/development/ui/assets-and-images#from-packages). 
+I did find nice [country icons dependency](https://pub.dev/packages/country_icons). Works nice runtime.
+
+Fortunately widget tests don't [load asset bundles from package dependencies](https://flutter.dev/docs/development/ui/assets-and-images#from-packages), and thus widget tests fail. 
 
 - https://github.com/flutter/flutter/issues/12999
 - https://github.com/flutter/flutter/issues/27802
 
-Fix: Cloned svg flag files to local repository and added currently used to pubspec.yaml.
+Fix: Cloned svg flag files to local repository and added currently used country icons to pubspec.yaml.
 
 ## CI/CD
 
