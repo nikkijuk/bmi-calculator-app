@@ -56,7 +56,7 @@ class _BmiCalculatorAppState extends State<BmiCalculatorApp> {
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: const BmiCalculatorHome(),
+          home: BmiCalculatorHome(),
         ),
       )
     );
@@ -65,16 +65,7 @@ class _BmiCalculatorAppState extends State<BmiCalculatorApp> {
 
 // delegates need to exist higher in widget tree
 // https://github.com/flutter/flutter/issues/26365
-class BmiCalculatorHome extends StatefulWidget {
-  const BmiCalculatorHome({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  _BmiCalculatorHomeState createState() => _BmiCalculatorHomeState();
-}
-
-class _BmiCalculatorHomeState extends State<BmiCalculatorHome> {
+class BmiCalculatorHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
