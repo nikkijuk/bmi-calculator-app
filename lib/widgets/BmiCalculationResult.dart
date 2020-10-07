@@ -37,6 +37,11 @@ class BmiCalculationResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // listens stream of CalculatorBloc, which
+    // - triggers when new CalculatorState is received from stream
+    // - widgets are built when previous and current object are not equal
+    // - builder return newly built widget if building has happened
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.bmi != current.bmi,
       builder: (context, state) {

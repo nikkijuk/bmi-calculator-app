@@ -31,13 +31,11 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   }
 
   Stream<CalculatorState> _changeHeight(CalculatorHeightChanged event) async* {
-    var height = event.height;
-    yield _createCalculatorState(height, state.weight);
+    yield _createCalculatorState(event?.height, state?.weight);
   }
 
   Stream<CalculatorState> _changeWeight(CalculatorWeightChanged event) async* {
-    var weight = event.weight;
-    yield _createCalculatorState(state.height, weight);
+    yield _createCalculatorState(state?.height, event?.weight);
   }
 
   CalculatorState _createCalculatorState(double height, double weight) {

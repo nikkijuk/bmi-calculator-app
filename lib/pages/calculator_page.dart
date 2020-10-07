@@ -121,30 +121,20 @@ class HeightInput extends StatelessWidget {
             CalculatorHeightChanged(height: _parseDoubleOrNull(value))
         );
 
-    // listens stream of CalculatorBloc, which
-    // - triggers when new CalculatorState is received from stream
-    // - widgets are built when previous and current object are not equal
-    // - builder return newly built widget if building has happened
-    return BlocBuilder<CalculatorBloc, CalculatorState>(
-      buildWhen: (previous, current) => previous.height != current.height,
-      builder: (context, state) {
-        return Container(
-          padding: const EdgeInsets.all(8),
-          child: TextFormField(
-            key: const ValueKey ('height'),
-            //initialValue: state.height?.toString() ?? '',
-            decoration: InputDecoration(
-              icon: const Icon(Icons.vertical_align_center),
-              labelText: S.of(context).height, // 'Height',
-              hintText: S.of(context).height_desc, // 'Height in centimeters',
-              border: const OutlineInputBorder(),
-              contentPadding: const EdgeInsets.all(8),
-            ),
-            keyboardType: TextInputType.number,
-            onChanged: _onHeightChanged,
-          ),
-        );
-      },
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: TextFormField(
+        key: const ValueKey ('height'),
+        decoration: InputDecoration(
+          icon: const Icon(Icons.vertical_align_center),
+          labelText: S.of(context).height,
+          hintText: S.of(context).height_desc,
+          border: const OutlineInputBorder(),
+          contentPadding: const EdgeInsets.all(8),
+        ),
+        keyboardType: TextInputType.number,
+        onChanged: _onHeightChanged,
+      ),
     );
   }
 }
@@ -159,26 +149,20 @@ class WeightInput extends StatelessWidget {
             CalculatorWeightChanged(weight: _parseDoubleOrNull(value))
         );
 
-    return BlocBuilder<CalculatorBloc, CalculatorState>(
-      buildWhen: (previous, current) => previous.weight != current.weight,
-      builder: (context, state) {
-        return Container(
-          padding: const EdgeInsets.all(8) ,
-          child: TextFormField(
-            key: const ValueKey ('weight'),
-            //initialValue: state.weight?.toString() ?? '',
-            decoration: InputDecoration(
-              icon: const Icon(Icons.restaurant),
-              labelText: S.of(context).weight, // 'Weight',
-              hintText: S.of(context).weight_desc, //'Weight in kilograms',
-              border: const OutlineInputBorder(),
-              contentPadding: const EdgeInsets.all(8),
-            ),
-            keyboardType: TextInputType.number,
-            onChanged: _onWeightChanged,
-          ),
-        );
-      },
+    return Container(
+      padding: const EdgeInsets.all(8) ,
+      child: TextFormField(
+        key: const ValueKey ('weight'),
+        decoration: InputDecoration(
+          icon: const Icon(Icons.restaurant),
+          labelText: S.of(context).weight,
+          hintText: S.of(context).weight_desc,
+          border: const OutlineInputBorder(),
+          contentPadding: const EdgeInsets.all(8),
+        ),
+        keyboardType: TextInputType.number,
+        onChanged: _onWeightChanged,
+      ),
     );
   }
 }
