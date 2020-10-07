@@ -9,6 +9,7 @@ import 'package:gherkin/gherkin.dart';
 // It would have been possible to use built in steps instead building own
 // https://pub.dev/packages/flutter_gherkin#flutter
 
+// built in: I fill the {string} field with {string}
 StepDefinitionGeneric createSetValueStep() {
   return when2<String, String, FlutterWorld>(
     'I set field {string} to value {string}',
@@ -19,6 +20,7 @@ StepDefinitionGeneric createSetValueStep() {
   );
 }
 
+// built in: I expect the {string} to be {string}
 StepDefinitionGeneric createCheckValueStep() {
   return then2<String, String, FlutterWorld>(
     'I expect field {string} to have value {string}',
