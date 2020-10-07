@@ -11,6 +11,12 @@ import 'bloc/simple_bloc_observer.dart';
 import 'domain/traditional_bmi_calculator.dart';
 import 'generated/l10n.dart';
 
+// remember: generation is done using IDE in this project,
+// so you might easily keep on old version.
+// version number is added to dependencies and generarion can be done
+// from command line.
+// > flutter pub run intl_utils:generate
+
 void main() {
 
   // adds logging so that bloc operations are easier to follow

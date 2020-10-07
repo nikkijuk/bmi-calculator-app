@@ -54,6 +54,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               FlatButton(
+                key: const ValueKey ('flag-gb'),
                 onPressed: () {
                   // refresh view after lambda within setState is executed
                   setState(() {
@@ -64,7 +65,6 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                   });
                 },
                 child:
-
                   SvgPicture.asset(
                     'assets/flags/svg/gb.svg',
                     height: 40.0,
@@ -74,6 +74,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
 
                 ),
               FlatButton(
+                key: const ValueKey ('flag-de'),
                 onPressed: () {
                   setState(() {
                     context.bloc<LocalizationBloc>().add(
@@ -89,6 +90,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                   ),
                 ),
               FlatButton(
+                key: const ValueKey ('flag-fi'),
                 onPressed: () {
                   setState(() {
                     context.bloc<LocalizationBloc>().add(

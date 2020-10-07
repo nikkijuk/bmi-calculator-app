@@ -10,12 +10,14 @@ Feature: Calculate BMI
 
   # test person
   Scenario: Bmi for our imaginary test person
+    When I tap the "flag-gb" button
     When I set field "height" to value "170"
     When I set field "weight" to value "70"
     Then I expect field "bmi" to have value "@FIXME"
 
   # test person, Donald & Bug
   Scenario Outline: BMI is calculated when values are given
+    # When I tap the "flag-gb" button
     When I set field "height" to value "<height-input>"
     When I set field "weight" to value "<weight-input>"
     Then I expect the "bmi" to be "<bmi-result>"

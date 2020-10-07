@@ -14,6 +14,8 @@ import 'steps/calculate_bmi_steps.dart';
 
 // run all tests at terminal
 //  > dart -v test_driver/app_test.dart
+// or
+// > flutter drive --target=test_driver/app.dart
 
 // NOTE: when testing locally home screen should be unlocked
 // NOTE: if screen is locked driver doesn't manage to use app

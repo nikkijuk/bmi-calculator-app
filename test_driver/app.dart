@@ -1,4 +1,5 @@
-import 'package:flutter_driver/driver_extension.dart' show enableFlutterDriverExtension;
+import 'package:flutter_driver/driver_extension.dart';
+import 'package:flutter_driver/flutter_driver.dart';
 // ignore: avoid_relative_lib_imports
 import '../lib/main.dart' as app;
 
@@ -10,4 +11,5 @@ void main() {
   // Call the `main()` function of your app or call `runApp` with any widget you
   // are interested in testing.
   app.main();
+
 }
