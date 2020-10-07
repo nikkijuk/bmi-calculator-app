@@ -1,5 +1,4 @@
 import 'package:flutter_driver/driver_extension.dart';
-import 'package:flutter_driver/flutter_driver.dart';
 // ignore: avoid_relative_lib_imports
 import '../lib/main.dart' as app;
 
