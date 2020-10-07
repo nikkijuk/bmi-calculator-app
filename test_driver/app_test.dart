@@ -4,7 +4,15 @@ import 'package:gherkin/gherkin.dart';
 import 'package:glob/glob.dart';
 import 'steps/calculate_bmi_steps.dart';
 
-// run at terminal
+// Component:
+// https://pub.dev/packages/flutter_gherkin
+
+// Guides:
+// https://dev.to/jankaritech/bdd-behavior-driven-development-with-flutter-31ao
+// https://stacksecrets.com/flutter/bdd-with-gherkin-in-flutter
+// https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
+
+// run all tests at terminal
 //  > dart -v test_driver/app_test.dart
 
 // NOTE: when testing locally home screen should be unlocked
@@ -26,7 +34,9 @@ Future<void> main() {
     ..customStepParameterDefinitions = []
     ..restartAppBetweenScenarios = true
     ..targetAppPath = 'test_driver/app.dart'
-  // ..tagExpression = "@smoke" // uncomment to see an example of running scenarios based on tag expressions
+    //..logFlutterProcessOutput = true
+    //..verboseFlutterProcessLogs = true
+    // ..tagExpression = "@smoke" // uncomment to see an example of running scenarios based on tag expressions
     ..exitAfterTestRun = true; // set to false if debugging to exit cleanly
   return GherkinRunner().execute(config);
 }

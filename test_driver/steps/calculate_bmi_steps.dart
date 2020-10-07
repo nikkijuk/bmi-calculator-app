@@ -6,6 +6,9 @@ import 'package:gherkin/gherkin.dart';
 // https://github.com/JankariTech/flutterBDDexample
 // https://github.com/JankariTech/flutterBDDexample/blob/master/myapp/test_driver/steps/tap_button_n_times_step.dart
 
+// It would have been possible to use built in steps instead building own
+// https://pub.dev/packages/flutter_gherkin#flutter
+
 StepDefinitionGeneric createSetValueStep() {
   return when2<String, String, FlutterWorld>(
     'I set field {string} to value {string}',

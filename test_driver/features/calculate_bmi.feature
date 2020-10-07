@@ -1,5 +1,7 @@
 # Important: when using flutter driver localization doesn't kick in
 # Currently tests that fallbacks for this bug work
+# to run only this feature
+# > dart test_driver/app_test.dart --feature="calculate_bmi.feature"
 
 Feature: Calculate BMI
   As the good software developer
