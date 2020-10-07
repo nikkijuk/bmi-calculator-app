@@ -80,7 +80,7 @@ class _BmiCalculatorHomeState extends State<BmiCalculatorHome> {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-            S.of(context).title
+            S.of(context)?.title
           ),
       ),
       body: BlocProvider(

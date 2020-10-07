@@ -48,7 +48,7 @@ class BmiCalculationResult extends StatelessWidget {
         if (state.bmi == null) {
           return Center(
           child: Text(
-            S.of(context).not_calculated,
+            S.of(context)?.not_calculated ?? '@FIXME',
             key: const ValueKey ('not-calculated'),
           ),
         );
@@ -60,15 +60,15 @@ class BmiCalculationResult extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                S.of(context).bmi_result(state.bmi),
+                S.of(context)?.bmi_result(state.bmi) ?? '@FIXME',
                 key: const ValueKey ('bmi'),
                 style: Theme.of(context).textTheme.headline4.apply(
                     color: current.color
                 ),
               ),
               Text(
-              S.of(context).bmi_desc(current.id),
-                key: const ValueKey ('bmi-name'),
+              S.of(context)?.bmi_desc(current.id) ?? '@FIXME',
+                key: const ValueKey ('bmi-name') ,
                 style: Theme.of(context).textTheme.headline6.apply(
                     color: current.color
                 ),

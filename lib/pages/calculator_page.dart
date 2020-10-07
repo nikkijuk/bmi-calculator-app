@@ -127,8 +127,8 @@ class HeightInput extends StatelessWidget {
         key: const ValueKey ('height'),
         decoration: InputDecoration(
           icon: const Icon(Icons.vertical_align_center),
-          labelText: S.of(context).height,
-          hintText: S.of(context).height_desc,
+          labelText: S.of(context)?.height,
+          hintText: S.of(context)?.height_desc,
           border: const OutlineInputBorder(),
           contentPadding: const EdgeInsets.all(8),
         ),
@@ -155,8 +155,8 @@ class WeightInput extends StatelessWidget {
         key: const ValueKey ('weight'),
         decoration: InputDecoration(
           icon: const Icon(Icons.restaurant),
-          labelText: S.of(context).weight,
-          hintText: S.of(context).weight_desc,
+          labelText: S.of(context)?.weight,
+          hintText: S.of(context)?.weight_desc,
           border: const OutlineInputBorder(),
           contentPadding: const EdgeInsets.all(8),
         ),
