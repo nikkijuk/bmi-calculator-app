@@ -132,7 +132,7 @@ class HeightInput extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: TextFormField(
             key: const ValueKey ('height'),
-            initialValue: state.height?.toString() ?? '',
+            //initialValue: state.height?.toString() ?? '',
             decoration: InputDecoration(
               icon: const Icon(Icons.vertical_align_center),
               labelText: S.of(context).height, // 'Height',
@@ -166,7 +166,7 @@ class WeightInput extends StatelessWidget {
           padding: const EdgeInsets.all(8) ,
           child: TextFormField(
             key: const ValueKey ('weight'),
-            initialValue: state.weight?.toString() ?? '',
+            //initialValue: state.weight?.toString() ?? '',
             decoration: InputDecoration(
               icon: const Icon(Icons.restaurant),
               labelText: S.of(context).weight, // 'Weight',
