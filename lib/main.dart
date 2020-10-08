@@ -46,7 +46,7 @@ class BmiCalculatorApp extends StatefulWidget {
 class _BmiCalculatorAppState extends State<BmiCalculatorApp> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<LocalizationBloc>(
       create: (_) => LocalizationBloc(),
       child: BlocBuilder<LocalizationBloc, Locale>(
         builder: (context, locale) => MaterialApp(
@@ -80,7 +80,7 @@ class BmiCalculatorHome extends StatelessWidget {
             S.of(context)?.title
           ),
       ),
-      body: BlocProvider(
+      body: BlocProvider<CalculatorBloc>(
         create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
         child: CalculatorPage(),
       ),
