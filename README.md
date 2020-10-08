@@ -31,10 +31,6 @@ Overview of [flutter architecture](https://flutter.dev/docs/resources/architectu
 
 ## Roadmap
 
-Extend with BDD / ATDD tools, preferably Gherkin tests
-- https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
-https://pub.dev/packages/flutter_gherkin
-
 Try Screenshot tests, possibly with Golden Toolkit
 - https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
 - https://pub.dev/packages/golden_toolkit
@@ -230,7 +226,7 @@ Fortunately widget tests don't [load asset bundles from package dependencies](ht
 
 Fix: Cloned svg flag files to local repository and added currently used country icons to pubspec.yaml.
 
-## BDD / gherkin tests
+## Gotchas with BDD / gherkin tests
 
 BDD is implemented in BMI Calculator using 3rd party extension called [flutter_gherkin](https://pub.dev/packages/flutter_gherkin).
 
@@ -332,6 +328,10 @@ BabelEdit
 
 Libraries
 - https://blog.codemagic.io/flutter-libraries-ebook-by-codemagic/
+
+BDD
+- https://medium.com/@maheshmnj/testing-your-flutter-app-f08ebc54beb9
+- https://pub.dev/packages/flutter_gherkin
 
 CI/CD
 - https://codemagic.io
