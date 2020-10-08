@@ -257,7 +257,9 @@ Problem: Localizing texts
 
 ## CI/CD
 
-Codemagic is used for CI/CD and integrating it was really simple. There was need to enable tests, since they were by default not active. 
+Codemagic is used for CI/CD and integrating it was really simple. There was need to enable tests and analyze, since they were by default not active.
+
+Build can be configured to trigger on several incidents. BMI Calculator build starts when tag is created to master branch.
 
 ![CI/CD with tests](diagrams/calculator-ci-cd-codemagic.png)
 
