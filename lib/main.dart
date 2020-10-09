@@ -36,13 +36,8 @@ void main() {
 }
 
 // This widget is the root of app
-class BmiCalculatorApp extends StatefulWidget {
+class BmiCalculatorApp extends StatelessWidget {
 
-  @override
-  _BmiCalculatorAppState createState() => _BmiCalculatorAppState();
-}
-
-class _BmiCalculatorAppState extends State<BmiCalculatorApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LocalizationBloc>(
