@@ -71,7 +71,9 @@ class BmiCalculatorHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-            S.of(context)?.title
+            // Here localized text is always accessible
+            // so: no short circuiting with "?" for bdd (flutter_driver) tests
+            S.of(context).title
           ),
       ),
       body: CalculatorPage(),
