@@ -8,7 +8,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'bloc/localization_bloc.dart';
 import 'bloc/simple_bloc_observer.dart';
-import 'domain/traditional_bmi_calculator.dart';
 import 'generated/l10n.dart';
 
 // remember: generation is done using IDE in this project,
@@ -80,10 +79,7 @@ class BmiCalculatorHome extends StatelessWidget {
             S.of(context)?.title
           ),
       ),
-      body: BlocProvider<CalculatorBloc>(
-        create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
-        child: CalculatorPage(),
-      ),
-    );
+      body: CalculatorPage(),
+      );
   }
 }

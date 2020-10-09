@@ -1,5 +1,6 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:bmi_calculator_app/bloc/localization_bloc.dart';
+import 'package:bmi_calculator_app/domain/traditional_bmi_calculator.dart';
 import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:bmi_calculator_app/widgets/BmiCalculationResult.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,10 @@ class CalculatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return BlocBuilder<CalculatorBloc, CalculatorState>(
+    return BlocProvider<CalculatorBloc>(
+      create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
+      child:
+        BlocBuilder<CalculatorBloc, CalculatorState>(
         builder: (context, state) {
           return Container(
             padding: const EdgeInsets.all(8),
@@ -29,9 +33,10 @@ class CalculatorPage extends StatelessWidget {
               )
             ),
           );
-        },
-      );
-    }
+          },
+        )
+    );
+  }
 }
 
 // As we are using setState this needs to be stateful widget
