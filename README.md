@@ -237,16 +237,24 @@ Fix: Cloned svg flag files to local repository and added currently used country 
 
 BDD is implemented in BMI Calculator using 3rd party extension called [flutter_gherkin](https://pub.dev/packages/flutter_gherkin).
 
-![BDD implementation and tests](diagrams/calculator-app-gherkin-test.png)
+BDD uses flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html). which provides API to test Flutter applications that run on real devices and emulators.
 
-It works almost completely.
+[flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html) is Flutter's version of Selenium WebDriver (generic web), Protractor (Angular), Espresso (Android) or Earl Gray (iOS).
+
+BDD tests are run in own process as black box tests against System Under Test (SUT)
 - use *flutter drive --target=test_driver/app.dart* or *dart -v test_driver/app_test.dart* to run test
 - test_driver/app_test.dart contains test configuration
-- test_driver/app.dart enables test and starts system under test (SUT, app)
+- test_driver/app.dart enables test and starts system under test (SUT, Bmi Calculator App)
 - test_driver/steps/calculate_bmi_steps.dart contains executable steps for SUT
 - test_driver/features/calculate_bmi.feature contains test scenarios written with Gherkin language
 
-What works
+Tests are relatively easy to write and built in step definitions save lot of time from tester.
+
+![BDD implementation and tests](diagrams/calculator-app-gherkin-test.png)
+
+BMI Calculator test are run by [flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html) and all except localization everything works as expected.
+
+What works on Localization
 - LocalizationBloc is initialized using BlocProvider before creation of MaterialApp in main.dart
 - MaterialApp's locale property is filled with value acquired from LocalizationBloc using BlocBuilder
 - MaterialApp's home property is set to CalculatorHome, which managed to acquire localized text and shows it as title
