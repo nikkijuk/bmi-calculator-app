@@ -31,15 +31,22 @@ Overview of [flutter architecture](https://flutter.dev/docs/resources/architectu
 
 ## Roadmap
 
+Add screenshot & reporter & debug support to BDD tests
+- flutter_gherkin works fine, but app is not behaving as expected with flutter_driver
+- problem: localization doesn't work - no possibility to select other language, localized texts only partially to retrieve
+
 Try Screenshot tests, possibly with Golden Toolkit
+- Working bdd tests are precondition for Golden tests 
 - https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
 - https://pub.dev/packages/golden_toolkit
 
-Add webview to show backgroud information
+Add webview to show background information
 - WebView is production ready since [Flutter 1.22](https://medium.com/flutter/announcing-flutter-1-22-44f146009e5f)
 - Show information of BMI calculation from internet
 
 Add menus to select background info or calculator page
+
+Add support for changing bmi algorithm
 
 Prepare distribution thru stores
 - .. this might never happen, as there's quite limited value on adding this app to any kind of store
