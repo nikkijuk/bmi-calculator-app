@@ -1,4 +1,3 @@
-import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:bmi_calculator_app/pages/calculator_page.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';

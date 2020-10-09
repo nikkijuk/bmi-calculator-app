@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:bmi_calculator_app/domain/bmi_calculator.dart';
 import 'package:flutter/material.dart';
