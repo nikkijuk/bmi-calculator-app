@@ -237,9 +237,9 @@ Fix: Cloned svg flag files to local repository and added currently used country 
 
 BDD is implemented in BMI Calculator using 3rd party extension called [flutter_gherkin](https://pub.dev/packages/flutter_gherkin).
 
-BDD uses flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html). which provides API to test Flutter applications that run on real devices and emulators.
+BDD uses [flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html), which provides API to test Flutter applications that run on real devices and emulators.
 
-[flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html) is Flutter's version of Selenium WebDriver (generic web), Protractor (Angular), Espresso (Android) or Earl Gray (iOS).
+[Flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html) is Flutter's version of Selenium WebDriver (generic web), Protractor (Angular), Espresso (Android) or Earl Gray (iOS).
 
 BDD tests are run in own process as black box tests against System Under Test (SUT)
 - use *flutter drive --target=test_driver/app.dart* or *dart -v test_driver/app_test.dart* to run test
@@ -252,7 +252,7 @@ Tests are relatively easy to write and built in step definitions save lot of tim
 
 ![BDD implementation and tests](diagrams/calculator-app-gherkin-test.png)
 
-BMI Calculator test are run by [flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html) and all except localization everything works as expected.
+When BMI Calculator tests are run by [flutter_driver](https://api.flutter.dev/flutter/flutter_driver/flutter_driver-library.html) all except localization works as expected.
 
 What works on Localization
 - LocalizationBloc is initialized using BlocProvider before creation of MaterialApp in main.dart
