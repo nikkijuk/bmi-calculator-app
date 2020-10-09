@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-// CalcultarPage is skeleton and defines structure of components
+// CalculatorPage is skeleton and defines structure of components
 class CalculatorPage extends StatelessWidget {
 
   @override
@@ -39,78 +39,62 @@ class CalculatorPage extends StatelessWidget {
   }
 }
 
-// As we are using setState this needs to be stateful widget
-class LanguageSelection extends StatefulWidget {
+class LanguageSelection extends StatelessWidget {
 
-  @override
-  _LanguageSelectionState createState() => _LanguageSelectionState();
-}
-
-class _LanguageSelectionState extends State<LanguageSelection> {
   @override
   Widget build(BuildContext context) {
 
-      // Flags for language selection are presented as row of flat buttons
-      // It's vitally important to select right type of button here:
-      // I was spending quite some time to tune wrong component while
-      // I didn't know all buttons that were available
-      return Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              FlatButton(
-                key: const ValueKey ('flag-gb'),
-                onPressed: () {
-                  // refresh view after lambda within setState is executed
-                  setState(() {
-                    // inform localization bloc that locale has changed
-                    context.bloc<LocalizationBloc>().add(
-                        const Locale('en', 'US')
-                    );
-                  });
-                },
-                child:
-                  SvgPicture.asset(
-                    'assets/flags/svg/gb.svg',
-                    height: 40.0,
-                    width: 40.0,
-                  ),
-                  
+    // create callback handler, which
+    // - uses BlocProvider to find LocalizationBloc using it's type
+    // - adds Locale to sink of LocalizationBloc
+    void _onLocaleChanged(Locale locale) =>
+        context.bloc<LocalizationBloc>().add(locale);
 
-                ),
-              FlatButton(
-                key: const ValueKey ('flag-de'),
-                onPressed: () {
-                  setState(() {
-                    context.bloc<LocalizationBloc>().add(
-                        const Locale('de', 'DE')
-                    );
-                  });
+    // Flags for language selection are presented as row of flat buttons
+    // It's vitally important to select right type of button here:
+    // I was spending quite some time to tune wrong component while
+    // I didn't know all buttons that were available
+    return Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            FlatButton(
+              key: const ValueKey ('flag-gb'),
+              onPressed: () {
+                _onLocaleChanged(const Locale('en', 'US'));
                 },
-                child:
-                  SvgPicture.asset(
-                    'assets/flags/svg/de.svg',
-                    height: 40.0,
-                    width: 40.0,
-                  ),
+              child:
+                SvgPicture.asset(
+                  'assets/flags/svg/gb.svg',
+                  height: 40.0,
+                  width: 40.0,
                 ),
-              FlatButton(
-                key: const ValueKey ('flag-fi'),
-                onPressed: () {
-                  setState(() {
-                    context.bloc<LocalizationBloc>().add(
-                        const Locale('fi', 'FI')
-                    );
-                  });
-                },
-                child:
-                  SvgPicture.asset(
-                    'assets/flags/svg/fi.svg',
-                    height: 40.0,
-                    width: 40.0,
-                  ),
+              ),
+            FlatButton(
+              key: const ValueKey ('flag-de'),
+              onPressed: () {
+              _onLocaleChanged(const Locale('de', 'de'));
+              },
+              child:
+                SvgPicture.asset(
+                  'assets/flags/svg/de.svg',
+                  height: 40.0,
+                  width: 40.0,
                 ),
-            ],
+              ),
+            FlatButton(
+              key: const ValueKey ('flag-fi'),
+              onPressed: () {
+                _onLocaleChanged(const Locale('fi', 'FI'));
+              },
+              child:
+                SvgPicture.asset(
+                  'assets/flags/svg/fi.svg',
+                  height: 40.0,
+                  width: 40.0,
+                ),
+              ),
+          ],
       );
     }
 }
@@ -177,4 +161,3 @@ class WeightInput extends StatelessWidget {
 // this was tricky: field can contain null, empty or numeric value
 double _parseDoubleOrNull(String value) =>
     value != null && value != '' ? double.parse(value) : null;
-
