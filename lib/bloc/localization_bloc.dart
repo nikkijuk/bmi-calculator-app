@@ -8,7 +8,7 @@ import 'package:bloc/bloc.dart';
 ///current [Locale] and notifies its listeners once the [Locale]
 ///changes.
 class LocalizationBloc extends Bloc<Locale, Locale> {
-  LocalizationBloc() : super(defaultLocale);
+  LocalizationBloc() : assert (defaultLocale != null), super(defaultLocale);
 
   static const Locale defaultLocale = Locale('en'); // TODO: add config?
 

@@ -10,7 +10,7 @@ class TrefethenBmiCalculator extends BmiCalculator {
   // BMI = 1.3*weight(kg)/height(m)^2.5 = 5734*weight(lb)/height(in)^2.5
   @override
   double calculateBmi (double height, double weight) {
-    return height != null && weight != null
+    return height != null && weight != null && height != 0 && weight != 0
         ? ( 1.3 * weight / pow (height / 100, 2.5)) : null;
   }
 

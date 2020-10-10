@@ -9,7 +9,9 @@ part 'calculator_event.dart';
 part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
-  CalculatorBloc(this.calculator) : super(const CalculatorState.initial());
+  CalculatorBloc(this.calculator) :
+        assert(const CalculatorState.initial() != null),
+        super(const CalculatorState.initial());
 
   BmiCalculator calculator;
 

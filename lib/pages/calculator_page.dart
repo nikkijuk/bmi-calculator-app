@@ -12,6 +12,9 @@ class CalculatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    assert (S.of(context) != null, 'active localization should be present');
+
     return BlocProvider<CalculatorBloc>(
       create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
       child:
@@ -43,6 +46,8 @@ class LanguageSelection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    assert (context.bloc<LocalizationBloc>() != null, 'bloc for localization should be present');
 
     // create callback handler, which
     // - uses BlocProvider to find LocalizationBloc using it's type
@@ -104,6 +109,8 @@ class HeightInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    assert (S.of(context) != null, 'active localization should be present');
+
     // create callback handler, which
     // - uses BlocProvider to find CalculatorBloc using it's type
     // - adds new CalculatorHeightChangedEvent to sink of CalculatorBloc
@@ -134,6 +141,8 @@ class WeightInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    assert (S.of(context) != null, 'active localization should be present');
 
     void _onWeightChanged(String value) =>
         context.bloc<CalculatorBloc>().add(

@@ -10,7 +10,7 @@ class TraditionalBmiCalculator extends BmiCalculator {
   // BMI = weight(kg)/height(m)^2 = 703*weight(lb)/height(in)^2.
   @override
   double calculateBmi (double height, double weight) {
-    return height != null && weight != null
+    return height != null && weight != null && height != 0 && weight != 0
         ? ( weight / pow (height / 100, 2)) : null;
   }
 

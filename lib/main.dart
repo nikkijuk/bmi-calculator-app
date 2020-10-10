@@ -67,6 +67,9 @@ class BmiCalculatorApp extends StatelessWidget {
 class BmiCalculatorHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    assert (S.of(context) != null, 'active localization should be present');
+
     return Scaffold(
       appBar: AppBar(
           title: Text(
