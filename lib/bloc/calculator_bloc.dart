@@ -10,6 +10,7 @@ part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   CalculatorBloc(this.calculator) :
+        assert(calculator != null),
         assert(const CalculatorState.initial() != null),
         super(const CalculatorState.initial());
 
