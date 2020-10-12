@@ -128,16 +128,17 @@ BMI calculator is simple and has only one page. This page is shown after BmiCalc
 
 Flutter uses composition to build views
 - BmiCalcularApp is composed of MaterialApp, Scaffold and CalculatorPage during startup
-- CalculatorPage is composed of BlocBuilder, Center, Column and HeightInput, WeightInput and BmiCalculationResult
-- CalculatorPage is rendere when BlocBuilder receives state from bloc
-- HeightInput, WeightInput and BmiCalculationResult are all rendered when associated BlocBuilder receives update
-- HeightInput, WeightInput and BmiCalculationResult have all id's (key), which can used to identify fields ui component during test
+- CalculatorPage is composed of LanguageSelection, HeightInput, WeightInput and BmiCalculationResult
+- CalculatorPage is embedded inside BlocProvider and BlocBuilder
+- CalculatorPage is rendered when BlocBuilder receives state from bloc
+- LanguageSelection, HeightInput, WeightInput and BmiCalculationResult are all rendered when associated BlocBuilder receives update
+- LanguageSelection, HeightInput, WeightInput and BmiCalculationResult have all id's (key), which can used to identify fields ui component during test
 
-![Calculator Page outline](diagrams/calculator-page-outline.png)
+![Calculator Page outline](diagrams/bmi-calculator-widget-tree.png)
 
 Composition in CalculatorPage is done using separate stateless widgets and for this reason several bloc builders are used. For this app it would be possible to have all input and result widgets embedded within one BlocBuilder, but this would have been at some point simply too much.  
 
-WidgetTester component is used to interact with ui fron test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
+WidgetTester component is used to interact with ui from test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
 
 ![Calculator UI implementation and tests](diagrams/calculator-page-test.png)
 

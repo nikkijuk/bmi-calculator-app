@@ -8,6 +8,10 @@ Feature: Calculate BMI
   I want to be able to calculate my BMO
   So that I can have extra joy when it at some point is again at green level
 
+  # Default language is "en"
+  Scenario: check default language
+    Then I expect the "app-title" to be "BMI Calculator"
+
   # test changing language
   # --> from log
   #I/flutter ( 4970): The following assertion was thrown while handling a gesture:
@@ -19,6 +23,7 @@ Feature: Calculate BMI
   #I/flutter ( 4970):         This can happen if the context you used comes from a widget above the BlocProvider.
   Scenario: select language
     When I tap the "flag-gb" button
+    Then I expect the "app-title" to be "BMI Calculator"
     # add here reading of title of app (should be ok)
     # test also field name (shouldn't exist)
 
