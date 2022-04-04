@@ -22,12 +22,18 @@ This project is a pretty simple technology demo
 - Bloc pattern for separating logic from UI 
 - bloc & bloc_flutter packages for implementation of Bloc  
 - object equality implemented with equatable
-- Bloc tested with with bloc_test
+- Bloc tested with bloc_test
 - Domain logic tested with normal unit test
 - Additional test for user interaction
 - Very good analysis for linting
 
 Overview of [flutter architecture](https://flutter.dev/docs/resources/architectural-overview) serves you well if you try to understand why studying Flutter might be good idea.
+
+## Status
+
+Developed with Flutter 1.X years ago. Now migrated to Flutter 2.X. In between I didn't manage to keep my flutter knowledge up to date, but migration was still relatively easy due to very clear error messages and migration tips tools were giving.
+
+Project uses currently sound null safety. Some of generated code is not completely cleanly implemented, which means that there's some messages during build.
 
 ## Roadmap
 
