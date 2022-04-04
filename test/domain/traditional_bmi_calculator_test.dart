@@ -13,17 +13,17 @@ void main() {
     });
 
     test('bmi should not be calculated and rounded as weight is null', () {
-      var bmi = TraditionalBmiCalculator().calculateBmiPrecision2(170, null);
+      var bmi = TraditionalBmiCalculator().calculateBmiPrecision2(170, 0);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated and rounded as height is null', () {
-      var bmi = TraditionalBmiCalculator().calculateBmiPrecision2(null, 70);
+      var bmi = TraditionalBmiCalculator().calculateBmiPrecision2(0, 70);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated and rounded as params are null', () {
-      var bmi = TraditionalBmiCalculator().calculateBmiPrecision2(null, null);
+      var bmi = TraditionalBmiCalculator().calculateBmiPrecision2(0, 0);
       expect(bmi, null);
     });
 
@@ -37,17 +37,17 @@ void main() {
     });
 
     test('bmi should not be calculated as weight is null', () {
-      var bmi = TraditionalBmiCalculator().calculateBmi(170, null);
+      var bmi = TraditionalBmiCalculator().calculateBmi(170, 0);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated as height is null', () {
-      var bmi = TraditionalBmiCalculator().calculateBmi(null, 70);
+      var bmi = TraditionalBmiCalculator().calculateBmi(0, 70);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated as params are null', () {
-      var bmi = TraditionalBmiCalculator().calculateBmi(null, null);
+      var bmi = TraditionalBmiCalculator().calculateBmi(0, 0);
       expect(bmi, null);
     });
   });

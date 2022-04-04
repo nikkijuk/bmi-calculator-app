@@ -4,35 +4,23 @@ part of 'calculator_bloc.dart';
 @immutable
 class CalculatorState extends Equatable {
   const CalculatorState({
-    @required this.height,
-    @required this.weight,
-    @required this.bmi,
+    required this.height,
+    required this.weight,
+    required this.bmi,
   });
 
   const CalculatorState.initial()
       : this(
-    height: null,
-    weight: null,
-    bmi: null,
+    height: 0,
+    weight: 0,
+    bmi: 0,
   );
 
   final double height;
   final double weight;
   final double bmi;
 
-  CalculatorState copyWith({
-    int height,
-    int weight,
-    int bmi,
-  }) {
-    return CalculatorState(
-      height: height ?? this.height,
-      weight: weight ?? this.weight,
-      bmi: bmi ?? this.bmi,
-    );
-  }
-
-  bool get isComplete => height != null && weight != null && bmi != null;
+  bool get isComplete => height != 0 && weight != 0 && bmi != 0;
 
   @override
   List<Object> get props => [height, weight, bmi];

@@ -13,17 +13,17 @@ void main() {
     });
 
     test('bmi should not be calculated and rounded as weight is null', () {
-      var bmi = TrefethenBmiCalculator().calculateBmiPrecision2(170, null);
+      var bmi = TrefethenBmiCalculator().calculateBmiPrecision2(170, 0);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated and rounded as height is null', () {
-      var bmi = TrefethenBmiCalculator().calculateBmiPrecision2(null, 70);
+      var bmi = TrefethenBmiCalculator().calculateBmiPrecision2(0, 70);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated and rounded as params are null', () {
-      var bmi = TrefethenBmiCalculator().calculateBmiPrecision2(null, null);
+      var bmi = TrefethenBmiCalculator().calculateBmiPrecision2(0, 0);
       expect(bmi, null);
     });
 
@@ -37,17 +37,17 @@ void main() {
     });
 
     test('bmi should not be calculated as weight is null', () {
-      var bmi = TrefethenBmiCalculator().calculateBmi(170, null);
+      var bmi = TrefethenBmiCalculator().calculateBmi(170, 0);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated as height is null', () {
-      var bmi = TrefethenBmiCalculator().calculateBmi(null, 70);
+      var bmi = TrefethenBmiCalculator().calculateBmi(0, 70);
       expect(bmi, null);
     });
 
     test('bmi should not be calculated as params are null', () {
-      var bmi = TrefethenBmiCalculator().calculateBmi(null, null);
+      var bmi = TrefethenBmiCalculator().calculateBmi(0, 0);
       expect(bmi, null);
     });
   });

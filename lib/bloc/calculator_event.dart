@@ -10,7 +10,7 @@ class CalculatorReset extends CalculatorEvent {}
 // mixin used as calculator event is base class and
 // Dart doesn't support multi-inheritance
 class CalculatorHeightChanged extends CalculatorEvent with EquatableMixin {
-  const CalculatorHeightChanged({@required this.height}) : assert (height != null);
+  const CalculatorHeightChanged({required this.height}) : assert (height != null);
 
   final double height;
 
@@ -21,7 +21,7 @@ class CalculatorHeightChanged extends CalculatorEvent with EquatableMixin {
 // mixin used as calculator event is base class and
 // Dart doesn't support multi-inheritance
 class CalculatorWeightChanged extends CalculatorEvent with EquatableMixin {
-  const CalculatorWeightChanged({@required this.weight}) : assert (weight != null);
+  const CalculatorWeightChanged({required this.weight}) : assert (weight != null);
 
   final double weight;
 

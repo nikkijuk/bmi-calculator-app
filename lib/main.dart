@@ -17,9 +17,6 @@ import 'generated/l10n.dart';
 
 void main() {
 
-  // adds logging so that bloc operations are easier to follow
-  Bloc.observer = SimpleBlocObserver();
-
   // adds properties to toString method of classes using Equatable
   // note: this helps by adding details to log output of SimpleBlocObserver
   EquatableConfig.stringify = true;
@@ -29,7 +26,14 @@ void main() {
   SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
   ).then(
-    (_) => runApp(BmiCalculatorApp())
+    (_) =>
+        BlocOverrides.runZoned(
+          () => runApp(BmiCalculatorApp()),
+
+          // adds logging so that bloc operations are easier to follow
+          // use onEvent to implement logging
+          blocObserver: SimpleBlocObserver(),
+        )
   );
 
 }

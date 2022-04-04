@@ -35,10 +35,11 @@ Future<void> main() {
     ]
     ..customStepParameterDefinitions = []
     ..restartAppBetweenScenarios = true
-    ..targetAppPath = 'test_driver/app.dart'
+    ..targetAppPath = 'test_driver/app.dart';
     //..logFlutterProcessOutput = true
     //..verboseFlutterProcessLogs = true
     // ..tagExpression = "@smoke" // uncomment to see an example of running scenarios based on tag expressions
-    ..exitAfterTestRun = true; // set to false if debugging to exit cleanly
+    // TODO: exitAfterTestRun commented out on 1.x -> 2.x migration
+    //..exitAfterTestRun = true; // set to false if debugging to exit cleanly
   return GherkinRunner().execute(config);
 }

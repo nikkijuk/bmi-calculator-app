@@ -18,27 +18,32 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0-0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ^0.16.1
-  intl_utils: ^1.7.0
-  equatable: ^1.2.5
-  bloc: ^6.0.3
-  flutter_bloc: ^6.0.6
-  charts_flutter: ^0.9.0
-  very_good_analysis: ^1.0.2
-  flutter_svg: ^0.19.0
-  flutter_gherkin: ^1.1.8+9
+  intl: ^0.17.0
+  intl_utils: ^2.6.1
+  equatable: ^2.0.3
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+  charts_flutter: ^0.12.0
+  very_good_analysis: ^2.4.0
+  flutter_svg: ^1.0.3
+  flutter_gherkin: ^2.0.0
+
+  #charts_flutter:
+  #  git:
+  #    url: https://github.com/simpleclub-extended/charts
+  #    path: charts_flutter
+  #    ref: intl-git
 
   # Country icons works, but is not conform with tests, so I needed to copy svg files to local repo
   # See: https://github.com/flutter/flutter/issues/27802
-  #country_icons: ^1.1.1
-
+  # country_icons: ^1.1.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -47,8 +52,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  bloc_test: ^7.0.6
-  mockito: ^4.1.2
+  bloc_test: ^9.0.3
+  mockito: ^5.1.0
   flutter_driver:
     sdk: flutter
   test: any
@@ -95,6 +100,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+# remember: generation is done using IDE in this project,
+# so you might easily keep on old version or even modify generated files
+# and save them to version control.
+#
+# version number is added to dependencies and generation can be done
+# from command line.
+# > flutter pub run intl_utils:generate
+
 flutter_intl:
   enabled: true
   localizely:

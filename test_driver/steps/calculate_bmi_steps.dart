@@ -26,7 +26,7 @@ StepDefinitionGeneric createCheckValueStep() {
     'I expect field {string} to have value {string}',
         (key, expected, context) async {
       final locator = find.byValueKey(key);
-      final actual = await FlutterDriverUtils.getText(context.world.driver, locator);
+      final actual = await FlutterDriverUtils.getText(context.world.driver!, locator);
       context.expectMatch(actual, expected);
     },
   );

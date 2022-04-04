@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:bmi_calculator_app/domain/bmi_calculator.dart';
 import 'package:flutter/material.dart';
@@ -9,36 +8,17 @@ part 'calculator_event.dart';
 part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
-  CalculatorBloc(this.calculator) :
-        assert(calculator != null),
-        assert(const CalculatorState.initial() != null),
-        super(const CalculatorState.initial());
+
+  // set calculator and call super with initial state value
+  CalculatorBloc(this.calculator) : super(CalculatorState.initial()) {
+
+    // register event listeners
+    on<CalculatorReset>((event, emit) => emit(CalculatorState.initial()));
+    on<CalculatorHeightChanged>((event, emit) => emit(_createCalculatorState(event.height, state.weight)));
+    on<CalculatorWeightChanged>((event, emit) => emit(_createCalculatorState(state.height, event.weight)));
+  }
 
   BmiCalculator calculator;
-
-  @override
-  Stream<CalculatorState> mapEventToState(CalculatorEvent event) async* {
-
-    switch (event.runtimeType) {
-      case CalculatorReset:
-        yield const CalculatorState.initial();
-        break;
-      case CalculatorHeightChanged:
-        yield* _changeHeight(event);
-        break;
-      case CalculatorWeightChanged:
-        yield* _changeWeight(event);
-        break;
-    }
-  }
-
-  Stream<CalculatorState> _changeHeight(CalculatorHeightChanged event) async* {
-    yield _createCalculatorState(event?.height, state?.weight);
-  }
-
-  Stream<CalculatorState> _changeWeight(CalculatorWeightChanged event) async* {
-    yield _createCalculatorState(state?.height, event?.weight);
-  }
 
   CalculatorState _createCalculatorState(double height, double weight) {
     var bmi = calculator.calculateBmiPrecision2 (height, weight);

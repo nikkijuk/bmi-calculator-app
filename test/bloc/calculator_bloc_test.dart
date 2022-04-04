@@ -34,8 +34,8 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorHeightChanged(height: 170))
         ..add(const CalculatorWeightChanged(weight: 70)),
-      expect: const <CalculatorState>[
-        CalculatorState(height: 170, weight: null, bmi: null),
+      expect: () => const <CalculatorState>[
+        CalculatorState(height: 170, weight: 0, bmi: 0),
         CalculatorState(height: 170, weight: 70, bmi: 24.22)
       ],
     );
@@ -48,8 +48,8 @@ void main() {
       act: (bloc) => bloc
         ..add(const CalculatorHeightChanged(height: 170))
         ..add(const CalculatorWeightChanged(weight: 70)),
-      expect: const <CalculatorState>[
-        CalculatorState(height: 170, weight: null, bmi: null),
+      expect: () => const <CalculatorState>[
+        CalculatorState(height: 170, weight: 0, bmi: 0),
         CalculatorState(height: 170, weight: 70, bmi: 24.15)
       ],
     );

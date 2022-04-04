@@ -38,8 +38,6 @@ class BmiCalculationResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    assert (S.of(context) != null, 'active localization should be present');
-
     // listens stream of CalculatorBloc, which
     // - triggers when new CalculatorState is received from stream
     // - widgets are built when previous and current object are not equal
@@ -47,31 +45,31 @@ class BmiCalculationResult extends StatelessWidget {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.bmi != current.bmi,
       builder: (context, state) {
-        if (state.bmi == null) {
+        if (state.bmi == 0) {
           return Center(
           child: Text(
-            S.of(context)?.not_calculated ?? '@FIXME',
+            S.of(context).not_calculated,
             key: const ValueKey ('not-calculated'),
           ),
         );
         } else {
-          var current = statuses.lastWhere((e) => e.minBmi <= state.bmi);
+          final current = statuses.lastWhere((e) => e.minBmi <= state.bmi);
           return Container(
           height: MediaQuery.of(context).size.height * 30/100,
           width:MediaQuery.of(context).size.width * 60/100,
           child: Column(
             children: [
               Text(
-                S.of(context)?.bmi_result(state.bmi) ?? '@FIXME',
+                S.of(context).bmi_result(state.bmi),
                 key: const ValueKey ('bmi'),
-                style: Theme.of(context).textTheme.headline4.apply(
+                style: Theme.of(context).textTheme.headline4!.apply(
                     color: current.color
                 ),
               ),
               Text(
-              S.of(context)?.bmi_desc(current.id) ?? '@FIXME',
+              S.of(context).bmi_desc(current.id),
                 key: const ValueKey ('bmi-name') ,
-                style: Theme.of(context).textTheme.headline6.apply(
+                style: Theme.of(context).textTheme.headline6!.apply(
                     color: current.color
                 ),
               ),
