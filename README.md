@@ -12,43 +12,49 @@ Body Mass Index calculator implemented with Flutter
 
 "BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range the value falls between." - https://www.calculator.net/bmi-calculator.html
 
+Please think it that way: it's just a number coming out from very simple model. And as every model is wrong the number is also helpful or not. I believe it has some value, and that thus it is ok to use such model. For anyone interested more please note that we use here ["new" bmi formula](https://people.maths.ox.ac.uk/trefethen/bmi.html).
+
 ## Technology
 
 This project is a pretty simple technology demo
 
-- Flutter for UI
-- Localizely for Localization workflow
-- CodeMagic for CI/CD
-- Bloc pattern for separating logic from UI 
-- bloc & bloc_flutter packages for implementation of Bloc  
-- object equality implemented with equatable
-- Bloc tested with bloc_test
+- [Flutter](https://flutter.dev/) for UI (initially Flutter 1.x, migrated to 2.x)
+- [Localizely](https://localizely.com/) for Localization workflow
+- [CodeMagic](https://codemagic.io/) for CI/CD
+- [Bloc library](https://bloclibrary.dev/#/) for separating business logic from UI components
+- [bloc](https://github.com/felangel/bloc) & [bloc_flutter](https://pub.dev/packages/flutter_bloc) packages for implementation of Bloc pattern  
+- [equatable](https://github.com/felangel/equatable) for object equality
+- [bloc_test](https://pub.dev/packages/bloc_test) for Bloc testing 
 - Domain logic tested with normal unit test
 - Additional test for user interaction
-- Very good analysis for linting
+- [Very good analysis](https://pub.dev/packages/very_good_analysis) for linting
 
 Overview of [flutter architecture](https://flutter.dev/docs/resources/architectural-overview) serves you well if you try to understand why studying Flutter might be good idea.
 
 ## Status
 
-Developed with Flutter 1.X years ago. Now migrated to Flutter 2.X. In between I didn't manage to keep my flutter knowledge up to date, but migration was still relatively easy due to very clear error messages and migration tips tools were giving.
+First version was developed with [Flutter 1.12](https://docs.flutter.dev/whats-new#dec-11-2019-flutter-interact-edition-112-release) 2 years ago. Now migrated to [Flutter 2.10](https://docs.flutter.dev/whats-new#feb-3-2022-windows-support-210-release). 
 
-Project uses currently sound null safety. Some of generated code is not completely cleanly implemented, which means that there's some messages during build.
+In between I didn't manage to keep my flutter knowledge up to date, but migration was still relatively easy due to very clear error messages and migration tips tools were giving.
+
+Project uses currently sound [null safety](https://dart.dev/null-safety). No tricks, it's all converted, no exceptions here. Some of generated code is not completely cleanly implemented, which means that there's some warnings and error messages during build.
 
 ## Roadmap
 
 Add screenshot & reporter & debug support to BDD tests
 - flutter_gherkin works fine, but app is not behaving as expected with flutter_driver
 - problem: localization doesn't work - no possibility to select other language, localized texts only partially to retrieve
+- good thing: [flutter_driver is deprecated](https://docs.flutter.dev/testing/integration-tests/migration) and I need to migrate it to [integration_test](https://pub.dev/packages/integration_test)
 
 Try Screenshot tests, possibly with Golden Toolkit
 - Working bdd tests are precondition for Golden tests 
 - https://tech.ebayinc.com/engineering/ebay-motors-screenshot-testing-with-flutter/
 - https://pub.dev/packages/golden_toolkit
 
-Add webview to show background information
+Add [webview](https://pub.dev/packages/webview_flutter) to show background information
 - WebView is production ready since [Flutter 1.22](https://medium.com/flutter/announcing-flutter-1-22-44f146009e5f)
 - Show information of BMI calculation from internet
+- NOTE: this will be probably never done as I doubt [flutter web view has its limits](https://betterprogramming.pub/flutter-failed-to-solve-the-biggest-challenge-for-our-cross-platform-app-c551afa0ef18)
 
 Add menus to select background info or calculator page
 
@@ -118,7 +124,7 @@ Note: due to design decision made reset event is never used. Nevertheless, it fu
 
 Note: bloc_flutter is similarly named component as one we use, so be careful not to mix them.
 
-## Immutabiliy, Object equality and Debugging bloc
+## Immutability, Object equality and Debugging bloc
 
 Events & States are immutable. State needs to be compared to previous state in bloc to see if it has changed according to event.
 
