@@ -33,9 +33,9 @@ Overview of [flutter architecture](https://flutter.dev/docs/resources/architectu
 
 ## Status
 
-First version was developed with [Flutter 1.12](https://docs.flutter.dev/whats-new#dec-11-2019-flutter-interact-edition-112-release) 2 years ago. Now migrated to [Flutter 2.10](https://docs.flutter.dev/whats-new#feb-3-2022-windows-support-210-release). 
+First version was developed with [Flutter 1.12](https://docs.flutter.dev/whats-new#dec-11-2019-flutter-interact-edition-112-release) 2019. I finally migrated it 2022 to [Flutter 2.10](https://docs.flutter.dev/whats-new#feb-3-2022-windows-support-210-release). 
 
-In between I didn't manage to keep my flutter knowledge up to date, but migration was still relatively easy due to very clear error messages and migration tips tools were giving.
+In between I didn't manage to keep my Flutter knowledge up to date, but migration was still relatively easy due to very clear error messages and migration tips tools were giving.
 
 Project uses currently sound [null safety](https://dart.dev/null-safety). No tricks, it's all converted, no exceptions here. Some of generated code is not completely cleanly implemented, which means that there's some warnings and error messages during build.
 
@@ -44,7 +44,7 @@ Project uses currently sound [null safety](https://dart.dev/null-safety). No tri
 Add screenshot & reporter & debug support to BDD tests
 - flutter_gherkin works fine, but app is not behaving as expected with flutter_driver
 - problem: localization doesn't work - no possibility to select other language, localized texts only partially to retrieve
-- good thing: [flutter_driver is deprecated](https://docs.flutter.dev/testing/integration-tests/migration) and I need to migrate it to [integration_test](https://pub.dev/packages/integration_test)
+- good thing: [flutter_driver is deprecated](https://docs.flutter.dev/testing/integration-tests/migration) and I need to migrate it to [integration_test](https://docs.flutter.dev/testing/integration-tests), which has luckily moved to be part of flutter itself.
 
 Try Screenshot tests, possibly with Golden Toolkit
 - Working bdd tests are precondition for Golden tests 
