@@ -24,8 +24,9 @@ This project is a pretty simple technology demo
 - [Bloc library](https://bloclibrary.dev/#/) for separating business logic from UI components
 - [bloc](https://github.com/felangel/bloc) & [bloc_flutter](https://pub.dev/packages/flutter_bloc) packages for implementation of Bloc pattern  
 - [equatable](https://github.com/felangel/equatable) for object equality
+- [test](https://pub.dev/packages/test) and [flutter_test](https://api.flutter.dev/flutter/flutter_test/flutter_test-library.html) used to [unit test](https://docs.flutter.dev/cookbook/testing/unit/introduction) domain logic https://docs.flutter.dev/cookbook/testing/unit/introduction
 - [bloc_test](https://pub.dev/packages/bloc_test) for Bloc testing 
-- Domain logic tested with normal unit test
+- [flutter_gherkin](https://pub.dev/packages/flutter_gherkin) for BDD tests 
 - Additional test for user interaction
 - [Very good analysis](https://pub.dev/packages/very_good_analysis) for linting
 
@@ -60,7 +61,7 @@ Add menus to select background info or calculator page
 
 Add support for changing bmi algorithm
 
-Prepare distribution thru stores
+Prepare distribution through stores
 - .. this might never happen, as there's quite limited value on adding this app to any kind of store
 - .. or it can happen that default algorithm is changed and app is published only to play store 
 
@@ -132,14 +133,14 @@ Instead of generating model classes, using generated implementation of equals, h
 
 https://pub.dev/packages/equatable
 
-Extending model with handy Equals & HashCode & toString features makes bloc also easy to debug - otherwise it might be really hard to unserstand what happens under the hood.
+Extending model with handy Equals & HashCode & toString features makes bloc also easy to debug - otherwise it might be really hard to understand what happens under the hood.
 
 ## Implementing UI components
 
-BMI calculator is simple and has only one page. This page is shown after BmiCalcularApp is started.
+BMI calculator is simple and has only one page. This page is shown after BmiCalculatorApp is started.
 
 Flutter uses composition to build views
-- BmiCalcularApp is composed of MaterialApp, Scaffold and CalculatorPage during startup
+- BmiCalculatorApp is composed of MaterialApp, Scaffold and CalculatorPage during startup
 - CalculatorPage is composed of LanguageSelection, HeightInput, WeightInput and BmiCalculationResult
 - CalculatorPage is embedded inside BlocProvider and BlocBuilder
 - CalculatorPage is rendered when BlocBuilder receives state from bloc
@@ -150,11 +151,11 @@ Flutter uses composition to build views
 
 Composition in CalculatorPage is done using separate stateless widgets and for this reason several bloc builders are used. For this app it would be possible to have all input and result widgets embedded within one BlocBuilder, but this would have been at some point simply too much.  
 
-WidgetTester component is used to interact with ui from test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
+[WidgetTester](https://api.flutter.dev/flutter/flutter_test/WidgetTester-class.html) component is used to interact with ui from test classes. All interactions with ui are async. When state of UI is changed it needs to be re-rendered. 
 
 ![Calculator UI implementation and tests](diagrams/calculator-page-test.png)
 
-UI components are Flutter Widgets. So, from here on one can't reuse classes with for example Angular.
+UI components are Flutter [Widgets](https://docs.flutter.dev/development/ui/widgets-intro). So, from here on one can't reuse classes with for example Angular apps.
 
 ## Localization
 
@@ -172,7 +173,7 @@ Candidates for process / tooling / ..
 - Windows, Linux & OSX desktop client like [BabelEdit](https://www.codeandweb.com/babeledit) from [CodeAndWeb](https://www.codeandweb.com)
 - Clever library like [easy localization](https://pub.dev/packages/easy_localization)
 - Clever Library plus [Some Python Scripts & Spreadsheet](https://itnext.io/flutter-localisation-google-sheets-api-python-internalisation-paradise-8439cab57866)
-- More control needed, so [DIY Jason based](https://medium.com/@podcoder/flutter-localization-a39402757a42) or ..
+- More control needed, so [DIY Json based](https://medium.com/@podcoder/flutter-localization-a39402757a42) or ..
 - And there needs to be couple of other options also .. 
 
 As the saying goes: "A fool with a tool is still a fool", so one must learn how flutter does localization.
