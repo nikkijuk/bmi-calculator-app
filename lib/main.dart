@@ -11,7 +11,7 @@ import 'generated/l10n.dart';
 
 // remember: generation is done using IDE in this project,
 // so you might easily keep on old version.
-// version number is added to dependencies and generarion can be done
+// version number is added to dependencies and generation can be done
 // from command line.
 // > flutter pub run intl_utils:generate
 
@@ -69,11 +69,9 @@ class BmiCalculatorApp extends StatelessWidget {
 // delegates need to exist higher in widget tree
 // https://github.com/flutter/flutter/issues/26365
 class BmiCalculatorHome extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-
-    assert (S.of(context) != null, 'active localization should be present');
-
     return Scaffold(
       appBar: AppBar(
           title: Text(

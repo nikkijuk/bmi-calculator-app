@@ -12,9 +12,6 @@ class CalculatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    assert (S.of(context) != null, 'active localization should be present');
-
     return BlocProvider<CalculatorBloc>(
       create: (_) => CalculatorBloc(TraditionalBmiCalculator()),
       child:
@@ -47,9 +44,6 @@ class LanguageSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // TODO: fix
-    //assert (context.bloc<LocalizationBloc>() != null, 'bloc for localization should be present');
-
     // create callback handler, which
     // - uses BlocProvider to find LocalizationBloc using it's type
     // - adds Locale to sink of LocalizationBloc
@@ -66,9 +60,7 @@ class LanguageSelection extends StatelessWidget {
           children: [
             TextButton(
               key: const ValueKey ('flag-gb'),
-              onPressed: () {
-                _onLocaleChanged(const Locale('en', 'US'));
-                },
+              onPressed: () => _onLocaleChanged(const Locale('en', 'US')),
               child:
                 SvgPicture.asset(
                   'assets/flags/svg/gb.svg',
@@ -78,9 +70,7 @@ class LanguageSelection extends StatelessWidget {
               ),
             TextButton(
               key: const ValueKey ('flag-de'),
-              onPressed: () {
-              _onLocaleChanged(const Locale('de', 'de'));
-              },
+              onPressed: () => _onLocaleChanged(const Locale('de', 'de')),
               child:
                 SvgPicture.asset(
                   'assets/flags/svg/de.svg',
@@ -90,9 +80,7 @@ class LanguageSelection extends StatelessWidget {
               ),
             TextButton(
               key: const ValueKey ('flag-fi'),
-              onPressed: () {
-                _onLocaleChanged(const Locale('fi', 'FI'));
-              },
+              onPressed: () => _onLocaleChanged(const Locale('fi', 'FI')),
               child:
                 SvgPicture.asset(
                   'assets/flags/svg/fi.svg',
@@ -110,14 +98,12 @@ class HeightInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    assert (S.of(context) != null, 'active localization should be present');
-
     // create callback handler, which
     // - uses BlocProvider to find CalculatorBloc using it's type
     // - adds new CalculatorHeightChangedEvent to sink of CalculatorBloc
     void _onHeightChanged(String value) =>
         context.read<CalculatorBloc>().add(
-            CalculatorHeightChanged(height: _parseDoubleOrNull(value))
+            CalculatorHeightChanged(height: _parseDouble(value))
         );
 
     return Container(
@@ -143,11 +129,9 @@ class WeightInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    assert (S.of(context) != null, 'active localization should be present');
-
     void _onWeightChanged(String value) =>
         context.read<CalculatorBloc>().add(
-            CalculatorWeightChanged(weight: _parseDoubleOrNull(value))
+            CalculatorWeightChanged(weight: _parseDouble(value))
         );
 
     return Container(
@@ -168,6 +152,6 @@ class WeightInput extends StatelessWidget {
   }
 }
 
-// this was tricky: field can contain null, empty or numeric value
-double _parseDoubleOrNull(String value) =>
-    value != null && value != '' ? double.parse(value) : 0;
+// TODO: use tryParse instead of parse?
+double _parseDouble(String value) =>
+    value != '' ? double.parse(value) : 0;

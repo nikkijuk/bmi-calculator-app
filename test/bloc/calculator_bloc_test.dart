@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 // test calculator bloc initial state and sending events using sink / receiving state as responses from stream
 // https://pub.dev/packages/bloc_test
 void main() {
+
   group('CalculatorBloc', () {
     test('initial state is not complete', () {
       expect(CalculatorBloc(TraditionalBmiCalculator()).state.isComplete,
