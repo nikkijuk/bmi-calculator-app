@@ -91,10 +91,10 @@ class S {
     );
   }
 
-  /// `Lenght in centimeters`
+  /// `Length in centimeters`
   String get height_desc {
     return Intl.message(
-      'Lenght in centimeters',
+      'Length in centimeters',
       name: 'height_desc',
       desc: '',
       args: [],

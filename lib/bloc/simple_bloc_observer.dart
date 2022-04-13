@@ -9,7 +9,7 @@ import 'package:bloc/bloc.dart';
 // - cubit emits state objects and has state,
 //    state is changed when methods of cubit are called
 // - bloc emits state objects and has state,
-//   state is changed when bloc receives events thru sink
+//   state is changed when bloc receives events through sink
 class SimpleBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {

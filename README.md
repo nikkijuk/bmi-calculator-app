@@ -180,6 +180,8 @@ As the saying goes: "A fool with a tool is still a fool", so one must learn how 
 
 ### Experimenting with Localizely
 
+TODO: test & update localization flow notes
+
 [Localizely's localization workflow](https://localizely.com/flutter-localization-workflow/) can be integrated directly to IDE, which makes it easy to use, as developer doesn't ever need to leave IDE.
 
 Android studios [Flutter_intl plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl) and Localizely project are connected with Localizelys developer specific api key and Localizelys project specific project id.
@@ -238,6 +240,8 @@ Experience was mostly positive, but there's still work to do on developer & Tran
 
 ## Gotchas with assets
 
+TODO: check state of asset loading
+
 I did find nice [country icons dependency](https://pub.dev/packages/country_icons). Works nice runtime.
 
 Fortunately widget tests don't [load asset bundles from package dependencies](https://flutter.dev/docs/development/ui/assets-and-images#from-packages), and thus widget tests fail. 
@@ -248,6 +252,8 @@ Fortunately widget tests don't [load asset bundles from package dependencies](ht
 Fix: Cloned svg flag files to local repository and added currently used country icons to pubspec.yaml.
 
 ## Gotchas with BDD / gherkin tests
+
+TODO: check state of BDD tests 
 
 BDD is implemented in BMI Calculator using 3rd party extension called [flutter_gherkin](https://pub.dev/packages/flutter_gherkin).
 
