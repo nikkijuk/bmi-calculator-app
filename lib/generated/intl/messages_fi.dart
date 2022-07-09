@@ -20,7 +20,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fi';
 
-  static String m0(bmiLevel) => "${Intl.select(bmiLevel, {
+  static String m0(Object bmiLevel) => "${Intl.select(bmiLevel, {
             't3': 'Sairaalloinen alipaino',
             't2': 'Vaikea alipaino',
             't1': 'Alipaino',

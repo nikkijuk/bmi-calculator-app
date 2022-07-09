@@ -9,6 +9,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // CalculatorPage is skeleton and defines structure of components
 class CalculatorPage extends StatelessWidget {
+  const CalculatorPage({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,6 @@ class CalculatorPage extends StatelessWidget {
             child: Center (
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.start,
                 // all components at page are defined separately as widgets
                 children: <Widget>[
                   LanguageSelection(),
@@ -30,16 +31,18 @@ class CalculatorPage extends StatelessWidget {
                   WeightInput (),
                   BmiCalculationResult(),
                 ],
-              )
+              ),
             ),
           );
           },
-        )
+        ),
     );
   }
 }
 
 class LanguageSelection extends StatelessWidget {
+  const LanguageSelection({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +58,6 @@ class LanguageSelection extends StatelessWidget {
     // I was spending quite some time to tune wrong component while
     // I didn't know all buttons that were available
     return Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextButton(
@@ -103,7 +105,7 @@ class HeightInput extends StatelessWidget {
     // - adds new CalculatorHeightChangedEvent to sink of CalculatorBloc
     void _onHeightChanged(String value) =>
         context.read<CalculatorBloc>().add(
-            CalculatorHeightChanged(height: _parseDouble(value))
+            CalculatorHeightChanged(height: _parseDouble(value)),
         );
 
     return Container(
@@ -131,7 +133,7 @@ class WeightInput extends StatelessWidget {
 
     void _onWeightChanged(String value) =>
         context.read<CalculatorBloc>().add(
-            CalculatorWeightChanged(weight: _parseDouble(value))
+            CalculatorWeightChanged(weight: _parseDouble(value)),
         );
 
     return Container(

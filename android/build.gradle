@@ -1,7 +1,7 @@
 buildscript {
 
     // kotlin version is set pretty high as it's same as Android studio uses as default
-    ext.kotlin_version = '1.6.20'
+    ext.kotlin_version = '1.7.10'
 
     repositories {
         google()
@@ -14,7 +14,7 @@ buildscript {
         // https://stackoverflow.com/questions/66920708/update-gradle-in-flutter-project
 
         // https://mvnrepository.com/artifact/com.android.tools.build/gradle?repo=google
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:7.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }

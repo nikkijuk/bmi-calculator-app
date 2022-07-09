@@ -67,7 +67,7 @@ Prepare distribution through stores
 
 ## Calculate your BMI
 
-Body mass index can be calculated from two values, and result correlates to persons healt. 
+Body mass index can be calculated from two values, and result correlates to persons health. 
 
 It's hard to think simpler app with real meaning in context of our lives.
 

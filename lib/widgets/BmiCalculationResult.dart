@@ -1,7 +1,7 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:bmi_calculator_app/generated/l10n.dart';
-import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Complexity of this single component and it's dependencies are reason
@@ -54,7 +54,7 @@ class BmiCalculationResult extends StatelessWidget {
         );
         } else {
           final current = statuses.lastWhere((e) => e.minBmi <= state.bmi);
-          return Container(
+          return SizedBox(
           height: MediaQuery.of(context).size.height * 30/100,
           width:MediaQuery.of(context).size.width * 60/100,
           child: Column(
@@ -63,14 +63,14 @@ class BmiCalculationResult extends StatelessWidget {
                 S.of(context).bmi_result(state.bmi),
                 key: const ValueKey ('bmi'),
                 style: Theme.of(context).textTheme.headline4!.apply(
-                    color: current.color
+                    color: current.color,
                 ),
               ),
               Text(
               S.of(context).bmi_desc(current.id),
                 key: const ValueKey ('bmi-name') ,
                 style: Theme.of(context).textTheme.headline6!.apply(
-                    color: current.color
+                    color: current.color,
                 ),
               ),
               Expanded(
@@ -83,8 +83,8 @@ class BmiCalculationResult extends StatelessWidget {
                       charts.BarTargetLineRendererConfig<String>(
                         // ID used to link series to this renderer.
                           customRendererId: 'bmiResultLine',
-                          groupingType: charts.BarGroupingType.stacked)
-                    ]
+                          groupingType: charts.BarGroupingType.stacked,)
+                    ],
                 ),
               ),
             ],
@@ -112,7 +112,7 @@ class BmiCalculationResult extends StatelessWidget {
         colorFn: (NutritionalStatus status, _) => charts.Color(
             r: status.color.red, 
             g: status.color.green, 
-            b: status.color.blue),
+            b: status.color.blue,),
         data: statuses,
       ),
       charts.Series<NutritionalStatus, String>(

@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:bmi_calculator_app/domain/bmi_calculator.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:equatable/equatable.dart';
 
 part 'calculator_event.dart';
 part 'calculator_state.dart';

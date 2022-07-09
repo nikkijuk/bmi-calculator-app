@@ -22,11 +22,11 @@ import 'steps/calculate_bmi_steps.dart';
 
 Future<void> main() {
   final config = FlutterTestConfiguration()
-    ..features = [Glob(r'test_driver/features/**.feature')]
+    ..features = [Glob('test_driver/features/**.feature')]
     ..reporters = [
       ProgressReporter(),
       TestRunSummaryReporter(),
-      JsonReporter(path: './report.json'),
+      JsonReporter(),
       StdoutReporter()
     ] // you can include the "StdoutReporter()" without the message level parameter for verbose log information
     ..stepDefinitions = [
@@ -42,4 +42,5 @@ Future<void> main() {
     // TODO: exitAfterTestRun commented out on 1.x -> 2.x migration
     //..exitAfterTestRun = true; // set to false if debugging to exit cleanly
   return GherkinRunner().execute(config);
+
 }

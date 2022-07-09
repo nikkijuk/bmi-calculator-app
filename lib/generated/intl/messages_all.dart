@@ -15,9 +15,9 @@ import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
 import 'package:intl/src/intl_helpers.dart';
 
-import 'messages_de.dart' as messages_de;
-import 'messages_en.dart' as messages_en;
-import 'messages_fi.dart' as messages_fi;
+import 'package:bmi_calculator_app/generated/intl/messages_de.dart' as messages_de;
+import 'package:bmi_calculator_app/generated/intl/messages_en.dart' as messages_en;
+import 'package:bmi_calculator_app/generated/intl/messages_fi.dart' as messages_fi;
 
 typedef Future<dynamic> LibraryLoader();
 Map<String, LibraryLoader> _deferredLibraries = {

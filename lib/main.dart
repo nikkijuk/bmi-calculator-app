@@ -1,13 +1,12 @@
+import 'package:bmi_calculator_app/bloc/localization_bloc.dart';
+import 'package:bmi_calculator_app/bloc/simple_bloc_observer.dart';
+import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:bmi_calculator_app/pages/calculator_page.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
-import 'bloc/localization_bloc.dart';
-import 'bloc/simple_bloc_observer.dart';
-import 'generated/l10n.dart';
 
 // remember: generation is done using IDE in this project,
 // so you might easily keep on old version.
@@ -24,22 +23,23 @@ void main() {
   // disable landscape and run app
   WidgetsFlutterBinding.ensureInitialized(); // ios simulator needed this line
   SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
+    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
   ).then(
     (_) =>
         BlocOverrides.runZoned(
-          () => runApp(BmiCalculatorApp()),
+          () => runApp(const BmiCalculatorApp()),
 
           // adds logging so that bloc operations are easier to follow
           // use onEvent to implement logging
           blocObserver: SimpleBlocObserver(),
-        )
+        ),
   );
 
 }
 
 // This widget is the root of app
 class BmiCalculatorApp extends StatelessWidget {
+  const BmiCalculatorApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class BmiCalculatorApp extends StatelessWidget {
       child: BlocBuilder<LocalizationBloc, Locale>(
         builder: (context, locale) => MaterialApp(
           locale: locale,
-          localizationsDelegates: [
+          localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -61,13 +61,14 @@ class BmiCalculatorApp extends StatelessWidget {
           ),
           home: BmiCalculatorHome(),
         ),
-      )
+      ),
     );
   }
 }
 
 // delegates need to exist higher in widget tree
 // https://github.com/flutter/flutter/issues/26365
+// ignore: use_key_in_widget_constructors
 class BmiCalculatorHome extends StatelessWidget {
 
   @override
@@ -81,7 +82,7 @@ class BmiCalculatorHome extends StatelessWidget {
             key: const ValueKey ('app-title'),
           ),
       ),
-      body: CalculatorPage(),
+      body: const CalculatorPage(),
       );
   }
 }

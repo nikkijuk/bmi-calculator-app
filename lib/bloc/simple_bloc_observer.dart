@@ -28,4 +28,5 @@ class SimpleBlocObserver extends BlocObserver {
     print('${bloc.runtimeType} $error $stackTrace');
     super.onError(bloc, error, stackTrace);
   }
+
 }

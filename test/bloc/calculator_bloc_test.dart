@@ -11,7 +11,7 @@ void main() {
   group('CalculatorBloc', () {
     test('initial state is not complete', () {
       expect(CalculatorBloc(TraditionalBmiCalculator()).state.isComplete,
-          false);
+          false,);
     });
 
     test('initial state of height is null', () {
