@@ -18,7 +18,7 @@ Please think it that way: it's just a number coming out from very simple model. 
 
 This project is a pretty simple technology demo
 
-- [Flutter](https://flutter.dev/) for UI (initially Flutter 1.x, migrated to 2.x)
+- [Flutter](https://flutter.dev/) for UI (initially Flutter 1.x, migrated first to 2.x + sound null safety, then to 3.x)
 - [Localizely](https://localizely.com/) for Localization workflow
 - [CodeMagic](https://codemagic.io/) for CI/CD
 - [Bloc library](https://bloclibrary.dev/#/) for separating business logic from UI components
@@ -34,7 +34,7 @@ Overview of [flutter architecture](https://flutter.dev/docs/resources/architectu
 
 ## Status
 
-First version was developed with [Flutter 1.12](https://docs.flutter.dev/whats-new#dec-11-2019-flutter-interact-edition-112-release) 2019. I finally migrated it 2022 to [Flutter 2.10](https://docs.flutter.dev/whats-new#feb-3-2022-windows-support-210-release). 
+First version of BMI calculator was developed with [Flutter 1.12](https://docs.flutter.dev/whats-new#dec-11-2019-flutter-interact-edition-112-release) 2019. I finally migrated it 2022 to [Flutter 2.10](https://docs.flutter.dev/whats-new#feb-3-2022-windows-support-210-release) and [sound null safety](https://dart.dev/null-safety). Migration to [Flutter 3.0.5](https://docs.flutter.dev/development/tools/sdk/release-notes/release-notes-3.0.0) happened later 2022 and didn't need lot of code changes.
 
 In between I didn't manage to keep my Flutter knowledge up to date, but migration was still relatively easy due to very clear error messages and migration tips tools were giving.
 
