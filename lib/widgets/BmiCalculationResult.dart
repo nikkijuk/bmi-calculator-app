@@ -1,4 +1,5 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
+import 'package:bmi_calculator_app/connectivity/AppleWatchProvider.dart';
 import 'package:bmi_calculator_app/generated/l10n.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
@@ -7,6 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // Complexity of this single component and it's dependencies are reason
 // why it has been moved to separate file - there's no need to reuse it
 class BmiCalculationResult extends StatelessWidget {
+
+  // added here so that always when bmi result changes it is synced with watch
+  AppleWatchProvider watch = AppleWatchProvider ();
 
   /*
   Classification:
@@ -45,6 +49,11 @@ class BmiCalculationResult extends StatelessWidget {
     return BlocBuilder<CalculatorBloc, CalculatorState>(
       buildWhen: (previous, current) => previous.bmi != current.bmi,
       builder: (context, state) {
+
+        // update watch ui
+        watch.sendBmiToWatch(state.bmi);
+
+        // render
         if (state.bmi == 0) {
           return Center(
           child: Text(
