@@ -1,6 +1,6 @@
 import 'package:bmi_calculator_app/bloc/calculator_bloc.dart';
 import 'package:bmi_calculator_app/generated/l10n.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:community_charts_flutter/community_charts_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,16 +22,16 @@ class BmiCalculationResult extends StatelessWidget {
 
   // it might be wise to put this data later on to own file
   // now it's here locally since we only need it here
-  // NOTE: Colors are from dart.ui package,
-  // they are not same colors as chart component uses
+
+  // TODO: Colors look currenly just weird. FIXME: LATER: SOMEDDAY
   final statuses = [
     NutritionalStatus ('t3', 'Severe Thinness', 0, 16, Colors.blue),
-    NutritionalStatus ('t2', 'Moderate Thinness', 16, 17, Colors.blue.shade300),
-    NutritionalStatus ('t1', 'Mild Thinness', 17, 18.5, Colors.blue.shade100),
+    NutritionalStatus ('t2', 'Moderate Thinness', 16, 17, Colors.lightBlue),
+    NutritionalStatus ('t1', 'Mild Thinness', 17, 18.5, Colors.blueGrey),
     NutritionalStatus ('n',  'Normal weight', 18.5, 25, Colors.green),
     NutritionalStatus ('po', 'Overweight', 25.0, 30, Colors.yellow),
-    NutritionalStatus ('o1', 'Obese class I', 30.0, 35, Colors.red.shade100),
-    NutritionalStatus ('o2', 'Obese class II', 35.0, 40, Colors.red.shade300),
+    NutritionalStatus ('o1', 'Obese class I', 30.0, 35, Colors.pink),
+    NutritionalStatus ('o2', 'Obese class II', 35.0, 40, Colors.purple),
     NutritionalStatus ('o3', 'Obese class III', 40.0, 100, Colors.red),
   ];
 
@@ -74,16 +74,17 @@ class BmiCalculationResult extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: charts.BarChart (
+                  child: BarChart (
                     _statusSeries(state.bmi),
                     animate: false,
-                    barGroupingType: charts.BarGroupingType.stacked,
+                    barGroupingType: BarGroupingType.stacked,
                     vertical: false,
                     customSeriesRenderers: [
-                      charts.BarTargetLineRendererConfig<String>(
+                      BarTargetLineRendererConfig<String>(
                         // ID used to link series to this renderer.
                           customRendererId: 'bmiResultLine',
-                          groupingType: charts.BarGroupingType.stacked,)
+                          groupingType: BarGroupingType.stacked,
+                      )
                     ],
                 ),
               ),
@@ -97,25 +98,25 @@ class BmiCalculationResult extends StatelessWidget {
 
 
   /// Create series list with multiple series
-  List<charts.Series<NutritionalStatus, String>> _statusSeries(double bmi) {
+  List<Series<NutritionalStatus, String>> _statusSeries(double bmi) {
     final result = [
-      NutritionalStatus ('ME', 'My BMI', bmi, bmi, Colors.black),
+      NutritionalStatus ('ME', 'My BMI', bmi, bmi, Colors.brown),
     ];
 
     return [
-      charts.Series<NutritionalStatus, String>(
+      Series<NutritionalStatus, String>(
         id: 'BMI Scale',
         domainFn: (NutritionalStatus st, _) => 'BMI',
         measureFn: (NutritionalStatus st, _) => st.maxBmi - st.minBmi,
         // NOTE: Colors which charts uses are from charts_flutter package 
         // one needs to have manual conversion fo dart.ui colors
-        colorFn: (NutritionalStatus status, _) => charts.Color(
+        colorFn: (NutritionalStatus status, _) => Color(
             r: status.color.red, 
             g: status.color.green, 
             b: status.color.blue,),
         data: statuses,
       ),
-      charts.Series<NutritionalStatus, String>(
+      Series<NutritionalStatus, String>(
         id: 'BMI Result',
         domainFn: (NutritionalStatus status, _) => 'BMI',
         measureFn: (NutritionalStatus status, _) => status.minBmi,
@@ -123,7 +124,7 @@ class BmiCalculationResult extends StatelessWidget {
         data: result,
       )
       // Configure our custom bar target renderer for this series.
-        ..setAttribute(charts.rendererIdKey, 'bmiResultLine'),
+        ..setAttribute(rendererIdKey, 'bmiResultLine'),
     ];
   }
 }
@@ -135,5 +136,5 @@ class NutritionalStatus {
   final String name;
   final double minBmi;
   final double maxBmi;
-  final Color color;
+  final MaterialColor color;
 }
