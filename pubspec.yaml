@@ -42,20 +42,16 @@ dependencies:
     sdk: flutter
   flutter_svg: ^1.1.6
   intl: ^0.17.0
+
+  # Bringing intl_utils up did create problems - not analyzed yet why
   intl_utils: ^2.7.0
+
   localization: ^2.1.0
   very_good_analysis: ^3.1.0
-
-  #charts_flutter:
-  #  git:
-  #    url: https://github.com/simpleclub-extended/charts
-  #    path: charts_flutter
-  #    ref: intl-git
 
   # Country icons works, but is not conform with tests, so I needed to copy svg files to local repo
   # See: https://github.com/flutter/flutter/issues/27802
   # country_icons: ^1.1.1
-
 
 dev_dependencies:
   bloc_test: ^9.1.0
